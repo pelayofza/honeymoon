@@ -1,0 +1,1929 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#c97b8b">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Luna de Miel">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Luna de Miel · Irene & Pelayo · Japón 2026</title>
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E%F0%9F%8C%B8%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E%F0%9F%8C%B8%3C/text%3E%3C/svg%3E">
+
+<link rel="manifest" href='data:application/manifest+json;charset=utf-8,{"name":"Luna%20de%20Miel%20Irene%20%26%20Pelayo","short_name":"Luna%20de%20Miel","start_url":".","scope":".","display":"standalone","background_color":"%23fff7f4","theme_color":"%23c97b8b","icons":[{"src":"data:image/svg%2Bxml,%253Csvg%2520xmlns%253D%2527http%253A%252F%252Fwww.w3.org%252F2000%252Fsvg%2527%2520viewBox%253D%25270%25200%2520512%2520512%2527%253E%253Crect%2520width%253D%2527512%2527%2520height%253D%2527512%2527%2520fill%253D%2527%2523fff7f4%2527%252F%253E%253Ctext%2520y%253D%2527420%2527%2520x%253D%252740%2527%2520font-size%253D%2527420%2527%253E%25F0%259F%258C%25B8%253C%252Ftext%253E%253C%252Fsvg%253E","sizes":"512x512","type":"image/svg+xml","purpose":"any maskable"}]'>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ========== TOKENS ========== */
+  :root{
+    --sakura: #f7c1c9;
+    --sakura-deep: #c97b8b;
+    --sakura-soft: #ffe9ec;
+    --rose: #b86473;
+    --gold: #b08855;
+    --gold-soft: #d9b87a;
+    --cream: #fff7f4;
+    --paper: #fffdfb;
+    --ink: #2a1d22;
+    --ink-soft: #5a4751;
+    --ink-mute: #8a7a82;
+    --line: #efd9dd;
+    --line-soft: #f5e7e9;
+    --shadow: 0 4px 20px rgba(180, 100, 115, .08);
+    --shadow-lg: 0 12px 40px rgba(180, 100, 115, .14);
+    --tokyo: #d0738a;
+    --kyoto: #8a9b6e;
+    --osaka: #e09a5b;
+    --okinawa: #6aa9c5;
+    --r: 14px;
+    --r-lg: 22px;
+  }
+
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  html{scroll-behavior:smooth;background:var(--cream);}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    background-image:
+      radial-gradient(circle at 10% 0%, #ffe9ec 0%, transparent 40%),
+      radial-gradient(circle at 90% 100%, #fff2dc 0%, transparent 40%);
+    background-attachment:fixed;
+    line-height:1.6;
+    font-size:16px;
+    padding-bottom:env(safe-area-inset-bottom);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:500;color:var(--ink);margin:0 0 .4em;letter-spacing:.01em;}
+  h1{font-size:2.4rem;line-height:1.1;font-weight:600;}
+  h2{font-size:1.85rem;font-weight:600;}
+  h3{font-size:1.35rem;font-weight:600;}
+  h4{font-size:1.1rem;font-family:'Inter',sans-serif;font-weight:600;letter-spacing:.02em;}
+  p{margin:0 0 1em;color:var(--ink-soft);}
+  a{color:var(--rose);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  hr{border:none;border-top:1px solid var(--line);margin:1.6em 0;}
+
+  /* ========== HEADER / HERO ========== */
+  .hero{
+    position:relative;
+    padding:54px 22px 44px;
+    text-align:center;
+    overflow:hidden;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0) 60%, var(--cream) 100%),
+      radial-gradient(circle at 50% 30%, #ffd8de 0%, var(--sakura-soft) 45%, var(--cream) 80%);
+  }
+  .hero .petals{position:absolute;inset:0;pointer-events:none;opacity:.4;}
+  .hero .kanji{font-size:.7rem;letter-spacing:.6em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:8px;}
+  .hero h1{
+    font-size:2.6rem;
+    line-height:1.05;
+    font-style:italic;
+    color:var(--rose);
+    margin:6px 0 4px;
+  }
+  .hero .amp{font-style:italic;color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.6em;line-height:1;vertical-align:-.05em;}
+  .hero .dates{font-size:.85rem;letter-spacing:.4em;text-transform:uppercase;color:var(--ink-mute);margin:14px 0 0;}
+  .hero .sublabel{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--ink-soft);margin-top:6px;}
+  .hero .divider{display:flex;align-items:center;justify-content:center;gap:10px;margin:18px auto 0;color:var(--gold);font-size:.9rem;}
+  .hero .divider::before,.hero .divider::after{content:"";flex:1;max-width:60px;height:1px;background:var(--gold-soft);}
+
+  /* Countdown */
+  .countdown{
+    margin:22px auto 0;
+    max-width:340px;
+    background:rgba(255,255,255,.7);
+    backdrop-filter:blur(8px);
+    border:1px solid var(--line);
+    border-radius:var(--r-lg);
+    padding:14px 16px;
+    box-shadow:var(--shadow);
+  }
+  .countdown .label{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-mute);}
+  .countdown .num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--rose);font-weight:600;line-height:1;margin:2px 0;}
+  .countdown .num small{font-size:.45em;color:var(--ink-mute);font-weight:400;letter-spacing:.05em;margin-left:6px;}
+
+  /* ========== NAV TABS (sticky) ========== */
+  nav.tabs{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,247,244,.92);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+    padding:8px 0;
+    margin:0 0 0;
+  }
+  nav.tabs .tabs-scroll{
+    display:flex;gap:6px;
+    overflow-x:auto;
+    padding:4px 14px;
+    scrollbar-width:none;
+    scroll-snap-type:x proximity;
+  }
+  nav.tabs .tabs-scroll::-webkit-scrollbar{display:none;}
+  nav.tabs button{
+    flex:0 0 auto;
+    border:none;
+    background:transparent;
+    padding:8px 14px;
+    border-radius:999px;
+    font-family:inherit;
+    font-size:.82rem;
+    font-weight:500;
+    color:var(--ink-soft);
+    cursor:pointer;
+    transition:all .18s;
+    white-space:nowrap;
+    scroll-snap-align:start;
+    border:1px solid transparent;
+  }
+  nav.tabs button.active{
+    background:var(--ink);
+    color:var(--cream);
+    border-color:var(--ink);
+  }
+  nav.tabs button .em{margin-right:5px;font-size:1.05em;}
+
+  /* ========== MAIN ========== */
+  main{max-width:780px;margin:0 auto;padding:24px 18px 80px;}
+  section.panel{display:none;animation:fadein .35s ease;}
+  section.panel.active{display:block;}
+  @keyframes fadein{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+
+  /* Section heading */
+  .sh{position:relative;margin:0 0 20px;text-align:center;}
+  .sh .em{font-size:2rem;display:block;margin-bottom:4px;}
+  .sh h2{font-size:1.9rem;margin:0;}
+  .sh .sub{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink-mute);font-size:1rem;margin-top:2px;}
+  .sh .accent{display:flex;align-items:center;justify-content:center;gap:8px;margin:8px auto;color:var(--gold);font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;}
+  .sh .accent::before,.sh .accent::after{content:"";flex:0 0 30px;height:1px;background:var(--gold-soft);}
+
+  /* Card */
+  .card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--r-lg);
+    padding:18px;
+    margin:0 0 14px;
+    box-shadow:var(--shadow);
+  }
+  .card.dest{border-left:4px solid var(--sakura-deep);padding:22px 18px;}
+  .card.tokyo{border-left-color:var(--tokyo);}
+  .card.kyoto{border-left-color:var(--kyoto);}
+  .card.osaka{border-left-color:var(--osaka);}
+  .card.okinawa{border-left-color:var(--okinawa);}
+
+  /* Day accordion */
+  details.day{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--r-lg);
+    margin:0 0 12px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+  }
+  details.day[open]{box-shadow:var(--shadow-lg);}
+  details.day > summary{
+    list-style:none;
+    cursor:pointer;
+    padding:16px 18px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    user-select:none;
+  }
+  details.day > summary::-webkit-details-marker{display:none;}
+  details.day > summary .num{
+    flex:0 0 42px;width:42px;height:42px;
+    border-radius:50%;
+    background:var(--sakura-soft);
+    color:var(--rose);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;font-size:1.3rem;
+  }
+  .tokyo details.day > summary .num{background:#fbe5ea;color:var(--tokyo);}
+  .kyoto details.day > summary .num{background:#e9efdf;color:var(--kyoto);}
+  .osaka details.day > summary .num{background:#fbe8d4;color:var(--osaka);}
+  .okinawa details.day > summary .num{background:#dceaf1;color:var(--okinawa);}
+  details.day > summary .title{flex:1;}
+  details.day > summary .title .day-tag{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);}
+  details.day > summary .title h3{margin:1px 0 0;font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--ink);}
+  details.day > summary .chev{
+    flex:0 0 auto;color:var(--ink-mute);font-size:1rem;transition:transform .25s;
+  }
+  details.day[open] > summary .chev{transform:rotate(180deg);}
+  details.day .body{padding:0 18px 18px;}
+
+  /* Timeline */
+  .timeline{position:relative;margin:14px 0 4px;padding-left:30px;}
+  .timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom, var(--sakura), var(--gold-soft));border-radius:2px;}
+  .ev{position:relative;margin:0 0 18px;}
+  .ev::before{
+    content:"";position:absolute;left:-25px;top:6px;
+    width:12px;height:12px;border-radius:50%;
+    background:var(--paper);
+    border:2px solid var(--sakura-deep);
+  }
+  .ev.food::before{border-color:var(--gold);}
+  .ev.move::before{border-color:var(--okinawa);}
+  .ev .when{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute);font-weight:600;}
+  .ev h4{margin:2px 0 4px;font-size:1.05rem;color:var(--ink);}
+  .ev .desc{font-size:.92rem;color:var(--ink-soft);margin:0 0 6px;}
+  .ev .meta{display:flex;flex-wrap:wrap;gap:6px 10px;font-size:.78rem;color:var(--ink-mute);margin-top:6px;}
+  .ev .meta span{display:inline-flex;align-items:center;gap:4px;}
+  .ev .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
+  .ev .actions a{
+    display:inline-flex;align-items:center;gap:5px;
+    font-size:.78rem;
+    padding:5px 10px;
+    background:var(--sakura-soft);
+    color:var(--rose);
+    border-radius:999px;
+    font-weight:500;
+    text-decoration:none;
+    transition:all .15s;
+  }
+  .ev .actions a:hover{background:var(--sakura);color:white;}
+  .ev .actions a.book{background:#fef4e0;color:var(--gold);}
+  .ev .actions a.book:hover{background:var(--gold-soft);color:white;}
+  .ev .tip{
+    margin-top:8px;padding:8px 12px;
+    background:linear-gradient(135deg, #fff8e8, #fff4f0);
+    border-left:3px solid var(--gold-soft);
+    border-radius:8px;
+    font-size:.84rem;
+    color:var(--ink-soft);
+    font-style:italic;
+  }
+  .ev .tip strong{font-style:normal;color:var(--gold);font-weight:600;}
+
+  .badge{
+    display:inline-block;font-size:.68rem;font-weight:600;
+    padding:2px 8px;border-radius:999px;
+    background:var(--sakura-soft);color:var(--rose);
+    letter-spacing:.05em;
+    margin-left:6px;vertical-align:middle;
+  }
+  .badge.michelin{background:#2a1d22;color:#f8d97a;}
+  .badge.michelin::before{content:"⭐ ";}
+  .badge.confirmed{background:#e3efd9;color:#5d7a3a;}
+  .badge.pending{background:#fef0e4;color:#a86a30;}
+  .badge.special{background:linear-gradient(135deg,#ffd2dc,#ffe7d0);color:var(--rose);}
+
+  /* Day header card */
+  .day-overview{
+    background:linear-gradient(135deg, rgba(255,233,236,.6), rgba(255,242,220,.6));
+    border-radius:var(--r);
+    padding:12px 14px;
+    margin:0 0 14px;
+    font-size:.9rem;
+    color:var(--ink-soft);
+    border:1px dashed var(--line);
+  }
+  .day-overview strong{color:var(--rose);}
+
+  /* Hotel block */
+  .hotel-block{
+    display:flex;gap:14px;align-items:flex-start;
+    background:linear-gradient(135deg, var(--sakura-soft), var(--cream));
+    padding:14px;border-radius:var(--r);
+    margin:0 0 16px;
+    border:1px solid var(--line);
+  }
+  .hotel-block .icon{flex:0 0 44px;width:44px;height:44px;border-radius:12px;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.5rem;}
+  .hotel-block .info{flex:1;min-width:0;}
+  .hotel-block .info .label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;}
+  .hotel-block .info h4{margin:2px 0;color:var(--ink);font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;}
+  .hotel-block .info p{margin:0;font-size:.82rem;color:var(--ink-soft);}
+  .hotel-block .info .acts{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap;}
+  .hotel-block .info .acts a{font-size:.74rem;padding:3px 9px;background:white;border-radius:999px;border:1px solid var(--line);color:var(--rose);}
+
+  /* Reservas list */
+  .reslist{padding:0;margin:0;list-style:none;}
+  .reslist li{
+    display:flex;gap:12px;align-items:flex-start;
+    padding:12px 14px;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--r);
+    margin:0 0 10px;
+    box-shadow:var(--shadow);
+    transition:all .18s;
+  }
+  .reslist li.done{background:#fafaf6;opacity:.65;}
+  .reslist li.done .name{text-decoration:line-through;}
+  .reslist li input[type="checkbox"]{
+    appearance:none;-webkit-appearance:none;
+    width:22px;height:22px;border-radius:6px;
+    border:2px solid var(--sakura-deep);
+    flex:0 0 22px;cursor:pointer;
+    margin-top:2px;
+    transition:all .15s;position:relative;
+  }
+  .reslist li input[type="checkbox"]:checked{background:var(--sakura-deep);}
+  .reslist li input[type="checkbox"]:checked::after{
+    content:"✓";position:absolute;color:white;
+    font-size:14px;font-weight:bold;
+    top:50%;left:50%;transform:translate(-50%,-50%);
+  }
+  .reslist .info{flex:1;min-width:0;}
+  .reslist .name{font-weight:600;color:var(--ink);font-size:.95rem;}
+  .reslist .meta{font-size:.78rem;color:var(--ink-mute);margin-top:2px;}
+  .reslist .city{display:inline-block;font-size:.68rem;padding:1px 7px;border-radius:999px;background:var(--sakura-soft);color:var(--rose);margin-right:6px;font-weight:600;letter-spacing:.04em;}
+  .reslist .city.tokyo{background:#fbe5ea;color:var(--tokyo);}
+  .reslist .city.kyoto{background:#e9efdf;color:var(--kyoto);}
+  .reslist .city.osaka{background:#fbe8d4;color:var(--osaka);}
+  .reslist .city.okinawa{background:#dceaf1;color:var(--okinawa);}
+
+  .reslist-actions{display:flex;gap:8px;margin:10px 0 18px;flex-wrap:wrap;}
+  .reslist-actions button{
+    background:var(--paper);border:1px solid var(--line);
+    padding:6px 12px;border-radius:999px;font-size:.78rem;color:var(--ink-soft);
+    cursor:pointer;font-family:inherit;
+  }
+  .reslist-actions button:hover{background:var(--sakura-soft);}
+
+  /* Pills */
+  .pills{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 16px;}
+  .pill{
+    display:inline-flex;align-items:center;gap:5px;
+    background:var(--paper);border:1px solid var(--line);
+    padding:5px 11px;border-radius:999px;
+    font-size:.78rem;color:var(--ink-soft);
+  }
+  .pill.gold{background:#fef4e0;border-color:#f0e2b9;color:var(--gold);}
+  .pill.rose{background:var(--sakura-soft);border-color:#ffd1d8;color:var(--rose);}
+
+  /* Phrase cards */
+  .phrases{display:grid;gap:10px;}
+  .phrase{
+    background:var(--paper);border:1px solid var(--line);
+    border-radius:var(--r);padding:12px 14px;
+  }
+  .phrase .jp{font-size:1.15rem;font-weight:500;color:var(--ink);margin:0;}
+  .phrase .romaji{font-style:italic;color:var(--gold);font-size:.85rem;margin:2px 0;}
+  .phrase .es{font-size:.82rem;color:var(--ink-soft);margin:0;}
+  .phrase .ctx{font-size:.7rem;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.1em;margin-top:4px;}
+
+  /* Budget chart bars */
+  .bar{display:flex;align-items:center;gap:10px;margin:6px 0;}
+  .bar .name{flex:0 0 100px;font-size:.82rem;color:var(--ink-soft);}
+  .bar .track{flex:1;height:14px;background:var(--sakura-soft);border-radius:999px;overflow:hidden;position:relative;}
+  .bar .fill{height:100%;background:linear-gradient(90deg, var(--sakura-deep), var(--gold-soft));border-radius:999px;}
+  .bar .val{flex:0 0 60px;text-align:right;font-size:.78rem;font-weight:600;color:var(--ink);}
+
+  /* Packing */
+  .packing{display:grid;gap:14px;}
+  .pack-cat h4{display:flex;align-items:center;gap:8px;color:var(--rose);margin-bottom:6px;}
+  .pack-cat ul{margin:0;padding-left:20px;}
+  .pack-cat li{margin:3px 0;font-size:.92rem;color:var(--ink-soft);}
+
+  /* Etiquette grid */
+  .etiq{display:grid;gap:10px;}
+  .etiq .item{
+    background:var(--paper);border:1px solid var(--line);
+    border-radius:var(--r);padding:12px 14px;
+    display:flex;gap:12px;align-items:flex-start;
+  }
+  .etiq .em{font-size:1.4rem;flex:0 0 auto;}
+  .etiq .txt h4{margin:0 0 2px;font-size:.95rem;}
+  .etiq .txt p{margin:0;font-size:.85rem;}
+
+  /* Highlight moments */
+  .moments{display:grid;gap:10px;margin:14px 0;}
+  .moment{
+    background:linear-gradient(135deg, var(--sakura-soft), #fff4e0);
+    border:1px solid var(--line);
+    border-radius:var(--r-lg);
+    padding:14px 16px;
+    display:flex;gap:12px;align-items:center;
+  }
+  .moment .em{font-size:1.7rem;flex:0 0 auto;}
+  .moment h4{margin:0;font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--rose);}
+  .moment p{margin:1px 0 0;font-size:.82rem;color:var(--ink-soft);}
+
+  /* Alert banner */
+  .alert{
+    background:linear-gradient(135deg, #fef0e4, #ffe9ec);
+    border:1px solid #f0c9a8;border-left:4px solid #d68f4f;
+    border-radius:var(--r);
+    padding:12px 14px;margin:0 0 14px;
+    font-size:.88rem;color:var(--ink);
+  }
+  .alert strong{color:#a86a30;}
+  .alert.info{background:linear-gradient(135deg, #e6f0f5, #f0f8fb);border-color:#bedce8;border-left-color:var(--okinawa);}
+  .alert.info strong{color:var(--okinawa);}
+
+  /* Stats grid */
+  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:0 0 14px;}
+  .stat{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:14px;text-align:center;box-shadow:var(--shadow);}
+  .stat .n{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--rose);line-height:1;}
+  .stat .l{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute);font-weight:600;margin-top:4px;}
+
+  /* Footer */
+  footer{
+    text-align:center;
+    padding:30px 20px;
+    color:var(--ink-mute);
+    font-size:.78rem;
+    border-top:1px solid var(--line);
+    margin-top:30px;
+  }
+  footer .heart{color:var(--sakura-deep);}
+
+  /* Install button (PWA) */
+  #installBtn{
+    display:none;position:fixed;bottom:18px;right:18px;
+    background:var(--rose);color:white;border:none;
+    padding:10px 16px;border-radius:999px;font-family:inherit;
+    font-size:.82rem;font-weight:600;
+    box-shadow:0 8px 24px rgba(184,100,115,.4);
+    cursor:pointer;z-index:60;
+  }
+
+  /* Day color theming */
+  .panel.tokyo .sh h2,.panel.tokyo .ev h4{color:var(--ink);}
+  .panel.tokyo .ev::before{border-color:var(--tokyo);}
+  .panel.kyoto .ev::before{border-color:var(--kyoto);}
+  .panel.osaka .ev::before{border-color:var(--osaka);}
+  .panel.okinawa .ev::before{border-color:var(--okinawa);}
+
+  /* Tablet+ */
+  @media (min-width:680px){
+    main{padding:30px 24px 80px;}
+    h1{font-size:3rem;}
+    .stats{grid-template-columns:repeat(4,1fr);}
+    .moments{grid-template-columns:repeat(2,1fr);}
+    .packing{grid-template-columns:repeat(2,1fr);}
+    .phrases{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (min-width:920px){
+    main{padding:40px 28px 100px;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important;}
+  }
+
+  /* Print */
+  @media print{
+    nav.tabs,#installBtn,.reslist input,.actions{display:none!important;}
+    section.panel{display:block!important;page-break-after:always;}
+    body{background:white;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== HERO ========== -->
+<header class="hero">
+  <div class="kanji">蜜月 · Mitsugetsu · Honeymoon</div>
+  <h1>Irene <span class="amp">&amp;</span> Pelayo</h1>
+  <div class="sublabel">una luna de miel en Japón</div>
+  <div class="dates">18 mayo — 5 junio · 2026</div>
+  <div class="divider">🌸</div>
+  <div class="countdown" id="countdown">
+    <div class="label">Cuenta atrás</div>
+    <div class="num" id="cdNum">—</div>
+    <div class="label" id="cdLabel" style="font-size:.65rem;letter-spacing:.2em;">cargando…</div>
+  </div>
+</header>
+
+<!-- ========== NAV ========== -->
+<nav class="tabs" aria-label="Navegación principal">
+  <div class="tabs-scroll" role="tablist">
+    <button class="active" data-tab="overview" role="tab"><span class="em">✦</span>Visión</button>
+    <button data-tab="tokyo" role="tab"><span class="em">🏙️</span>Tokyo</button>
+    <button data-tab="kyoto" role="tab"><span class="em">⛩️</span>Kyoto</button>
+    <button data-tab="osaka" role="tab"><span class="em">🏯</span>Osaka</button>
+    <button data-tab="okinawa" role="tab"><span class="em">🌊</span>Okinawa</button>
+    <button data-tab="reservas" role="tab"><span class="em">📌</span>Reservas</button>
+    <button data-tab="practico" role="tab"><span class="em">🧭</span>Práctico</button>
+    <button data-tab="frases" role="tab"><span class="em">🗣️</span>Frases</button>
+    <button data-tab="momentos" role="tab"><span class="em">💎</span>Momentos</button>
+  </div>
+</nav>
+
+<main>
+
+<!-- ========== OVERVIEW ========== -->
+<section id="overview" class="panel active" role="tabpanel">
+  <div class="sh">
+    <span class="em">✈️</span>
+    <h2>Visión general</h2>
+    <span class="accent">17 días · 4 destinos</span>
+    <span class="sub">Cultura · Gastronomía · Romanticismo · Naturaleza</span>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">17</div><div class="l">Días</div></div>
+    <div class="stat"><div class="n">4</div><div class="l">Destinos</div></div>
+    <div class="stat"><div class="n">5</div><div class="l">⭐ Michelin</div></div>
+    <div class="stat"><div class="n">∞</div><div class="l">Recuerdos</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🎯 Filosofía del itinerario</h3>
+    <p>Una progresión emocional cuidadosamente diseñada, de lo urbano y vibrante a lo paradisíaco y sereno.</p>
+    <ul style="padding-left:20px;color:var(--ink-soft);">
+      <li><strong style="color:var(--tokyo)">Tokyo</strong> — impacto cultural, contraste moderno/tradicional</li>
+      <li><strong style="color:var(--kyoto)">Kyoto</strong> — romanticismo, tradición, ritmo pausado</li>
+      <li><strong style="color:var(--osaka)">Osaka</strong> — diversión, comida callejera, excursiones</li>
+      <li><strong style="color:var(--okinawa)">Okinawa</strong> — desconexión total, naturaleza y playa</li>
+      <li>Cierre logístico en Tokyo (vuelo internacional)</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>📅 Calendario</h3>
+    <div style="font-size:.92rem;color:var(--ink-soft);">
+      <p style="margin:0 0 6px;"><strong style="color:var(--tokyo);">19–23 mayo</strong> · Tokyo (5 noches) · The Prince Park Tower</p>
+      <p style="margin:0 0 6px;"><strong style="color:var(--kyoto);">23–26 mayo</strong> · Kyoto (3 noches) · The Thousand Kyoto</p>
+      <p style="margin:0 0 6px;"><strong style="color:var(--osaka);">26–30 mayo</strong> · Osaka (4 noches) · Centara Grand Hotel</p>
+      <p style="margin:0 0 6px;"><strong style="color:var(--okinawa);">30 mayo – 4 junio</strong> · Okinawa (5 noches) · Hiyori Ocean Resort</p>
+      <p style="margin:0 0 6px;"><strong>4 junio</strong> · Tokyo (Haneda) · 1 noche tras vuelo desde Naha</p>
+      <p style="margin:0;"><strong>5 junio</strong> · Vuelo de regreso a Madrid</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>✈️ Vuelos confirmados</h3>
+    <div style="display:grid;gap:8px;font-size:.9rem;">
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;padding:10px 12px;background:var(--sakura-soft);border-radius:10px;">
+        <span><strong>18 may · 12:30</strong> · MAD → HND</span>
+        <span style="color:var(--rose);font-weight:600;">IB 0281</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;padding:10px 12px;background:#fef4e0;border-radius:10px;">
+        <span><strong>23 may</strong> · Tokyo → Kyoto</span>
+        <span style="color:var(--gold);">Shinkansen Nozomi · ~2h20</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;padding:10px 12px;background:#fef4e0;border-radius:10px;">
+        <span><strong>26 may</strong> · Kyoto → Osaka</span>
+        <span style="color:var(--gold);">Shinkansen / JR · ~15-30 min</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;padding:10px 12px;background:var(--sakura-soft);border-radius:10px;">
+        <span><strong>30 may · 14:05</strong> · Osaka ITM → Naha OKA</span>
+        <span style="color:var(--rose);font-weight:600;">NH 767</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;padding:10px 12px;background:var(--sakura-soft);border-radius:10px;">
+        <span><strong>4 jun · 11:55</strong> · Naha OKA → Tokyo HND</span>
+        <span style="color:var(--rose);font-weight:600;">NH 464</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;padding:10px 12px;background:var(--sakura-soft);border-radius:10px;">
+        <span><strong>5 jun · 11:10</strong> · Tokyo HND → MAD</span>
+        <span style="color:var(--rose);font-weight:600;">IB 0282</span>
+      </div>
+    </div>
+    <div class="alert info" style="margin-top:12px;"><strong>🛏️ Importante:</strong> el 4 jun por la noche dormís en Tokyo (Haneda) antes del vuelo de vuelta del 5 jun. Reservar hotel cerca del aeropuerto (ej. Royal Park HND, Villa Fontaine HND).</div>
+  </div>
+
+  <div class="alert info">
+    <strong>💡 Tip:</strong> Considera <em>luggage forwarding</em> (Yamato Transport) para enviar maletas de Tokyo a Kyoto/Osaka y de vuelta. Cuesta ~¥2.000-3.000 por maleta y llega al día siguiente. Vuelas a Okinawa con equipaje ligero.
+  </div>
+</section>
+
+<!-- ========== TOKYO ========== -->
+<section id="tokyo" class="panel tokyo" role="tabpanel">
+  <div class="sh">
+    <span class="em">🏙️</span>
+    <h2>Tokyo</h2>
+    <span class="accent">19 — 23 mayo</span>
+    <span class="sub">Energía, cultura y gastronomía</span>
+  </div>
+
+  <div class="hotel-block">
+    <div class="icon">🏨</div>
+    <div class="info">
+      <div class="label">Hotel · 4 noches</div>
+      <h4>The Prince Park Tower Tokyo</h4>
+      <p>Junto a Shiba Park y Tokyo Tower. 33 plantas, 12 restaurantes, onsen natural a 1.600 m de profundidad y vistas icónicas a la torre.</p>
+      <div class="acts">
+        <a href="https://maps.google.com/?q=The+Prince+Park+Tower+Tokyo" target="_blank" rel="noopener">📍 Mapa</a>
+        <a href="https://www.princehotels.com/parktower/" target="_blank" rel="noopener">🌐 Web</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 1 -->
+  <details class="day" open>
+    <summary>
+      <div class="num">1</div>
+      <div class="title">
+        <div class="day-tag">Mar 19 may · Día 1</div>
+        <h3>Llegada · Primer contacto</h3>
+      </div>
+      <div class="chev">▾</div>
+    </summary>
+    <div class="body">
+      <div class="day-overview"><strong>Objetivo:</strong> transición suave + primera inmersión urbana. Salida de Madrid el 18 may a las 12:30 (IB 0281) — llegada a Haneda mañana del 19 (≈8:30 hora local). Evitad agendar nada exigente — el jet lag pega fuerte.</div>
+      <div class="timeline">
+        <div class="ev move">
+          <div class="when">~08:30</div>
+          <h4>Llegada Haneda (HND) → hotel</h4>
+          <p class="desc">Vuelo IB 0281 desde Madrid. Tras inmigración y aduana, taxi al hotel (~25 min, ¥6.000-7.000) o Limousine Bus (¥1.230 directo a Shiba Park).</p>
+          <div class="tip"><strong>Anti-jet lag:</strong> intentad dormir las primeras 8h del vuelo. Al llegar, NO durmáis siesta hasta la noche, salid a la luz del sol.</div>
+        </div>
+        <div class="ev">
+          <div class="when">17:00</div>
+          <h4>Paseo por Shiba Park</h4>
+          <p class="desc">Justo al lado del hotel. Templo Zojo-ji con la torre de fondo: foto icónica.</p>
+          <div class="actions">
+            <a href="https://maps.google.com/?q=Shiba+Park+Tokyo" target="_blank">📍 Maps</a>
+          </div>
+        </div>
+        <div class="ev">
+          <div class="when">18:00 · atardecer</div>
+          <h4>Tokyo Tower 🗼</h4>
+          <p class="desc">Subid al Top Deck (250 m) al atardecer. Vistas espectaculares, especialmente al anochecer cuando se enciende Tokyo.</p>
+          <div class="meta"><span>⏱️ ~1h</span><span>💴 ¥3.000</span></div>
+          <div class="actions">
+            <a href="https://maps.google.com/?q=Tokyo+Tower" target="_blank">📍 Maps</a>
+            <a href="https://www.tokyotower.co.jp/en/" target="_blank">🎫 Tickets</a>
+          </div>
+        </div>
+        <div class="ev food">
+          <div class="when">20:00 · Cena</div>
+          <h4>Shabusen <span class="badge">shabu-shabu</span></h4>
+          <p class="desc">Shabu-shabu y sukiyaki en Ginza. Buena bienvenida culinaria sin agobiar el primer día.</p>
+          <div class="actions">
+            <a href="https://maps.google.com/?q=Shabusen+Ginza+Tokyo" target="_blank">📍 Maps</a>
+          </div>
+          <div class="tip"><strong>Cómo pedir:</strong> el camarero os trae caldo y vais hirviendo carne y verdura. Pedid el wagyu si está disponible.</div>
+        </div>
+        <div class="ev">
+          <div class="when">22:00</div>
+          <h4>Paseo nocturno por Ginza</h4>
+          <p class="desc">Iluminación de lujo, escaparates, ambiente. Cierre suave para el primer día.</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- DAY 2 -->
+  <details class="day">
+    <summary>
+      <div class="num">2</div>
+      <div class="title">
+        <div class="day-tag">Mié 20 may · Día 2</div>
+        <h3>Tradición + Modernidad</h3>
+      </div>
+      <div class="chev">▾</div>
+    </summary>
+    <div class="body">
+      <div class="day-overview"><strong>Día equilibrado</strong> entre naturaleza espiritual, cultura juvenil y la mejor vista de Tokyo.</div>
+      <div class="timeline">
+        <div class="ev">
+          <div class="when">09:30</div>
+          <h4>Meiji Jingu ⛩️</h4>
+          <p class="desc">Templo sintoísta más importante de Tokyo, en pleno bosque. Llegad temprano para evitar grupos.</p>
+          <div class="actions"><a href="https://maps.google.com/?q=Meiji+Jingu+Shrine" target="_blank">📍 Maps</a></div>
+          <div class="tip"><strong>Ritual:</strong> en el agua del temizuya (purificación), enjuagad mano izquierda → derecha → boca → mango del cazo.</div>
+        </div>
+        <div class="ev">
+          <div class="when">11:00</div>
+          <h4>Yoyogi Park</h4>
+          <p class="desc">Paseo por el parque adyacente. En domingos suele haber bailarines de rockabilly.</p>
+        </div>
+        <div class="ev">
+          <div class="when">12:30 · Almuerzo</div>
+          <h4>Harajuku / Omotesando</h4>
+          <p class="desc">Takeshita Street (kawaii pop) y luego Omotesando (avenida elegante con arquitectura). Comed en alguna crepería o ramen del barrio.</p>
+        </div>
+        <div class="ev">
+          <div class="when">15:00</div>
+          <h4>Shibuya y el Cruce</h4>
+          <p class="desc">El cruce más famoso del mundo. Vistas desde el Starbucks o Magnet by Shibuya 109.</p>
+          <div class="actions"><a href="https://maps.google.com/?q=Shibuya+Crossing" target="_blank">📍 Maps</a></div>
+        </div>
+        <div class="ev">
+          <div class="when">17:30 · atardecer</div>
+          <h4>Shibuya Sky <span class="badge pending">por reservar</span></h4>
+          <p class="desc">Mirador 360° en el techo. Reservad slot al atardecer (1h antes del sunset). Imprescindible.</p>
+          <div class="meta"><span>⏱️ 1h30</span><span>💴 ¥2.500</span></div>
+          <div class="actions">
+            <a href="https://maps.google.com/?q=Shibuya+Sky" target="_blank">📍 Maps</a>
+            <a href="https://www.shibuya-scramble-square.com/sky/" target="_blank" class="book">🎫 Reservar</a>
+          </div>
+          <div class="tip"><strong>Tip foto:</strong> el "Sky Edge" (esquina abierta) tiene cola para foto pero merece la pena.</div>
+        </div>
+        <div class="ev food">
+          <div class="when">20:30 · Cena</div>
+          <h4>Hakushu Teppanyaki <span class="badge pending">por reservar</span></h4>
+          <p class="desc">Auténtico teppanyaki Kobe (desde 1966) en Shibuya Sakuragaoka. Wagyu A4/A5 cocinado delante de vosotros. Pequeño y familiar — ~10 asientos.</p>
+          <div class="meta"><span>💴 desde ¥7.500</span><span>📞 Reserva imprescindible</span></div>
+          <div class="actions">
+            <a href="https://maps.google.com/?q=Hakushu+Teppanyaki+Shibuya" target="_blank">📍 Maps</a>
+            <a href="https://www.tablecheck.com/en/" target="_blank" class="book">📞 Reservar</a>
+          </div>
+          <div class="tip"><strong>Pedid:</strong> el set de Kobe A5 + okonomiyaki estilo Kansai (especialidad del fundador).</div>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- DAY 3 -->
+  <details class="day">
+    <summary>
+      <div class="num">3</div>
+      <div class="title">
+        <div class="day-tag">Jue 21 may · Día 3</div>
+        <h3>Asakusa · Barrio tradicional</h3>
+      </div>
+      <div class="chev">▾</div>
+    </summary>
+    <div class="body">
+      <div class="day-overview">El día <strong>más auténtico culturalmente</strong> de Tokyo. Senso-ji al amanecer es mágico (sin gente).</div>
+      <div class="timeline">
+        <div class="ev">
+          <div class="when">08:30</div>
+          <h4>Senso-ji + calle Nakamise</h4>
+          <p class="desc">El templo más antiguo de Tokyo (645 d.C.). Llegad temprano para fotos sin multitud. La calle Nakamise tiene ~250 puestos tradicionales.</p>
+          <div class="actions"><a href="https://maps.google.com/?q=Senso-ji+Asakusa" target="_blank">📍 Maps</a></div>
+          <div class="tip"><strong>Snack:</strong> ningyo-yaki (pasteles de bizcocho) y melon pan recién hecho de Asakusa Kagetsudo.</div>
+        </div>
+        <div class="ev">
+          <div class="when">11:00</div>
+          <h4>Sumida Riverwalk</h4>
+          <p class="desc">Paseo junto al río con vistas a Tokyo Skytree. Posible cruzar el puente Azuma.</p>
+        </div>
+        <div class="ev food">
+          <div class="when">13:00 · Almuerzo</div>
+          <h4>Sometaro <span class="badge">okonomiyaki</span></h4>
+          <p class="desc">Casa tradicional de madera (1937) con tatami. Okonomiyaki que cocináis vosotros mismos en la plancha de la mesa.</p>
+          <div class="meta"><span>💴 ¥1.000-2.000</span><span>🥢 sin reserva</span></div>
+          <div class="actions"><a href="https://maps.google.com/?q=Sometaro+Asakusa" target="_blank">📍 Maps</a></div>
+        </div>
+        <div class="ev">
+          <div class="when">15:00</div>
+          <h4>Zona Sumida / opcional Skytree</h4>
+          <p class="desc">Si queréis vistas, Tokyo Skytree (634 m, mirador a 450 m). Más alto pero más lejos del centro que Shibuya Sky.</p>
+        </div>
+        <div class="ev food">
+          <div class="when">19:00 · Cena</div>
+          <h4>Tempura Shimomura <span class="badge michelin">Michelin</span> <span class="badge confirmed">confirmado</span></h4>
+          <p class="desc">Chef Mitsuhiko Shimomura (entrenado 20+ años en alta tempura). Mostrador de 10 asientos en Asakusa. Cocina tempura en aceite de sésamo de mezcla propia, temperatura ajustada para cada pieza.</p>
+          <div class="meta"><span>⭐ 1 estrella desde 2019</span><span>💴 ~¥18.000-25.000</span></div>
+          <div class="actions">
+            <a href="https://maps.google.com/?q=Tempura+Shimomura+Asakusa" target="_blank">📍 Maps</a>
+            <a href="https://guide.michelin.com/us/en/tokyo-region/tokyo/restaurant/tempura-shimomura" target="_blank">🎖️ Michelin</a>
+          </div>
+          <div class="tip"><strong>No os perdáis:</strong> el boniato (sweet potato) cocido en aceite >30 min — caramelizado y sedoso.</div>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- DAY 4 -->
+  <details class="day">
+    <summary>
+      <div class="num">4</div>
+      <div class="title">
+        <div class="day-tag">Vie 22 may · Día 4</div>
+        <h3>Gastronomía + Experiencia</h3>
+      </div>
+      <div class="chev">▾</div>
+    </summary>
+    <div class="body">
+      <div class="day-overview">Día <strong>experiencial</strong> centrado en la gastronomía japonesa. Aprendéis a hacer sushi.</div>
+      <div class="timeline">
+        <div class="ev">
+          <div class="when">08:30</div>
+          <h4>Tsukiji Outer Market</h4>
+          <p class="desc">El mercado mayorista se trasladó a Toyosu, pero el "outer market" sigue siendo paraíso gastro. Sashimi, tamagoyaki, mochi de fresa, té matcha.</p>
+          <div class="actions"><a href="https://maps.google.com/?q=Tsukiji+Outer+Market" target="_blank">📍 Maps</a></div>
+          <div class="tip"><strong>Imprescindible:</strong> tamagoyaki en palillo de Yamacho (¥150) y oysters frescas con limón.</div>
+        </div>
+        <div class="ev food">
+          <div class="when">13:00</div>
+          <h4>Clase de sushi <span class="badge confirmed">reservada</span> <span class="badge special">💕 luna de miel</span></h4>
+          <p class="desc">Aprenderéis a preparar nigiri y maki con un chef. Os llevaréis recetario y gorro. Una de las experiencias más memorables del viaje.</p>
+          <div class="meta"><span>⏱️ ~2h</span></div>
+        </div>
+        <div class="ev">
+          <div class="when">15:30</div>
+          <h4>Hamarikyu Gardens</h4>
+          <p class="desc">Jardín de un antiguo señor feudal con estanque de agua salada. Casa de té sobre el agua: <em>matcha + wagashi</em> ceremonial.</p>
+          <div class="meta"><span>💴 ¥300 + ¥850 té</span></div>
+          <div class="actions"><a href="https://maps.google.com/?q=Hamarikyu+Gardens" target="_blank">📍 Maps</a></div>
+        </div>
+        <div class="ev food">
+          <div class="when">19:30 · Cena</div>
+          <h4>Nodaiwa <span class="badge">⭐ unagi</span> <span class="badge pending">hotel gestiona</span></h4>
+          <p class="desc">Anguila desde la era Edo (5ª generación). Estilo <em>kabayaki</em> (con salsa) y <em>shirayaki</em> (sin sazonar). Estrella Michelin. Ubicación en Higashi-Azabu, cerca del hotel.</p>
+          <div class="meta"><span>📞 03-3583-7852</span><span>💴 ~¥10.000-15.000</span></div>
+          <div class="actions">
+            <a href="https://maps.google.com/?q=Nodaiwa+Higashi+Azabu" target="_blank">📍 Maps</a>
+            <a href="https://guide.michelin.com/us/en/tokyo-region/tokyo/restaurant/nodaiwa-azabu-Iikura-honten-1194124" target="_blank">🎖️ Michelin</a>
+          </div>
+          <div class="tip"><strong>Probad:</strong> el set unaju (anguila sobre arroz en caja laqueada) — la versión más tradicional.</div>
+        </div>
+      </div>
+    </div>
+  </details>
+</section>
+
+<!-- ========== KYOTO ========== -->
+<section id="kyoto" class="panel kyoto" role="tabpanel">
+  <div class="sh">
+    <span class="em">⛩️</span>
+    <h2>Kyoto</h2>
+    <span class="accent">23 — 26 mayo</span>
+    <span class="sub">Japón tradicional y romántico</span>
+  </div>
+
+  <div class="hotel-block">
+    <div class="icon">🏯</div>
+    <div class="info">
+      <div class="label">Hotel · 3 noches</div>
+      <h4>The Thousand Kyoto</h4>
+      <p>A 2 minutos a pie de la salida central de la estación Kyoto. Diseño minimalista contemporáneo, restaurante italiano SCALAE.</p>
+      <div class="acts">
+        <a href="https://maps.google.com/?q=The+Thousand+Kyoto" target="_blank">📍 Mapa</a>
+        <a href="https://www.keihanhotels-resorts.co.jp/the-thousand-kyoto/en/" target="_blank">🌐 Web</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert info">
+    <strong>🚄 Llegada:</strong> Shinkansen Tokyo → Kyoto (~2h20, Nozomi). Reservad Green Car por amplitud, asientos D/E lado derecho para ver el Monte Fuji al pasar Mishima (despejado mañanas).
+  </div>
+
+  <!-- DAY 1 -->
+  <details class="day" open>
+    <summary>
+      <div class="num">1</div>
+      <div class="title">
+        <div class="day-tag">Sáb 23 may · Día 1</div>
+        <h3>Llegada · Gion</h3>
+      </div>
+      <div class="chev">▾</div>
+    </summary>
+    <div class="body">
+      <div class="day-overview"><strong>Ambiente romántico</strong> + introducción cultural. Gion al atardecer es uno de los momentos más bellos del viaje.</div>
+      <div class="timeline">
+        <div class="ev move">
+          <div class="when">10:00 · Salida</div>
+          <h4>Shinkansen Tokyo → Kyoto</h4>
+          <p class="desc">Considera enviar maletas (Yamato) un día antes para llegar ligeros.</p>
+        </div>
+        <div class="ev food">
+          <div class="when">13:00 · Almuerzo</div>
+          <h4>SCALAE (hotel) <span class="badge pending">por reservar</span></h4>
+          <p class="desc">Italiano contemporáneo dentro del Thousand Kyoto. Cocina abierta. Práctico para descansar tras el tren y antes de salir.</p>
+          <div class="actions">
+            <a href="https://www.tablecheck.com/en/the-thousand-kyoto-scalae" target="_blank" class="book">🍝 Reservar</a>
+          </div>
+        </div>
+        <div class="ev">
+          <div class="when">15:30</div>
+          <h4>Gion: Yasaka · Hanamikoji · Shirakawa</h4>
+          <p class="desc">Templo Yasaka (entrada al barrio), Hanamikoji (calle de geishas y machiya), y el canal Shirakawa con sauces — más íntimo y menos turístico.</p>
+          <div class="actions">
+            <a href="https://maps.google.com/?q=Hanamikoji+Gion" target="_blank">📍 Hanamikoji</a>
+            <a href="https://maps.google.com/?q=Shirakawa+canal+Gion" target="_blank">📍 Shirakawa</a>
+          </div>
+          <div class="tip"><strong>Etiqueta:</strong> prohibido fotografiar geishas/maikos sin permiso (multas reales). Nunca las paréis.</div>
+        </div>
+        <div class="ev food">
+          <div class="when">17:00</div>
+          <h4>Té en Gion Kitagawa Hanbee <span class="badge pending">por reservar</span></h4>
+          <p class="desc">Casa de té tradicional. Matcha ceremonial + wagashi (dulces de temporada). Pequeño momento zen.</p>
+          <div class="actions"><a href="https://maps.google.com/?q=Kitagawa+Hanbee+Gion" target="_blank">📍 Maps</a></div>
+        </div>
+        <div class="ev food">
+          <div class="when">19:30 · Cena</div>
+          <h4>Wabiya Korekido <span class="badge">yakitori</span> <span class="badge confirmed">confirmado</span></h4>
+          <p class="desc">Yakitori premium en una machiya renovada de Hanamikoji. Pollo Wabiya de Tottori — el mejor del país. Ambiente íntimo y elegante.</p>
+          <div class="meta"><span>📞 075-541-1112</span><span>💴 ~¥8.000-12.000</span></div>
+          <div class="actions">
+            <a href="https://maps.google.com/?q=Wabiya+Korekido+Gion" target="_blank">📍 Maps</a>
+          </div>
+          <div class="tip"><strong>Especial:</strong> oyakodon a la piedra caliente al final de la cena (versión deluxe del clásico).</div>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- DAY 2 -->
+  <details class="day">
+    <summary>
+      <div class="num">2</div>
+      <div class="title">
+        <div class="day-tag">Dom 24 may · Día 2</div>
+        <h3>Arashiyama · Naturaleza icónica</h3>
+      </div>
+      <div class="chev">▾</div>
+    </summary>
+    <div class="body">
+      <div class="day-overview">Uno de los días <strong>más bonitos visualmente</strong> del viaje. Salir muy temprano es clave para el Bamboo Grove sin gente.</div>
+      <div class="timeline">
+        <div class="ev move">
+          <div class="when">07:30</div>
+          <h4>Taxi → Arashiyama</h4>
+          <p class="desc">Taxi desde el hotel (~30 min, ¥3.500-4.000). Vital madrugar.</p>
+        </div>
+        <div class="ev">
+          <div class="when">08:00</div>
+          <h4>Bamboo Grove 🎋</h4>
+          <p class="desc">El bosque de bambú más famoso del mundo. A las 8 am hay calma; a partir de las 10 am es imposible. Caminata de ~10 min.</p>
+          <div class="actions"><a href="https://maps.google.com/?q=Arashiyama+Bamboo+Grove" target="_blank">📍 Maps</a></div>
+        </div>
+        <div class="ev">
+          <div class="when">09:00</div>
+          <h4>Tenryu-ji ⛩️</h4>
+          <p class="desc">Templo zen Patrimonio UNESCO. Su jardín Sogenchi (s. XIV) es uno de los más bellos de Japón. Adyacente al bambú.</p>
+          <div class="meta"><span>💴 ¥800 (jardín)</span></div>
+          <div class="actions"><a href="https://maps.google.com/?q=Tenryuji+Temple" target="_blank">📍 Maps</a></div>
+        </div>
+        <div class="ev">
+          <div class="when">11:00</div>
+          <h4>Gio-ji 🌿 <span class="badge special">joya escondida</span></h4>
+          <p class="desc">Pequeñísimo templo cubierto de musgo (kokedera). Casi nadie llega: silencio puro y verde infinito. 15 min andando desde el bambú.</p>
+          <div class="meta"><span>💴 ¥300</span></div>
+          <div class="actions"><a href="https://maps.google.com/?q=Gioji+Temple" target="_blank">📍 Maps</a></div>
+        </div>
+        <div class="ev food">
+          <div class="when">12:30 · Almuerzo</div>
+          <h4>Yudofu Sagano <span class="badge">tofu kaiseki</span></h4>
+          <p class="desc">Tofu zen artesanal en un edificio histórico con jardín. Especialidad de Arashiyama por el agua de la zona.</p>
+          <div class="meta"><span>💴 ¥3.000-5.000</span></div>
+          <div class="actions"><a href="https://maps.google.com/?q=Yudofu+Sagano+Arashiyama" target="_blank">📍 Maps</a></div>
+        </div>
+        <div class="ev">
+          <div class="when">14:30</div>
+          <h4>Okochi Sanso Villa</h4>
+          <p class="desc">Villa de un actor de cine mudo japonés convertida en jardín. Vistas espectaculares + matcha incluido. Menos visitada por la entrada de ¥1.000.</p>
+          <div class="actions"><a href="https://maps.google.com/?q=Okochi+Sanso+Villa" target="_blank">📍 Maps</a></div>
+        </div>
+        <div class="ev food">
+          <div class="when">19:30 · Cena (centro Kyoto)</div>
+          <h4>Kiyama <span class="badge michelin">Michelin</span> <span class="badge pending">por reservar</span></h4>
+          <p class="desc">Kaiseki contemporáneo del chef Yoshiro Kiyama (formado en Wakuden). En Nakagyo, centro de Kyoto. Estrella Michelin desde 2018, conseguida en su primer año.</p>
+          <div class="meta"><span>⭐ 1 estrella</span><span>💴 cena ¥24.200</span></div>
+          <div class="actions">
+            <a href="https://maps.google.com/?q=Kiyama+Nakagyo+Kyoto" target="_blank">📍 Maps</a>
+            <a href="https://guide.michelin.com/us/en/kyoto-region/kyoto/restaurant/kiyama" target="_blank">🎖️ Michelin</a>
+          </div>
+          <div class="tip"><strong>Filosofía:</strong> agua de pozo natural propia para el dashi inicial. Wagyu sorprendentemente tierno + matsutake en temporada.</div>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- DAY 3 -->
+  <details class="day">
+    <summary>
+      <div class="num">3</div>
+      <div class="title">
+        <div class="day-tag">Lun 25 may · Día 3</div>
+        <h3>Fushimi Inari · Kimono</h3>
+      </div>
+      <div class="chev">▾</div>
+    </summary>
+    <div class="body">
+      <div class="day-overview">Día <strong>más especial a nivel "luna de miel"</strong> 💕. Fotos con kimono en Higashiyama tras los miles de torii rojos.</div>
+      <div class="timeline">
+        <div class="ev">
+          <div class="when">07:30</div>
+          <h4>Fushimi Inari Taisha ⛩️</h4>
+          <p class="desc">10.000 torii rojos subiendo el monte Inari. A las 7-8 am no hay nadie. Subid al menos hasta el mirador de Yotsutsuji (30 min, vistas de Kyoto).</p>
+          <div class="meta"><span>💴 gratis</span><span>👟 calzado cómodo</span></div>
+          <div class="actions"><a href="https://maps.google.com/?q=Fushimi+Inari" target="_blank">📍 Maps</a></div>
+        </div>
+        <div class="ev">
+          <div class="when">11:00</div>
+          <h4>Experiencia kimono + fotos <span class="badge pending">por reservar</span> <span class="badge special">💕</span></h4>
+          <p class="desc">Vestiros con kimono tradicional (peinado y accesorios incluidos) y sesión de fotos por Higashiyama / Sannenzaka. Memorable.</p>
+          <div class="meta"><span>⏱️ medio día</span><span>💴 ~¥15.000-30.000 por pareja</span></div>
+        </div>
+        <div class="ev">
+          <div class="when">13:30</div>
+          <h4>Higashiyama: Kiyomizu-dera + Sannenzaka</h4>
+          <p class="desc">Templo Patrimonio UNESCO con balcón de madera (sin un solo clavo) y vistas de Kyoto. Calles de piedra Sannenzaka/Ninenzaka entre tiendas tradicionales.</p>
+          <div class="meta"><span>💴 ¥400</span></div>
+          <div class="actions"><a href="https://maps.google.com/?q=Kiyomizu-dera" target="_blank">📍 Maps</a></div>
+        </div>
+        <div class="ev food">
+          <div class="when">19:00 · Cena</div>
+          <h4>Sushi Matsumoto <span class="badge michelin">Michelin</span> <span class="badge confirmed">confirmado</span></h4>
+          <p class="desc">Edomae sushi en una machiya renovada de Gion. El chef Matsumoto se formó en Sushi Shimizu (Shinbashi). Ingredientes frescos cada mañana, mostrador.</p>
+          <div class="meta"><span>⭐ 1 estrella</span><span>💴 cena ¥26.000</span><span>📞 075-531-2031</span></div>
+          <div class="actions">
+            <a href="https://maps.google.com/?q=Sushi+Matsumoto+Gion" target="_blank">📍 Maps</a>
+            <a href="https://guide.michelin.com/us/en/kyoto-region/kyoto/restaurant/sushi-matsumoto" target="_blank">🎖️ Michelin</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+</section>
+
+<!-- ========== OSAKA ========== -->
+<section id="osaka" class="panel osaka" role="tabpanel">
+  <div class="sh">
+    <span class="em">🏯</span>
+    <h2>Osaka</h2>
+    <span class="accent">26 — 30 mayo</span>
+    <span class="sub">Diversión y excursiones</span>
+  </div>
+
+  <div class="hotel-block">
+    <div class="icon">🌃</div>
+    <div class="info">
+      <div class="label">Hotel · 4 noches</div>
+      <h4>Centara Grand Hotel Osaka</h4>
+      <p>33 plantas en pleno corazón de Namba — barrio del entretenimiento y compras. A 5 min andando de la estación Namba.</p>
+      <div class="acts">
+        <a href="https://maps.google.com/?q=Centara+Grand+Hotel+Osaka" target="_blank">📍 Mapa</a>
+        <a href="https://www.centarahotelsresorts.com/centaragrand/cgoj" target="_blank">🌐 Web</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 1 -->
+  <details class="day" open>
+    <summary>
+      <div class="num">1</div>
+      <div class="title">
+        <div class="day-tag">Mar 26 may · Día 1</div>
+        <h3>Castillo · Dotonbori</h3>
+      </div>
+      <div class="chev">▾</div>
+    </summary>
+    <div class="body">
+      <div class="timeline">
+        <div class="ev move">
+          <div class="when">11:00</div>
+          <h4>Tren Kyoto → Osaka</h4>
+          <p class="desc">Shinkansen (~15 min) o JR Special Rapid (~30 min, más barato). Check-in y dejar maletas.</p>
+        </div>
+        <div class="ev">
+          <div class="when">14:00</div>
+          <h4>Osaka Castle 🏯</h4>
+          <p class="desc">Castillo símbolo de la ciudad. Subid al mirador del torreón. Jardines preciosos alrededor.</p>
+          <div class="meta"><span>💴 ¥600</span><span>⏱️ ~2h</span></div>
+          <div class="actions"><a href="https://maps.google.com/?q=Osaka+Castle" target="_blank">📍 Maps</a></div>
+        </div>
+        <div class="ev food">
+          <div class="when">19:00 · Cena</div>
+          <h4>Tonkatsu Koshiro <span class="badge pending">por reservar</span></h4>
+          <p class="desc">Cerdo tonkatsu de razas heritage rarísimas (Mangalica, Sangen, Berkshire, Schwäbisch-Hall...). Apenas 10 asientos en Minamisemba. Único.</p>
+          <div class="meta"><span>💴 menú degustación ¥10.000</span><span>📞 06-4307-6546</span></div>
+          <div class="actions">
+            <a href="https://maps.google.com/?q=Tonkatsu+Koshiro+Osaka" target="_blank">📍 Maps</a>
+            <a href="https://www.tablecheck.com/en/shops/tonkatsu-koushirou/reserve" target="_blank" class="book">🍴 Reservar</a>
+          </div>
+          <div class="tip"><strong>Único en Japón:</strong> compares cortes y razas en una misma cena. El chuletón Berkshire es legendario.</div>
+        </div>
+        <div class="ev">
+          <div class="when">21:30</div>
+          <h4>Dotonbori 🌃</h4>
+          <p class="desc">Neones, el cangrejo gigante, el Glico Running Man, takoyaki en cada esquina. Esencia de Osaka. Foto obligatoria desde el puente Ebisubashi.</p>
+          <div class="actions"><a href="https://maps.google.com/?q=Dotonbori" target="_blank">📍 Maps</a></div>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- DAY 2 -->
+  <details class="day">
+    <summary>
+      <div class="num">2</div>
+      <div class="title">
+        <div class="day-tag">Mié 27 may · Día 2</div>
+        <h3>Universal Studios Japan 🎢</h3>
+      </div>
+      <div class="chev">▾</div>
+    </summary>
+    <div class="body">
+      <div class="day-overview">El día <strong>más divertido</strong> del viaje. Súper Nintendo World es el highlight. Organización <em>militar</em>.</div>
+      <div class="alert"><strong>⚠️ Crítico 2026:</strong> 2026 es el 25º aniversario y el lanzamiento "Discover U!!" — uno de los años más concurridos. Express Pass <strong>imprescindible</strong>, comprado con semanas de antelación.</div>
+      <div class="timeline">
+        <div class="ev">
+          <div class="when">07:30</div>
+          <h4>Salida temprana al parque</h4>
+          <p class="desc">Llegad antes de la apertura oficial (suele abrir 30 min antes). Tren JR Yumesaki desde Osaka Station hasta Universal-City Station.</p>
+          <div class="actions"><a href="https://maps.google.com/?q=Universal+Studios+Japan" target="_blank">📍 Maps</a></div>
+        </div>
+        <div class="ev">
+          <div class="when">08:30</div>
+          <h4>Estrategia de colas</h4>
+          <p class="desc"><strong>Express Pass 4 + Nintendo World</strong> ✔️ — id directos a las atracciones más demandadas. Mario Kart y Yoshi Adventure primero, luego Donkey Kong (área nueva 2024) si está incluido.</p>
+        </div>
+        <div class="ev">
+          <div class="when">12:00</div>
+          <h4>Power-Up Band 🍄</h4>
+          <p class="desc">Pulsera oficial (~¥3.800) que conecta con la app y permite jugar en Nintendo World (golpear bloques, mini juegos). Esencial para inmersión.</p>
+        </div>
+        <div class="ev">
+          <div class="when">13:30 · Almuerzo</div>
+          <h4>Kinopio's Café o Mario Café</h4>
+          <p class="desc">En Nintendo World. Comida temática (la pizza de Mario, la hamburguesa de Bowser). Reservad slot.</p>
+        </div>
+        <div class="ev">
+          <div class="when">15:00</div>
+          <h4>Otras zonas</h4>
+          <p class="desc">Wizarding World of Harry Potter (Hogsmeade, mantequilla de cerveza), Jurassic Park ride, Spider-Man, Minions Park.</p>
+        </div>
+        <div class="ev">
+          <div class="when">20:00</div>
+          <h4>Show nocturno + cierre</h4>
+          <p class="desc">Suelen tener parade nocturna o iluminación de Hogwarts.</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- DAY 3 -->
+  <details class="day">
+    <summary>
+      <div class="num">3</div>
+      <div class="title">
+        <div class="day-tag">Jue 28 may · Día 3</div>
+        <h3>Nara · Excursión</h3>
+      </div>
+      <div class="chev">▾</div>
+    </summary>
+    <div class="body">
+      <div class="day-overview">Día <strong>cultural relajado</strong> fuera de la ciudad. Los ciervos sagrados son tan adorables como atrevidos.</div>
+      <div class="timeline">
+        <div class="ev move">
+          <div class="when">09:00</div>
+          <h4>Tren Osaka → Nara</h4>
+          <p class="desc">JR Yamatoji desde Osaka Station (~50 min) o Kintetsu Nara desde Namba (~40 min, más cerca del parque).</p>
+        </div>
+        <div class="ev">
+          <div class="when">10:30</div>
+          <h4>Nara Park · ciervos 🦌</h4>
+          <p class="desc">~1.000 ciervos sika sagrados se pasean libres. Comprad senbei (galletas, ¥200) — saben hacer reverencia. Cuidado: pueden picar mochilas.</p>
+          <div class="actions"><a href="https://maps.google.com/?q=Nara+Park" target="_blank">📍 Maps</a></div>
+        </div>
+        <div class="ev">
+          <div class="when">11:30</div>
+          <h4>Todai-ji + Daibutsu</h4>
+          <p class="desc">El Buda gigante de bronce (15 m, 500 toneladas) en el edificio de madera más grande del mundo. Pasad por el agujero del pilar (mismo tamaño que la nariz del Buda) — dicen que da iluminación.</p>
+          <div class="meta"><span>💴 ¥600</span></div>
+          <div class="actions"><a href="https://maps.google.com/?q=Todai-ji+Nara" target="_blank">📍 Maps</a></div>
+        </div>
+        <div class="ev food">
+          <div class="when">13:30 · Almuerzo</div>
+          <h4>Momoshiki <span class="badge pending">por reservar</span></h4>
+          <p class="desc">Restaurante recomendado en el plan original (verifica nombre exacto al reservar).</p>
+        </div>
+        <div class="ev food">
+          <div class="when">16:00 · Café</div>
+          <h4>SARASA</h4>
+          <p class="desc">Café en Nara para descansar. Buen ambiente.</p>
+        </div>
+        <div class="ev food">
+          <div class="when">20:00 · Cena (vuelta a Osaka)</div>
+          <h4>KUNSEI <span class="badge pending">por reservar</span></h4>
+          <p class="desc">Cocina ahumada (kunsei = ahumado en japonés). Verifica detalles al reservar.</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- DAY 4 -->
+  <details class="day">
+    <summary>
+      <div class="num">4</div>
+      <div class="title">
+        <div class="day-tag">Vie 29 may · Día 4</div>
+        <h3>Osaka urbano · Despedida</h3>
+      </div>
+      <div class="chev">▾</div>
+    </summary>
+    <div class="body">
+      <div class="timeline">
+        <div class="ev">
+          <div class="when">10:00</div>
+          <h4>Umeda Sky Building</h4>
+          <p class="desc">Floating Garden Observatory en la planta 39-40. Vistas 360° de Osaka. Arquitectura icónica de Hara.</p>
+          <div class="meta"><span>💴 ¥1.500</span></div>
+          <div class="actions"><a href="https://maps.google.com/?q=Umeda+Sky+Building" target="_blank">📍 Maps</a></div>
+        </div>
+        <div class="ev food">
+          <div class="when">13:00 · Almuerzo</div>
+          <h4>Kiji <span class="badge">okonomiyaki</span></h4>
+          <p class="desc">El okonomiyaki más famoso de Osaka, en el subsuelo de Umeda Sky. Hay cola siempre — id antes de las 13h o después de las 14:30.</p>
+          <div class="meta"><span>💴 ¥1.000-1.500</span></div>
+          <div class="actions"><a href="https://maps.google.com/?q=Kiji+Okonomiyaki+Umeda" target="_blank">📍 Maps</a></div>
+          <div class="tip"><strong>Pedid:</strong> el modan-yaki (okonomiyaki + yakisoba). Sentarse en mostrador para ver al chef.</div>
+        </div>
+        <div class="ev">
+          <div class="when">15:00</div>
+          <h4>Shopping Umeda</h4>
+          <p class="desc">Hankyu, Hanshin, Grand Front Osaka, Hep Five (con noria roja). Si os queda hueco para souvenirs / electrónica / ropa.</p>
+        </div>
+        <div class="ev food">
+          <div class="when">19:00 · Cena</div>
+          <h4>Sushi Murakami Jiro <span class="badge michelin">Michelin</span> <span class="badge confirmed">confirmado</span></h4>
+          <p class="desc">8 asientos en Sonezakishinchi. Pareja al frente — chef Jiro formado en Kitashinchi Saeki, esposa atendiendo. Inglés. 5 años seguidos con estrella.</p>
+          <div class="meta"><span>⭐ 1 estrella</span><span>💴 menú ¥38.500</span><span>🕐 turnos 18:00 / 20:40</span></div>
+          <div class="actions">
+            <a href="https://maps.google.com/?q=Sushi+Murakami+Jiro" target="_blank">📍 Maps</a>
+            <a href="https://guide.michelin.com/us/en/osaka-region/osaka/restaurant/sushi-murakami-jiro" target="_blank">🎖️ Michelin</a>
+          </div>
+          <div class="tip"><strong>Pista:</strong> arroz "shari" en vinagre rojo (akazu) — más complejo y umami que el blanco común.</div>
+        </div>
+      </div>
+    </div>
+  </details>
+</section>
+
+<!-- ========== OKINAWA ========== -->
+<section id="okinawa" class="panel okinawa" role="tabpanel">
+  <div class="sh">
+    <span class="em">🌊</span>
+    <h2>Okinawa</h2>
+    <span class="accent">30 mayo — 4 junio</span>
+    <span class="sub">Relax · Naturaleza · Playa</span>
+  </div>
+
+  <div class="hotel-block">
+    <div class="icon">🌴</div>
+    <div class="info">
+      <div class="label">Hotel · 5 noches</div>
+      <h4>Hiyori Ocean Resort Okinawa</h4>
+      <p>En Onna village (Nakadomari, 836-1). El resort de Onna más cercano a Naha (~49 min en coche por la costa). A 16 min andando de Nakadomari Beach. Cerca de Cueva Azul y Cabo Manzamo.</p>
+      <div class="acts">
+        <a href="https://maps.google.com/?q=Hiyori+Ocean+Resort+Okinawa" target="_blank">📍 Mapa</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert"><strong>⚠️ Aviso ferry Zamami:</strong> El ferry rápido Queen Zamami estará en mantenimiento del <strong>27 mayo al 5 junio 2026</strong>. Solo operará el ferry regular (~2h por trayecto en lugar de 50 min). Salida muy temprana imprescindible. Reserva en <a href="https://www.zamamienglishguide.com/ferries/" target="_blank">zamamienglishguide.com</a> o tel. 098-868-4567.</div>
+
+  <div class="alert info"><strong>🚗 Coche imprescindible:</strong> Okinawa se recorre en coche (transporte público escaso). Necesitáis <strong>traducción JAF</strong> de vuestro carnet (~¥4.000, 1 semana en tramitarse online). El permiso internacional español NO es válido — solo carnet español + traducción JAF certificada.</div>
+
+  <!-- DAY 1 -->
+  <details class="day" open>
+    <summary>
+      <div class="num">1</div>
+      <div class="title">
+        <div class="day-tag">Sáb 30 may · Día 1</div>
+        <h3>Llegada · Relax</h3>
+      </div>
+      <div class="chev">▾</div>
+    </summary>
+    <div class="body">
+      <div class="timeline">
+        <div class="ev move">
+          <div class="when">14:05</div>
+          <h4>Vuelo NH 767 · Osaka ITM → Naha OKA</h4>
+          <p class="desc">ANA. ~2h15. Llegada Naha ≈16:20. Recoger maletas y al rental car desk.</p>
+        </div>
+        <div class="ev move">
+          <div class="when">17:00</div>
+          <h4>Coche de alquiler · Naha → Onna</h4>
+          <p class="desc">~50 min por la Expressway. Ojo: en Japón se conduce por la izquierda. GPS en inglés. Pago de peaje con tarjeta IC o efectivo. Llevad la traducción JAF impresa.</p>
+        </div>
+        <div class="ev">
+          <div class="when">~18:30</div>
+          <h4>Check-in en Hiyori Ocean Resort</h4>
+          <p class="desc">Llegada al hotel al atardecer. Bienvenida con vistas al Mar de China Oriental.</p>
+        </div>
+        <div class="ev food">
+          <div class="when">19:30 · Cena</div>
+          <h4>Hillside Grill (hotel)</h4>
+          <p class="desc">Restaurante del hotel. Práctico para el primer día sin moverse.</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- DAY 2 -->
+  <details class="day">
+    <summary>
+      <div class="num">2</div>
+      <div class="title">
+        <div class="day-tag">Dom 31 may · Día 2</div>
+        <h3>Costa Oeste</h3>
+      </div>
+      <div class="chev">▾</div>
+    </summary>
+    <div class="body">
+      <div class="timeline">
+        <div class="ev food">
+          <div class="when">09:00 · Desayuno</div>
+          <h4>Pannilani Bakery <span class="badge" style="background:#fff;color:var(--ink-mute);font-style:italic;">verificar nombre</span></h4>
+          <p class="desc">Bakery local en Onna (verifica el nombre con el hotel — algunas referencias indican "Mermaid Bakery" como alternativa popular para malasadas hawaianas en la zona).</p>
+        </div>
+        <div class="ev">
+          <div class="when">11:00</div>
+          <h4>Cabo Manzamo</h4>
+          <p class="desc">Acantilado de piedra caliza con la famosa forma de "trompa de elefante". Vistas 180° del Mar de China Oriental. El rey Sho Kei (s. XVIII) decía que aquí cabían 10.000 personas sentadas (de ahí el nombre).</p>
+          <div class="meta"><span>💴 ¥100 conservación</span><span>🚗 parking gratis</span></div>
+          <div class="actions"><a href="https://maps.google.com/?q=Cape+Manzamo" target="_blank">📍 Maps</a></div>
+          <div class="tip"><strong>Mejor momento:</strong> atardecer (color del mar pasa de azul → rojo → púrpura). Hay food court en la planta 2 del centro turístico.</div>
+        </div>
+        <div class="ev">
+          <div class="when">14:00 · opcional</div>
+          <h4>Cueva Azul (Blue Cave)</h4>
+          <p class="desc">Snorkel o buceo en la cueva con luz turquesa. Tours desde Maeda Misaki (~¥4.000-7.000). Reservar el día anterior.</p>
+          <div class="actions"><a href="https://maps.google.com/?q=Blue+Cave+Okinawa+Maeda" target="_blank">📍 Maps</a></div>
+        </div>
+        <div class="ev food">
+          <div class="when">19:30 · Cena</div>
+          <h4>Blue Entrance Kitchen</h4>
+          <p class="desc">Cocina internacional con vistas al mar. Ambiente relajado.</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- DAY 3 -->
+  <details class="day">
+    <summary>
+      <div class="num">3</div>
+      <div class="title">
+        <div class="day-tag">Lun 1 jun · Día 3</div>
+        <h3>Norte · Día estrella</h3>
+      </div>
+      <div class="chev">▾</div>
+    </summary>
+    <div class="body">
+      <div class="day-overview">Día completo al norte. Empezar con el acuario y terminar en una de las playas más bellas de Japón.</div>
+      <div class="timeline">
+        <div class="ev">
+          <div class="when">09:00</div>
+          <h4>Churaumi Aquarium 🐋</h4>
+          <p class="desc">Uno de los acuarios más grandes del mundo. El tanque Kuroshio (7.500 m³) con tiburones ballena de 8 m y mantarrayas es sobrecogedor. Llegada ~50 min en coche desde Onna.</p>
+          <div class="meta"><span>🕐 8:30-18:30</span><span>💴 ¥2.180</span></div>
+          <div class="actions"><a href="https://maps.google.com/?q=Churaumi+Aquarium" target="_blank">📍 Maps</a></div>
+          <div class="tip"><strong>Shows imprescindibles:</strong> alimentación mantas 9:30 / alimentación tiburón ballena 15:00 y 17:00.</div>
+        </div>
+        <div class="ev food">
+          <div class="when">13:00 · Almuerzo</div>
+          <h4>L LOTA Café</h4>
+          <p class="desc">Café en zona norte (verificar ubicación exacta). Buen lugar para parada gastronómica en ruta a Kouri.</p>
+        </div>
+        <div class="ev">
+          <div class="when">14:30</div>
+          <h4>Kouri Island + puente</h4>
+          <p class="desc">Pequeña isla unida por uno de los puentes más bellos de Japón (1,9 km sobre agua turquesa). Vistas y selfies en el puente.</p>
+          <div class="actions"><a href="https://maps.google.com/?q=Kouri+Bridge" target="_blank">📍 Maps</a></div>
+        </div>
+        <div class="ev">
+          <div class="when">15:30 · 💕</div>
+          <h4>Heart Rock <span class="badge special">luna de miel</span></h4>
+          <p class="desc">Dos rocas que forman un corazón perfecto en la marea baja, en Tinu Beach. Spot icónico de fotos de pareja.</p>
+          <div class="actions"><a href="https://maps.google.com/?q=Heart+Rock+Kouri" target="_blank">📍 Maps</a></div>
+          <div class="tip"><strong>Crucial:</strong> consultar tabla de mareas antes de ir. Solo se ve en marea baja.</div>
+        </div>
+        <div class="ev food">
+          <div class="when">20:00 · Cena</div>
+          <h4>Teppanyaki Zen <span class="badge pending">por reservar</span></h4>
+          <p class="desc">Teppanyaki premium con wagyu Ishigaki / Motobu. Una de las mejores experiencias de carne en Okinawa.</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- DAY 4 -->
+  <details class="day">
+    <summary>
+      <div class="num">4</div>
+      <div class="title">
+        <div class="day-tag">Mar 2 jun · Día 4</div>
+        <h3>Zamami · Día paradisíaco</h3>
+      </div>
+      <div class="chev">▾</div>
+    </summary>
+    <div class="body">
+      <div class="day-overview">El día <strong>más paradisíaco</strong> 🌴. Las aguas de Kerama tienen el "Kerama Blue" — visibilidad de 50 m+.</div>
+      <div class="alert"><strong>📅 Día largo:</strong> Con ferry regular (en lugar del Queen Zamami en mantenimiento), planificad <strong>10:00 ida / 16:00 vuelta</strong> aprox. Llevad protector solar reef-safe, agua y snacks.</div>
+      <div class="timeline">
+        <div class="ev move">
+          <div class="when">07:30</div>
+          <h4>Salida temprana → Tomari Port (Naha)</h4>
+          <p class="desc">~50 min en coche. Aparcar en torno al puerto (~¥1.500/día). Llegar 30 min antes de zarpar.</p>
+        </div>
+        <div class="ev move">
+          <div class="when">10:00</div>
+          <h4>Ferry Zamami (regular) <span class="badge pending">~2h</span></h4>
+          <p class="desc">Reserva imprescindible. Tel. 098-868-4567 o online. Vuelta sobre las 16:00.</p>
+          <div class="meta"><span>💴 ~¥3.200 ida (regular)</span></div>
+          <div class="actions">
+            <a href="https://www.zamamienglishguide.com/ferries/" target="_blank">⛴️ Reserva</a>
+          </div>
+        </div>
+        <div class="ev">
+          <div class="when">12:00</div>
+          <h4>Playa Furuzamami 🏖️</h4>
+          <p class="desc">15 min andando del puerto (o bus shuttle). Considerada de las mejores playas de Japón. Snorkel directo desde la orilla — peces, tortugas, coral.</p>
+          <div class="actions"><a href="https://maps.google.com/?q=Furuzamami+Beach" target="_blank">📍 Maps</a></div>
+          <div class="tip"><strong>Alquilad equipo:</strong> snorkel + aletas (~¥1.500). Sombrilla obligatoria — no hay sombra.</div>
+        </div>
+        <div class="ev">
+          <div class="when">14:00</div>
+          <h4>Playa Ama (alternativa o adicional)</h4>
+          <p class="desc">Más tranquila que Furuzamami. A veces se ven tortugas. 20 min andando.</p>
+        </div>
+        <div class="ev move">
+          <div class="when">16:00</div>
+          <h4>Ferry vuelta → Tomari → Onna</h4>
+          <p class="desc">Llegada al puerto ~18:00, hotel ~19:00.</p>
+        </div>
+        <div class="ev food">
+          <div class="when">20:30 · Cena</div>
+          <h4>Yakiniku Ryukyu no Ushi Onna <span class="badge confirmed">confirmado</span></h4>
+          <p class="desc">Yakiniku con la mejor carne wagyu de Okinawa (Ishigaki, Motobu). Cocináis en parrilla individual. El mejor cierre culinario.</p>
+          <div class="actions"><a href="https://maps.google.com/?q=Yakiniku+Ryukyu+no+Ushi+Onna" target="_blank">📍 Maps</a></div>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- DAY 5 -->
+  <details class="day">
+    <summary>
+      <div class="num">5</div>
+      <div class="title">
+        <div class="day-tag">Mié 3 jun · Día 5</div>
+        <h3>Día libre · Despedida del mar</h3>
+      </div>
+      <div class="chev">▾</div>
+    </summary>
+    <div class="body">
+      <div class="timeline">
+        <div class="ev">
+          <div class="when">Mañana</div>
+          <h4>Día libre · descanso</h4>
+          <p class="desc">Aprovechad el resort: piscina, spa, paseo por la playa. O excursión opcional al sur (Senagajima, Cape Chinen, Sefa Utaki - lugar sagrado).</p>
+        </div>
+        <div class="ev">
+          <div class="when">Tarde</div>
+          <h4>Sunset paseo</h4>
+          <p class="desc">Despedida del mar. Volved a Cabo Manzamo para el atardecer si no fuisteis aún en ese momento.</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- DAY 6 -->
+  <details class="day">
+    <summary>
+      <div class="num">6</div>
+      <div class="title">
+        <div class="day-tag">Jue 4 jun · Día 6</div>
+        <h3>Salida Okinawa → Tokyo</h3>
+      </div>
+      <div class="chev">▾</div>
+    </summary>
+    <div class="body">
+      <div class="day-overview">Día de tránsito. Vuelo a media mañana, tarde libre en Tokyo y noche cerca de Haneda para el vuelo del día siguiente.</div>
+      <div class="timeline">
+        <div class="ev move">
+          <div class="when">08:30</div>
+          <h4>Devolver coche en aeropuerto Naha</h4>
+          <p class="desc">Llenar depósito antes (gasolinera cerca del aeropuerto). Estar 2h antes del vuelo en mostrador.</p>
+        </div>
+        <div class="ev move">
+          <div class="when">11:55</div>
+          <h4>Vuelo NH 464 · Naha → Tokyo Haneda</h4>
+          <p class="desc">ANA · ~2h35. Llegada a HND ≈14:30.</p>
+        </div>
+        <div class="ev">
+          <div class="when">15:30</div>
+          <h4>Check-in hotel Haneda</h4>
+          <p class="desc">Hotel cerca de aeropuerto (Royal Park Hotel HND, Villa Fontaine, The Edition Toranomon si os apetece centro). Practicidad para vuelo del día siguiente.</p>
+        </div>
+        <div class="ev">
+          <div class="when">17:00</div>
+          <h4>Tarde libre · cierre del viaje</h4>
+          <p class="desc">Si os apetece, última escapada al centro: Roppongi Hills (vistas), un izakaya tradicional, o pasear Ginza. O simplemente descansar.</p>
+        </div>
+        <div class="ev food">
+          <div class="when">20:00 · Cena</div>
+          <h4>Última cena en Japón</h4>
+          <p class="desc">Sugerencia: ramen (Ichiran 24h cerca de cualquier zona) o izakaya cercano al hotel. Cierre informal y nostálgico.</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- DAY 7 -->
+  <details class="day">
+    <summary>
+      <div class="num">7</div>
+      <div class="title">
+        <div class="day-tag">Vie 5 jun · Día 7</div>
+        <h3>Vuelta a Madrid</h3>
+      </div>
+      <div class="chev">▾</div>
+    </summary>
+    <div class="body">
+      <div class="timeline">
+        <div class="ev move">
+          <div class="when">~08:30</div>
+          <h4>Check-out + traslado a Haneda</h4>
+          <p class="desc">Llegada al aeropuerto 2h30 antes del vuelo internacional.</p>
+        </div>
+        <div class="ev move">
+          <div class="when">11:10</div>
+          <h4>Vuelo IB 0282 · Tokyo Haneda → Madrid</h4>
+          <p class="desc">Iberia. ~14h. Llegada a MAD por la tarde-noche del 5 jun. ¡Os esperamos en casa! 💕</p>
+        </div>
+      </div>
+    </div>
+  </details>
+</section>
+
+<!-- ========== RESERVAS ========== -->
+<section id="reservas" class="panel" role="tabpanel">
+  <div class="sh">
+    <span class="em">📌</span>
+    <h2>Reservas</h2>
+    <span class="accent">checklist · persistente</span>
+    <span class="sub">Marcad cada una al confirmar</span>
+  </div>
+
+  <div class="reslist-actions">
+    <button id="markAllPending">Solo pendientes</button>
+    <button id="markAllConfirmed">Solo confirmadas</button>
+    <button id="resetAll">Resetear marcas</button>
+  </div>
+
+  <h3 style="margin-top:18px;">✅ Confirmadas</h3>
+  <ul class="reslist" id="resConfirmed">
+    <li data-id="r-shimomura"><input type="checkbox"><div class="info"><div class="name"><span class="city tokyo">TOKYO</span>Tempura Shimomura ⭐</div><div class="meta">21 may · cena · Asakusa</div></div></li>
+    <li data-id="r-murakami"><input type="checkbox"><div class="info"><div class="name"><span class="city osaka">OSAKA</span>Sushi Murakami Jiro ⭐</div><div class="meta">29 may · cena · Sonezakishinchi</div></div></li>
+    <li data-id="r-matsumoto"><input type="checkbox"><div class="info"><div class="name"><span class="city kyoto">KYOTO</span>Sushi Matsumoto ⭐</div><div class="meta">25 may · cena · Gion</div></div></li>
+    <li data-id="r-wabiya"><input type="checkbox"><div class="info"><div class="name"><span class="city kyoto">KYOTO</span>Wabiya Korekido</div><div class="meta">23 may · cena · Hanamikoji</div></div></li>
+    <li data-id="r-yakiniku"><input type="checkbox"><div class="info"><div class="name"><span class="city okinawa">OKINAWA</span>Yakiniku Ryukyu no Ushi Onna</div><div class="meta">2 jun · cena · Onna</div></div></li>
+    <li data-id="r-sushiclass"><input type="checkbox"><div class="info"><div class="name"><span class="city tokyo">TOKYO</span>Clase de sushi</div><div class="meta">22 may · 13:00 · Tsukiji</div></div></li>
+  </ul>
+
+  <h3 style="margin-top:24px;">⏳ Pendientes</h3>
+  <ul class="reslist" id="resPending">
+    <li data-id="r-shibuyasky"><input type="checkbox"><div class="info"><div class="name"><span class="city tokyo">TOKYO</span>Shibuya Sky</div><div class="meta">20 may · slot atardecer · reservar 2-3 sem antes</div></div></li>
+    <li data-id="r-hakushu"><input type="checkbox"><div class="info"><div class="name"><span class="city tokyo">TOKYO</span>Hakushu Teppanyaki</div><div class="meta">20 may · cena · Shibuya · 03-3463-3322</div></div></li>
+    <li data-id="r-kiyama"><input type="checkbox"><div class="info"><div class="name"><span class="city kyoto">KYOTO</span>Kiyama ⭐</div><div class="meta">24 may · cena · Nakagyo · ¥24.200</div></div></li>
+    <li data-id="r-tonkatsu"><input type="checkbox"><div class="info"><div class="name"><span class="city osaka">OSAKA</span>Tonkatsu Koshiro</div><div class="meta">26 may · cena · 06-4307-6546 · TableCheck</div></div></li>
+    <li data-id="r-momoshiki"><input type="checkbox"><div class="info"><div class="name"><span class="city osaka">OSAKA</span>Momoshiki (Nara)</div><div class="meta">28 may · almuerzo · Nara</div></div></li>
+    <li data-id="r-kunsei"><input type="checkbox"><div class="info"><div class="name"><span class="city osaka">OSAKA</span>KUNSEI</div><div class="meta">28 may · cena</div></div></li>
+    <li data-id="r-zen"><input type="checkbox"><div class="info"><div class="name"><span class="city okinawa">OKINAWA</span>Teppanyaki Zen</div><div class="meta">1 jun · cena · Onna</div></div></li>
+    <li data-id="r-nodaiwa"><input type="checkbox"><div class="info"><div class="name"><span class="city tokyo">TOKYO</span>Nodaiwa ⭐</div><div class="meta">22 may · cena · hotel gestiona · 03-3583-7852</div></div></li>
+    <li data-id="r-scalae"><input type="checkbox"><div class="info"><div class="name"><span class="city kyoto">KYOTO</span>SCALAE (hotel)</div><div class="meta">23 may · almuerzo · TableCheck</div></div></li>
+    <li data-id="r-hanbee"><input type="checkbox"><div class="info"><div class="name"><span class="city kyoto">KYOTO</span>Té Gion Kitagawa Hanbee</div><div class="meta">23 may · tarde · Gion</div></div></li>
+    <li data-id="r-kimono"><input type="checkbox"><div class="info"><div class="name"><span class="city kyoto">KYOTO</span>Experiencia kimono + fotos</div><div class="meta">25 may · medio día · 💕</div></div></li>
+    <li data-id="r-yudofu"><input type="checkbox"><div class="info"><div class="name"><span class="city kyoto">KYOTO</span>Yudofu Sagano</div><div class="meta">24 may · almuerzo · Arashiyama</div></div></li>
+    <li data-id="r-usj"><input type="checkbox"><div class="info"><div class="name"><span class="city osaka">OSAKA</span>USJ Express Pass 4 + Nintendo</div><div class="meta">27 may · CRÍTICO · semanas antes</div></div></li>
+    <li data-id="r-ferry"><input type="checkbox"><div class="info"><div class="name"><span class="city okinawa">OKINAWA</span>Ferry Zamami (regular)</div><div class="meta">2 jun · 098-868-4567 · 30 días antes</div></div></li>
+    <li data-id="r-jaf"><input type="checkbox"><div class="info"><div class="name"><span class="city okinawa">OKINAWA</span>Traducción JAF carnet</div><div class="meta">Antes del viaje · 1 sem · ¥4.000</div></div></li>
+    <li data-id="r-shinkansen"><input type="checkbox"><div class="info"><div class="name"><span class="city tokyo">TOKYO/KYO</span>Shinkansen Tokyo-Kyoto</div><div class="meta">23 may · asientos reservados · Green Car</div></div></li>
+    <li data-id="r-yamato"><input type="checkbox"><div class="info"><div class="name"><span class="city tokyo">LOG.</span>Yamato luggage forwarding</div><div class="meta">Tokyo → Kyoto · 1 día antes</div></div></li>
+    <li data-id="r-hotel-hnd"><input type="checkbox"><div class="info"><div class="name"><span class="city tokyo">TOKYO</span>Hotel Tokyo (4 jun · cerca Haneda)</div><div class="meta">Royal Park HND / Villa Fontaine HND</div></div></li>
+    <li data-id="r-rental-car"><input type="checkbox"><div class="info"><div class="name"><span class="city okinawa">OKINAWA</span>Coche de alquiler 30/5 - 4/6</div><div class="meta">Recogida Naha · OTS / Toyota / Times</div></div></li>
+  </ul>
+</section>
+
+<!-- ========== PRACTICO ========== -->
+<section id="practico" class="panel" role="tabpanel">
+  <div class="sh">
+    <span class="em">🧭</span>
+    <h2>Práctico</h2>
+    <span class="accent">presupuesto · packing · etiqueta</span>
+  </div>
+
+  <h3 style="margin-top:8px;">💴 Presupuesto orientativo (por persona/día)</h3>
+  <div class="card">
+    <div class="bar"><div class="name">Tokyo</div><div class="track"><div class="fill" style="width:88%;"></div></div><div class="val">¥30k</div></div>
+    <div class="bar"><div class="name">Kyoto</div><div class="track"><div class="fill" style="width:75%;"></div></div><div class="val">¥25k</div></div>
+    <div class="bar"><div class="name">Osaka</div><div class="track"><div class="fill" style="width:70%;"></div></div><div class="val">¥23k</div></div>
+    <div class="bar"><div class="name">Okinawa</div><div class="track"><div class="fill" style="width:80%;"></div></div><div class="val">¥27k</div></div>
+    <p style="font-size:.8rem;margin:10px 0 0;color:var(--ink-mute);">* Sin contar hotel ni vuelos. Cifras orientativas para gastronomía premium + entradas + transporte.</p>
+  </div>
+
+  <div class="card">
+    <h3>💸 Tipo de cambio (orientativo)</h3>
+    <p>~¥160 = 1€ (abril 2026). Llevad parte en efectivo (¥30.000-50.000) — muchos templos, restaurantes pequeños y taxis solo aceptan cash. ATM en 7-Eleven aceptan tarjetas extranjeras.</p>
+    <p style="font-size:.85rem;color:var(--ink-mute);margin:0;">IC card (Suica/PASMO) recargable para metro/tren/conveniences — añadidla al Apple Wallet desde España antes del viaje.</p>
+  </div>
+
+  <h3 style="margin-top:20px;">🧳 Packing list (mayo-junio)</h3>
+  <div class="card">
+    <p style="font-size:.86rem;">Tokyo/Kyoto/Osaka mayo: <strong>18-25°C</strong>, posibles lluvias finales mayo. Okinawa empieza <strong>temporada de lluvias</strong> a finales de mayo (26-30°C, alta humedad).</p>
+    <div class="packing">
+      <div class="pack-cat">
+        <h4>👕 Ropa</h4>
+        <ul>
+          <li>Capas finas: camisetas + cárdigan ligero</li>
+          <li>1 outfit elegante (cenas Michelin)</li>
+          <li>Bañador, ropa playa Okinawa</li>
+          <li>Calcetines limpios (templos = descalzarse)</li>
+          <li>Paraguas plegable (Okinawa lluvia)</li>
+        </ul>
+      </div>
+      <div class="pack-cat">
+        <h4>👟 Calzado</h4>
+        <ul>
+          <li>Zapatillas cómodas (caminaréis 15-20km/día)</li>
+          <li>Sandalias para Okinawa</li>
+          <li>Calzado fácil quitar/poner (templos)</li>
+        </ul>
+      </div>
+      <div class="pack-cat">
+        <h4>🔌 Tech</h4>
+        <ul>
+          <li>Adaptador tipo A (USA, 100V)</li>
+          <li>Power bank para el día</li>
+          <li>eSIM o pocket WiFi</li>
+          <li>Cable de carga + cargador 20W+</li>
+        </ul>
+      </div>
+      <div class="pack-cat">
+        <h4>📋 Documentos</h4>
+        <ul>
+          <li>Pasaporte (válido +6 meses)</li>
+          <li>Carnet conducir + traducción JAF</li>
+          <li>Seguro de viaje (imprescindible)</li>
+          <li>Reservas impresas (algunos sitios lo piden)</li>
+          <li>Tarjeta crédito + débito + cash inicial</li>
+        </ul>
+      </div>
+      <div class="pack-cat">
+        <h4>🧴 Otros</h4>
+        <ul>
+          <li>Protector solar reef-safe (Okinawa)</li>
+          <li>Repelente mosquitos</li>
+          <li>Bolsa para zapatos (templos)</li>
+          <li>Pañuelo / toalla pequeña (no hay en baños públicos)</li>
+          <li>Medicación habitual + jet lag aids</li>
+        </ul>
+      </div>
+      <div class="pack-cat">
+        <h4>💕 Detalles</h4>
+        <ul>
+          <li>Anillos (si los hay) en bolsa segura</li>
+          <li>Cámara para fotos kimono</li>
+          <li>Diario de viaje</li>
+          <li>Tarjetas para regalos pequeños (omiyage japonés)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:20px;">🙏 Etiqueta cultural</h3>
+  <div class="etiq">
+    <div class="item"><div class="em">⛩️</div><div class="txt"><h4>Templos y santuarios</h4><p>En el temizuya (purificación con agua): mano izquierda, derecha, boca, mango. Bow ligero al entrar al recinto. Silencio cerca del altar.</p></div></div>
+    <div class="item"><div class="em">🍣</div><div class="txt"><h4>Restaurantes</h4><p>NO clavar palillos en el arroz (recuerda funerales). NO pasar comida palillo a palillo. Decir "itadakimasu" antes y "gochisousama" después.</p></div></div>
+    <div class="item"><div class="em">💵</div><div class="txt"><h4>Propinas</h4><p>NO se dejan propinas en Japón — se considera ofensivo. El servicio impecable está incluido en el precio.</p></div></div>
+    <div class="item"><div class="em">🚇</div><div class="txt"><h4>Metro / tren</h4><p>Silencio total. Llamadas en silencio o no contestar. No comer (excepto Shinkansen). Cola ordenada en el andén.</p></div></div>
+    <div class="item"><div class="em">♨️</div><div class="txt"><h4>Onsen (aguas termales)</h4><p>Ducha completa antes de entrar. Desnudo. Tatuajes pueden no ser bienvenidos en algunos onsen tradicionales (consultar). NO meter la toalla pequeña en el agua.</p></div></div>
+    <div class="item"><div class="em">🎌</div><div class="txt"><h4>Zapatos</h4><p>Quitar al entrar a casas, ryokan, algunos restaurantes (mirad si hay zapatillas o tatami). Usar las zapatillas de baño SOLO para el baño.</p></div></div>
+    <div class="item"><div class="em">📸</div><div class="txt"><h4>Fotos</h4><p>Pedid permiso a personas. Geishas/maikos en Gion: prohibidísimo (multas). Algunos templos prohíben foto al altar.</p></div></div>
+    <div class="item"><div class="em">🤝</div><div class="txt"><h4>Saludo y educación</h4><p>Bow (inclinación) en lugar de apretón de manos. Recibid tarjetas / dinero con LAS DOS MANOS. Decid "sumimasen" (perdón) liberalmente.</p></div></div>
+  </div>
+
+  <h3 style="margin-top:20px;">🆘 Emergencias</h3>
+  <div class="card">
+    <p style="margin:0 0 6px;"><strong>Policía:</strong> 110</p>
+    <p style="margin:0 0 6px;"><strong>Bomberos / ambulancia:</strong> 119</p>
+    <p style="margin:0 0 6px;"><strong>Embajada España (Tokyo):</strong> +81 3-3583-8531</p>
+    <p style="margin:0 0 6px;"><strong>Línea inglés tourism:</strong> 050-3816-2787 (24h)</p>
+    <p style="margin:0;font-size:.85rem;color:var(--ink-mute);">App útil: <em>Japan Official Travel</em> (JNTO) — info accesibilidad, transporte, alertas.</p>
+  </div>
+</section>
+
+<!-- ========== FRASES ========== -->
+<section id="frases" class="panel" role="tabpanel">
+  <div class="sh">
+    <span class="em">🗣️</span>
+    <h2>Frases útiles</h2>
+    <span class="accent">supervivencia + cortesía</span>
+  </div>
+
+  <h3>👋 Saludos</h3>
+  <div class="phrases">
+    <div class="phrase"><p class="jp">こんにちは</p><p class="romaji">Konnichiwa</p><p class="es">Hola (mediodía-tarde)</p></div>
+    <div class="phrase"><p class="jp">おはようございます</p><p class="romaji">Ohayō gozaimasu</p><p class="es">Buenos días</p></div>
+    <div class="phrase"><p class="jp">こんばんは</p><p class="romaji">Konbanwa</p><p class="es">Buenas tardes/noches</p></div>
+    <div class="phrase"><p class="jp">ありがとうございます</p><p class="romaji">Arigatō gozaimasu</p><p class="es">Muchas gracias</p></div>
+    <div class="phrase"><p class="jp">すみません</p><p class="romaji">Sumimasen</p><p class="es">Perdón / disculpe (también "gracias")</p></div>
+    <div class="phrase"><p class="jp">お願いします</p><p class="romaji">Onegaishimasu</p><p class="es">Por favor</p></div>
+  </div>
+
+  <h3 style="margin-top:20px;">🍣 En restaurantes</h3>
+  <div class="phrases">
+    <div class="phrase"><p class="jp">いただきます</p><p class="romaji">Itadakimasu</p><p class="es">Antes de comer ("recibiré esta comida")</p></div>
+    <div class="phrase"><p class="jp">ごちそうさまでした</p><p class="romaji">Gochisō-sama deshita</p><p class="es">Después de comer ("ha sido un festín")</p></div>
+    <div class="phrase"><p class="jp">これをください</p><p class="romaji">Kore o kudasai</p><p class="es">Esto, por favor (señalando)</p></div>
+    <div class="phrase"><p class="jp">お会計お願いします</p><p class="romaji">O-kaikei onegaishimasu</p><p class="es">La cuenta, por favor</p></div>
+    <div class="phrase"><p class="jp">予約があります</p><p class="romaji">Yoyaku ga arimasu</p><p class="es">Tengo reserva</p></div>
+    <div class="phrase"><p class="jp">美味しい！</p><p class="romaji">Oishii!</p><p class="es">¡Está delicioso!</p></div>
+    <div class="phrase"><p class="jp">英語のメニューはありますか？</p><p class="romaji">Eigo no menyū wa arimasu ka?</p><p class="es">¿Tienen menú en inglés?</p></div>
+    <div class="phrase"><p class="jp">アレルギーがあります</p><p class="romaji">Arerugī ga arimasu</p><p class="es">Tengo alergia</p></div>
+  </div>
+
+  <h3 style="margin-top:20px;">🚆 Transporte</h3>
+  <div class="phrases">
+    <div class="phrase"><p class="jp">〜駅はどこですか？</p><p class="romaji">~ eki wa doko desu ka?</p><p class="es">¿Dónde está la estación de ~?</p></div>
+    <div class="phrase"><p class="jp">タクシーを呼んでください</p><p class="romaji">Takushī o yonde kudasai</p><p class="es">Llame un taxi por favor</p></div>
+    <div class="phrase"><p class="jp">この住所までお願いします</p><p class="romaji">Kono jūsho made onegaishimasu</p><p class="es">A esta dirección, por favor (mostrando móvil)</p></div>
+  </div>
+
+  <h3 style="margin-top:20px;">🆘 Emergencias</h3>
+  <div class="phrases">
+    <div class="phrase"><p class="jp">助けて！</p><p class="romaji">Tasukete!</p><p class="es">¡Ayuda!</p></div>
+    <div class="phrase"><p class="jp">病院はどこですか？</p><p class="romaji">Byōin wa doko desu ka?</p><p class="es">¿Dónde está el hospital?</p></div>
+    <div class="phrase"><p class="jp">スペイン語を話せますか？</p><p class="romaji">Supein-go o hanasemasu ka?</p><p class="es">¿Habla español?</p></div>
+    <div class="phrase"><p class="jp">英語を話せますか？</p><p class="romaji">Eigo o hanasemasu ka?</p><p class="es">¿Habla inglés?</p></div>
+  </div>
+
+  <h3 style="margin-top:20px;">💕 Especial luna de miel</h3>
+  <div class="phrases">
+    <div class="phrase"><p class="jp">新婚旅行です</p><p class="romaji">Shinkon ryokō desu</p><p class="es">Estamos de luna de miel</p></div>
+    <div class="phrase"><p class="jp">写真をお願いできますか？</p><p class="romaji">Shashin o onegai dekimasu ka?</p><p class="es">¿Nos puede hacer una foto?</p></div>
+  </div>
+</section>
+
+<!-- ========== MOMENTOS ========== -->
+<section id="momentos" class="panel" role="tabpanel">
+  <div class="sh">
+    <span class="em">💎</span>
+    <h2>Momentos imborrables</h2>
+    <span class="accent">los highlights del viaje</span>
+  </div>
+
+  <div class="moments">
+    <div class="moment"><div class="em">🌅</div><div><h4>Shibuya Sky al atardecer</h4><p>El skyline más electrizante del mundo encendiéndose ante tus ojos.</p></div></div>
+    <div class="moment"><div class="em">🎎</div><div><h4>Paseo con kimono en Kyoto</h4><p>Vestidos de tradición caminando juntos por Higashiyama. La foto de la luna de miel.</p></div></div>
+    <div class="moment"><div class="em">🎋</div><div><h4>Bamboo Grove al amanecer</h4><p>Antes de que llegue nadie. Solo el sonido del viento entre el bambú.</p></div></div>
+    <div class="moment"><div class="em">🦌</div><div><h4>Ciervos de Nara</h4><p>Reverencias por una galleta. Imposible no reír.</p></div></div>
+    <div class="moment"><div class="em">🎢</div><div><h4>Nintendo World en USJ</h4><p>Volver a tener 10 años durante un día entero.</p></div></div>
+    <div class="moment"><div class="em">🌊</div><div><h4>Aguas turquesa de Zamami</h4><p>El "Kerama Blue" que cambia de color con cada nube.</p></div></div>
+    <div class="moment"><div class="em">🍣</div><div><h4>Clase de sushi en Tokyo</h4><p>Hacer sushi juntos. Puede que el más bonito del viaje.</p></div></div>
+    <div class="moment"><div class="em">⭐</div><div><h4>Cinco estrellas Michelin</h4><p>De Shimomura a Murakami Jiro: la cena perfecta.</p></div></div>
+    <div class="moment"><div class="em">💕</div><div><h4>Heart Rock en Kouri</h4><p>Una postal de pareja imposible de no enmarcar.</p></div></div>
+    <div class="moment"><div class="em">⛩️</div><div><h4>Fushimi Inari sin nadie</h4><p>10.000 torii rojos al amanecer. Mágico.</p></div></div>
+  </div>
+
+  <hr>
+
+  <div class="sh" style="margin-top:30px;">
+    <span class="em">🌸</span>
+    <h2 style="font-style:italic;">Buen viaje</h2>
+    <span class="sub">Que sea el principio de lo bonito</span>
+  </div>
+</section>
+
+</main>
+
+<!-- Install button -->
+<button id="installBtn" type="button">📲 Instalar como app</button>
+
+<footer>
+  <p>Hecho con <span class="heart">❤</span> para Irene &amp; Pelayo · Japón mayo-junio 2026</p>
+  <p style="font-size:.7rem;margin-top:6px;color:var(--ink-mute);">Editad cualquier dato directamente en el HTML · Funciona offline al instalar</p>
+</footer>
+
+<script>
+  // ========== TABS ==========
+  const tabs = document.querySelectorAll('nav.tabs button');
+  const panels = document.querySelectorAll('section.panel');
+  function activateTab(name){
+    tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === name));
+    panels.forEach(p => p.classList.toggle('active', p.id === name));
+    history.replaceState(null,'','#'+name);
+    window.scrollTo({top: document.querySelector('nav.tabs').offsetTop - 4, behavior:'smooth'});
+    // ensure tab visible in scroll
+    const activeBtn = document.querySelector('nav.tabs button.active');
+    if(activeBtn) activeBtn.scrollIntoView({inline:'center', block:'nearest', behavior:'smooth'});
+  }
+  tabs.forEach(t => t.addEventListener('click', () => activateTab(t.dataset.tab)));
+  if(location.hash){
+    const target = location.hash.substring(1);
+    if(document.getElementById(target)) activateTab(target);
+  }
+
+  // ========== COUNTDOWN ==========
+  const startDate = new Date('2026-05-18T12:30:00');
+  const endDate = new Date('2026-06-05T23:59:59');
+  function updateCountdown(){
+    const now = new Date();
+    const numEl = document.getElementById('cdNum');
+    const labelEl = document.getElementById('cdLabel');
+    if(now < startDate){
+      const diff = Math.ceil((startDate - now) / (1000*60*60*24));
+      numEl.innerHTML = diff + ' <small>días</small>';
+      labelEl.textContent = 'hasta el inicio';
+    } else if(now <= endDate){
+      const diff = Math.ceil((endDate - now) / (1000*60*60*24));
+      numEl.innerHTML = '✈️ <small>en viaje</small>';
+      labelEl.textContent = diff + ' días por delante';
+    } else {
+      numEl.textContent = '✓';
+      labelEl.textContent = 'viaje completado';
+    }
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 60*60*1000);
+
+  // ========== CHECKLIST PERSISTENCIA ==========
+  const STORAGE_KEY = 'lunademiel-reservas-v1';
+  function loadChecks(){
+    try{
+      const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+      document.querySelectorAll('.reslist li').forEach(li => {
+        const id = li.dataset.id;
+        const cb = li.querySelector('input[type="checkbox"]');
+        if(data[id]){
+          cb.checked = true;
+          li.classList.add('done');
+        }
+      });
+    }catch(e){console.warn('no storage', e);}
+  }
+  function saveChecks(){
+    const data = {};
+    document.querySelectorAll('.reslist li').forEach(li => {
+      const cb = li.querySelector('input[type="checkbox"]');
+      if(cb.checked) data[li.dataset.id] = true;
+    });
+    try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); }catch(e){}
+  }
+  document.querySelectorAll('.reslist input[type="checkbox"]').forEach(cb => {
+    cb.addEventListener('change', () => {
+      cb.closest('li').classList.toggle('done', cb.checked);
+      saveChecks();
+    });
+  });
+  loadChecks();
+
+  // Filter buttons
+  document.getElementById('markAllPending').addEventListener('click', () => {
+    document.querySelectorAll('.reslist li').forEach(li => {
+      li.style.display = li.classList.contains('done') ? 'none' : 'flex';
+    });
+  });
+  document.getElementById('markAllConfirmed').addEventListener('click', () => {
+    document.querySelectorAll('.reslist li').forEach(li => {
+      li.style.display = li.classList.contains('done') ? 'flex' : 'none';
+    });
+  });
+  document.getElementById('resetAll').addEventListener('click', () => {
+    document.querySelectorAll('.reslist li').forEach(li => {
+      li.style.display = 'flex';
+    });
+    if(confirm('¿Quitar todas las marcas?')){
+      document.querySelectorAll('.reslist input[type="checkbox"]').forEach(cb => {
+        cb.checked = false;
+        cb.closest('li').classList.remove('done');
+      });
+      saveChecks();
+    }
+  });
+
+  // ========== PWA INSTALL ==========
+  let deferredPrompt;
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    document.getElementById('installBtn').style.display = 'block';
+  });
+  document.getElementById('installBtn').addEventListener('click', async () => {
+    if(!deferredPrompt) return;
+    deferredPrompt.prompt();
+    await deferredPrompt.userChoice;
+    deferredPrompt = null;
+    document.getElementById('installBtn').style.display = 'none';
+  });
+
+  // Service worker (offline) — inline via Blob
+  if('serviceWorker' in navigator){
+    const swCode = `
+      const CACHE='lunademiel-v1';
+      self.addEventListener('install', e => self.skipWaiting());
+      self.addEventListener('activate', e => self.clients.claim());
+      self.addEventListener('fetch', e => {
+        if(e.request.method !== 'GET') return;
+        e.respondWith(
+          caches.open(CACHE).then(cache =>
+            cache.match(e.request).then(r => r || fetch(e.request).then(resp => {
+              try{ cache.put(e.request, resp.clone()); }catch(_){}
+              return resp;
+            }).catch(()=> cache.match('/')))
+          )
+        );
+      });`;
+    try{
+      const blob = new Blob([swCode], {type:'application/javascript'});
+      const url = URL.createObjectURL(blob);
+      navigator.serviceWorker.register(url).catch(()=>{});
+    }catch(e){}
+  }
+</script>
+
+</body>
+</html>
