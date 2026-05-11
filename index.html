@@ -314,6 +314,78 @@ details.discover .body{padding:0 16px 16px;border-top:1px dashed var(--line);mar
 .ev .actions a.eml{background:#f0e9f5;color:#5a4c8a;}
 .ev .actions a.eml::before{content:"📧 ";}
 
+
+
+/* ========== RESTAURANT ORDER GUIDE ========== */
+.order-guide{display:grid;gap:14px;margin:0 0 24px;}
+.order-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:16px 18px;box-shadow:var(--shadow);}
+.order-card .head{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px dashed var(--line);}
+.order-card .head .em{flex:0 0 auto;font-size:1.5rem;}
+.order-card .head h4{margin:0;flex:1;color:var(--ink);font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;font-style:italic;}
+.order-card .head h4 small{display:block;font-family:'Inter',sans-serif;font-style:normal;font-size:.7rem;color:var(--ink-mute);letter-spacing:.1em;text-transform:uppercase;margin-top:2px;}
+.order-card .head .day-pill{flex:0 0 auto;font-size:.68rem;padding:3px 9px;border-radius:999px;background:var(--sakura-soft);color:var(--rose);font-weight:600;letter-spacing:.04em;}
+.order-card .head .day-pill.tokyo{background:#fbe5ea;color:var(--tokyo);}
+.order-card .head .day-pill.kyoto{background:#e9efdf;color:var(--kyoto);}
+.order-card .head .day-pill.osaka{background:#fbe8d4;color:var(--osaka);}
+.order-card .head .day-pill.okinawa{background:#dceaf1;color:var(--okinawa);}
+.order-card .picks{display:flex;flex-direction:column;gap:6px;}
+.order-card .pick{display:flex;gap:8px;align-items:flex-start;font-size:.9rem;color:var(--ink-soft);}
+.order-card .pick::before{content:"▸";color:var(--gold);font-weight:bold;flex:0 0 auto;}
+.order-card .pick strong{color:var(--rose);}
+.order-card .tip-pick{margin-top:8px;padding:8px 10px;background:linear-gradient(135deg,#fff8e8,#fff4f0);border-radius:8px;font-size:.82rem;color:var(--ink-soft);font-style:italic;border-left:3px solid var(--gold-soft);}
+.order-card .tip-pick strong{color:var(--gold);font-style:normal;}
+
+
+/* ========== CHATBOT ========== */
+.chatbot-card{background:linear-gradient(135deg,#fff,#fef0e4);border:1px solid var(--line);border-radius:var(--r-lg);padding:16px 18px;margin:0 0 22px;box-shadow:var(--shadow);}
+.chatbot-card .ch-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.chatbot-card .ch-avatar{width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#ffd8de,#c97b8b);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex:0 0 auto;}
+.chatbot-card .ch-title{flex:1;}
+.chatbot-card .ch-title h3{margin:0;font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:var(--rose);}
+.chatbot-card .ch-title .sub{font-size:.72rem;color:var(--ink-mute);letter-spacing:.08em;}
+.chatbot-card .ch-window{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:10px;min-height:120px;max-height:340px;overflow-y:auto;-webkit-overflow-scrolling:touch;}
+.chatbot-card .ch-msg{margin:6px 0;padding:9px 12px;border-radius:12px;font-size:.88rem;line-height:1.5;max-width:88%;word-wrap:break-word;}
+.chatbot-card .ch-msg.user{background:var(--sakura-soft);color:var(--rose);margin-left:auto;border-bottom-right-radius:4px;}
+.chatbot-card .ch-msg.bot{background:#fff8e8;color:var(--ink);border-bottom-left-radius:4px;border:1px solid var(--line);}
+.chatbot-card .ch-msg.bot strong{color:var(--rose);}
+.chatbot-card .ch-msg.bot em{color:var(--gold);font-style:italic;}
+.chatbot-card .ch-msg .ask-claude{display:inline-block;margin-top:8px;background:linear-gradient(135deg,#cc7a5a,#a85a3a);color:white;padding:6px 12px;border-radius:999px;font-size:.78rem;font-weight:600;text-decoration:none;}
+.chatbot-card .ch-msg.bot ul{margin:4px 0 4px;padding-left:18px;}
+.chatbot-card .ch-msg.bot li{margin:2px 0;}
+.chatbot-card .ch-form{display:flex;gap:6px;margin-top:8px;}
+.chatbot-card .ch-form input{flex:1;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:10px 16px;font-size:.92rem;font-family:inherit;color:var(--ink);outline:none;}
+.chatbot-card .ch-form input:focus{border-color:var(--sakura-deep);}
+.chatbot-card .ch-form button{background:var(--rose);color:white;border:none;border-radius:50%;width:40px;height:40px;cursor:pointer;font-size:1rem;flex:0 0 40px;font-family:inherit;}
+.chatbot-card .ch-suggestions{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.chatbot-card .ch-suggestions .pill{background:var(--paper);border:1px solid var(--line);padding:6px 11px;border-radius:999px;font-size:.74rem;color:var(--rose);cursor:pointer;font-family:inherit;}
+.chatbot-card .ch-suggestions .pill:hover,.chatbot-card .ch-suggestions .pill:active{background:var(--sakura-soft);}
+.chatbot-card .ch-typing{display:inline-block;}
+.chatbot-card .ch-typing span{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--gold);margin:0 1px;animation:bounce 1s infinite;}
+.chatbot-card .ch-typing span:nth-child(2){animation-delay:.15s;}
+.chatbot-card .ch-typing span:nth-child(3){animation-delay:.3s;}
+@keyframes bounce{0%,80%,100%{transform:scale(.6);opacity:.4;}40%{transform:scale(1);opacity:1;}}
+
+/* ========== STORY COLLAPSIBLE ========== */
+details.story-collapse{margin:14px 0;background:linear-gradient(135deg,#fff8f4,#fef4e8);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:var(--r);overflow:hidden;}
+details.story-collapse[open]{box-shadow:var(--shadow);}
+details.story-collapse > summary{list-style:none;cursor:pointer;padding:14px 18px;display:flex;align-items:center;gap:10px;user-select:none;}
+details.story-collapse > summary::-webkit-details-marker{display:none;}
+details.story-collapse > summary .story-icon{flex:0 0 auto;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;}
+details.story-collapse > summary h5{margin:0;flex:1;font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:var(--rose);font-weight:600;line-height:1.2;}
+details.story-collapse > summary .story-chev{flex:0 0 auto;color:var(--gold);transition:transform .25s;font-size:.9rem;}
+details.story-collapse[open] > summary .story-chev{transform:rotate(180deg);}
+details.story-collapse .story-body{padding:0 18px 16px;border-top:1px dashed var(--line);}
+details.story-collapse .story-body p{margin:10px 0 0;font-size:.94rem;color:var(--ink);line-height:1.65;}
+details.story-collapse .story-body p em{color:var(--gold);font-style:italic;}
+details.story-collapse .story-body p strong{color:var(--rose);font-weight:600;}
+details.story-collapse .story-body .funfact{margin:10px 0 0;}
+
+/* On mobile, summary needs more space for long titles */
+@media (max-width:480px){
+  details.story-collapse > summary{padding:12px 14px;}
+  details.story-collapse > summary h5{font-size:1.05rem;}
+}
+
 @media print{nav.tabs,#installBtn,.reslist input,#installBanner,#splash{display:none!important;}section.panel{display:block!important;}body{background:white;}}
 
 /* ========== iOS PWA SPLASH SCREEN ========== */
@@ -438,7 +510,6 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
     <button data-tab="okinawa" role="tab"><span class="em">🌊</span>Okinawa</button>
     <button data-tab="gastronomia" role="tab"><span class="em">🍣</span>Gastronomía</button>
     <button data-tab="tiempo" role="tab"><span class="em">☀️</span>El tiempo</button>
-    <button data-tab="reservas" role="tab"><span class="em">📌</span>Reservas</button>
     <button data-tab="practico" role="tab"><span class="em">🧭</span>Práctico</button>
     <button data-tab="frases" role="tab"><span class="em">🗣️</span>Frases</button>
     <button data-tab="momentos" role="tab"><span class="em">💎</span>Momentos</button>
@@ -446,6 +517,31 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
 </nav>
 <main>
 <section id="overview" class="panel active" role="tabpanel">
+  <div class="chatbot-card">
+    <div class="ch-header">
+      <div class="ch-avatar">🌸</div>
+      <div class="ch-title">
+        <h3>Tu asistente del viaje</h3>
+        <div class="sub">Pregúntame lo que quieras sobre Japón</div>
+      </div>
+    </div>
+    <div class="ch-window" id="chWindow">
+      <div class="ch-msg bot">¡Hola! Soy vuestro asistente de viaje 🌸 Puedo ayudaros con horarios, restaurantes, qué pedir, fotos perfectas, tips de etiqueta y más. ¿Qué queréis saber?</div>
+    </div>
+    <div class="ch-suggestions" id="chSuggestions">
+      <button class="pill" data-q="¿Qué hago el día 1?">¿Qué hago el día 1?</button>
+      <button class="pill" data-q="¿Dónde ceno este viernes?">Cenas confirmadas</button>
+      <button class="pill" data-q="¿Cómo llego a Kyoto?">Transporte</button>
+      <button class="pill" data-q="¿Qué tiempo hará?">Tiempo</button>
+      <button class="pill" data-q="¿Cómo se dice 'gracias' en japonés?">Frases</button>
+      <button class="pill" data-q="Tips para Fushimi Inari">Tips Fushimi</button>
+    </div>
+    <form class="ch-form" id="chForm">
+      <input type="text" id="chInput" placeholder="Pregunta algo sobre el viaje…" autocomplete="off">
+      <button type="submit" aria-label="Enviar">➤</button>
+    </form>
+  </div>
+
   <div class="sh"><span class="em">✈️</span><h2>Inicio</h2><span class="accent">17 días · 4 destinos</span><span class="sub">Cultura · Gastronomía · Romanticismo · Naturaleza</span></div>
   <div class="dest-hero" data-wiki="Mount_Fuji" data-emoji="🗻">
     <img loading="lazy" alt="Monte Fuji">
@@ -457,12 +553,10 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
     <div class="stat"><div class="n">5</div><div class="l">⭐ Michelin</div></div>
     <div class="stat"><div class="n">∞</div><div class="l">Recuerdos</div></div>
   </div>
-  <div class="story">
-    <div class="label">🌸 Bienvenidos</div>
-    <h4>Una luna de miel hecha a mano</h4>
+  <details class="story-collapse"><summary><span class="story-icon">🌸 Bienvenidos</span><h5>Una luna de miel hecha a mano</h5><span class="story-chev">▾</span></summary><div class="story-body">
     <p>Habéis elegido el viaje perfecto: Japón en mayo es <strong>tsuyu-iri</strong>, justo antes de que llegue la temporada de lluvias. Las hortensias <em>(ajisai)</em> empiezan a florecer en azul y violeta, los arrozales se llenan de agua reflejando el cielo, y los <em>matsuri</em> de primavera todavía animan algunos templos.</p>
     <p>El itinerario está diseñado como una <strong>partitura emocional</strong>: empezáis con el shock cultural y la energía vibrante de Tokyo, descendéis al ritmo pausado y profundo de Kyoto, sois felices como niños en Osaka, y terminamos en el azul infinito de Okinawa. Es una progresión muy japonesa: del bullicio al silencio, de lo moderno a lo eterno.</p>
-  </div>
+  </div></details>
   <div class="card"><h3>📅 Calendario</h3>
     <div style="font-size:.92rem;color:var(--ink-soft);">
       <p style="margin:0 0 6px;"><strong style="color:var(--tokyo);">19–23 mayo</strong> · Tokyo (4 noches) · The Prince Park Tower</p>
@@ -493,26 +587,43 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
     <img loading="lazy" alt="Tokyo skyline">
     <div class="overlay"><div class="caption"><div class="kanji-deco">東京 · TŌKYŌ</div><div class="name">La capital del este</div></div></div>
   </div>
-  <div class="story">
-    <div class="label">📖 La historia de Tokyo</div>
-    <h4>De pueblo de pescadores a la mayor metrópolis del mundo</h4>
+  <details class="story-collapse"><summary><span class="story-icon">📖 La historia de Tokyo</span><h5>De pueblo de pescadores a la mayor metrópolis del mundo</h5><span class="story-chev">▾</span></summary><div class="story-body">
     <p>Hasta 1603 era un humilde pueblo llamado <strong>Edo</strong>, "puerta de la ensenada". Cuando el shogun Tokugawa Ieyasu lo eligió como capital militar, en pocas décadas se convirtió en la <em>ciudad más poblada del planeta</em> — un millón de habitantes mientras Madrid apenas tenía 150.000.</p>
     <p>En 1868 cambió de nombre a <strong>Tokyo</strong> ("capital del este") cuando el emperador Meiji se mudó desde Kyoto. Sobrevivió al gran terremoto de 1923, fue arrasada por los bombardeos de 1945, y volvió a renacer. Hoy contiene 13,5 millones de personas en una metrópolis de 37 millones — la mayor aglomeración urbana de la historia humana.</p>
     <p>Lo más sorprendente: pese al tamaño, Tokyo funciona con un orden y una calma que asombran. <em>Vais a un lugar único</em>.</p>
-  </div>
+  </div></details>
   <div class="hotel-block"><div class="icon">🏨</div><div class="info"><div class="label">Hotel · 4 noches</div><h4>The Prince Park Tower Tokyo</h4><p>Junto a Shiba Park y Tokyo Tower. 33 plantas, 12 restaurantes, onsen natural a 1.600 m de profundidad y vistas icónicas a la torre.</p><div class="acts"><a href="https://maps.google.com/?q=The+Prince+Park+Tower+Tokyo" target="_blank">📍 Mapa</a><a href="https://www.princehotels.com/parktower/" target="_blank">🌐 Web</a></div></div></div>
 
   <details class="day" open><summary><div class="num">1</div><div class="title"><div class="day-tag">Mar 19 may · Día 1</div><h3>Llegada · Primer contacto</h3></div><div class="chev">▾</div></summary>
     <div class="body">
       <div class="day-overview"><strong>Objetivo:</strong> transición suave + primera inmersión urbana. Salida de Madrid el 18 may a las 12:30 (IB 0281) — llegada a Haneda mañana del 19 (≈8:30 hora local). Evitad agendar nada exigente — el jet lag pega fuerte.</div>
       <div class="ev-img tokyo-fb" data-wiki="Tokyo_Tower" data-emoji="🗼"><img loading="lazy" alt="Tokyo Tower"></div>
-      <div class="story"><div class="label">🗼 ¿Sabíais que…?</div><h4>Tokyo Tower es 13 metros más alta que la Torre Eiffel</h4><p>Construida en <strong>1958</strong>, fue una copia descarada — pero superada — de la Eiffel. La pintaron de blanco y rojo no por estética sino por <strong>obligación legal de aviación</strong> (las autoridades japonesas exigían contraste alto contra el cielo gris). Su acero proviene en parte de <em>tanques estadounidenses reciclados</em> de la Guerra de Corea, vendidos al peso a Japón porque ya no se usaban.</p><p>Cada noche, ilumina 333 metros con un ritual que cambia según la estación. En primavera (mayo) veréis la <strong>"Landmark Light" naranja-cálido</strong>; en invierno se vuelve plateada-azul; los días señalados se pinta de rosa por el cáncer de mama, dorado por los Juegos Olímpicos, roja por San Valentín.</p><p>Curiosidad: la torre está <em>licenciada para emitir señal de radio y TV digital</em>, pero apenas se usa desde que se inauguró Tokyo Skytree en 2012. Sigue funcionando como antena de respaldo para emergencias.</p><div class="funfact"><span class="em">📺</span><span><strong>Cultura pop:</strong> Tokyo Tower aparece en miles de animes y películas — desde "Sailor Moon" hasta el clip de "Rain on me" de Lady Gaga & Ariana Grande, donde Lady Gaga sale en su mirador.</span></div></div>
+      <details class="story-collapse"><summary><span class="story-icon">🗼 ¿Sabíais que…?</span><h5>Tokyo Tower es 13 metros más alta que la Torre Eiffel</h5><span class="story-chev">▾</span></summary><div class="story-body"><p>Construida en <strong>1958</strong>, fue una copia descarada — pero superada — de la Eiffel. La pintaron de blanco y rojo no por estética sino por <strong>obligación legal de aviación</strong> (las autoridades japonesas exigían contraste alto contra el cielo gris). Su acero proviene en parte de <em>tanques estadounidenses reciclados</em> de la Guerra de Corea, vendidos al peso a Japón porque ya no se usaban.</p><p>Cada noche, ilumina 333 metros con un ritual que cambia según la estación. En primavera (mayo) veréis la <strong>"Landmark Light" naranja-cálido</strong>; en invierno se vuelve plateada-azul; los días señalados se pinta de rosa por el cáncer de mama, dorado por los Juegos Olímpicos, roja por San Valentín.</p><p>Curiosidad: la torre está <em>licenciada para emitir señal de radio y TV digital</em>, pero apenas se usa desde que se inauguró Tokyo Skytree en 2012. Sigue funcionando como antena de respaldo para emergencias.</p><div class="funfact"><span class="em">📺</span><span><strong>Cultura pop:</strong> Tokyo Tower aparece en miles de animes y películas — desde "Sailor Moon" hasta el clip de "Rain on me" de Lady Gaga & Ariana Grande, donde Lady Gaga sale en su mirador.</span></div></div></details>
       <div class="timeline">
         <div class="ev move"><div class="when">~08:30</div><h4>Llegada Haneda (HND) → hotel</h4><p class="desc">Vuelo IB 0281 desde Madrid. Tras inmigración, taxi al hotel (~25 min, ¥6.000-7.000) o Limousine Bus (¥1.230 directo a Shiba Park).</p><div class="tip"><strong>Anti-jet lag:</strong> intentad dormir las primeras 8h del vuelo. Al llegar, NO durmáis siesta hasta la noche, salid a la luz del sol.</div></div>
-        <div class="ev"><div class="when">17:00</div><h4>Paseo por Shiba Park · Zojo-ji</h4><p class="desc">El templo Zojo-ji (1393) era el santuario funerario de los shogunes Tokugawa. Su silueta de madera con Tokyo Tower al fondo es la foto más icónica del "Japón de dos épocas".</p><div class="actions"><a href="https://maps.google.com/?q=Zojoji+Temple" target="_blank">📍 Maps</a></div></div>
-        <div class="ev"><div class="when">18:00 · atardecer</div><h4>Tokyo Tower 🗼</h4><p class="desc">Subid al Top Deck (250 m) al atardecer. Vistas espectaculares cuando se enciende la ciudad.</p><div class="meta"><span>⏱️ ~1h</span><span>💴 ¥3.000</span></div><div class="actions"><a href="https://maps.google.com/?q=Tokyo+Tower" target="_blank">📍 Maps</a><a href="https://www.tokyotower.co.jp/en/" target="_blank">🎫 Tickets</a></div></div>
-        <div class="ev food"><div class="when">20:00 · Cena</div><h4>Shabusen <span class="badge">shabu-shabu</span></h4><p class="desc">Shabu-shabu y sukiyaki en Ginza. Buena bienvenida culinaria sin agobiar el primer día.</p><div class="actions"><a href="https://maps.google.com/?q=Shabusen+Ginza+Tokyo" target="_blank">📍 Maps</a></div><div class="tip"><strong>Cómo pedir:</strong> el camarero os trae caldo y vais hirviendo carne y verdura. Pedid el wagyu si está disponible.</div></div>
-        <div class="ev"><div class="when">22:00</div><h4>Paseo nocturno por Ginza</h4><p class="desc">El barrio fue construido sobre las cenizas de un gran incendio en 1872 — los británicos diseñaron sus avenidas amplias para evitar otro desastre. Hoy es la calle comercial más cara del mundo: el m² supera los 100.000€.</p></div>
+        <div class="ev"><div class="when">10:30 · check-in temprano</div><h4>Hotel + descanso breve</h4><p class="desc">Si la habitación no está lista, dejad equipaje en recepción. Ducha rápida si os la habilitan.</p></div>
+        <div class="ev"><div class="when">11:30</div><h4>Shiba Park · Zojo-ji ⛩️</h4><p class="desc">Justo al lado del hotel. El templo Zojo-ji (1393) era el santuario funerario de los shogunes Tokugawa. Su silueta de madera con Tokyo Tower al fondo es <strong>la</strong> foto icónica del "Japón de dos épocas". Tranquilo a media mañana.</p><div class="actions"><a href="https://maps.google.com/?q=Zojoji+Temple" target="_blank">📍 Maps</a></div></div>
+        <div class="ev"><div class="when">12:30</div><h4>Tokyo Tower 🗼</h4><p class="desc">Subid al Top Deck (250 m) con cielo claro de mañana. Más rápido (sin cola del atardecer). Vistas con Monte Fuji al fondo si está despejado.</p><div class="meta"><span>⏱️ ~1h</span><span>💴 ¥3.000</span></div><div class="actions"><a href="https://maps.google.com/?q=Tokyo+Tower" target="_blank">📍 Maps</a><a href="https://www.tokyotower.co.jp/en/" target="_blank">🎫 Tickets</a></div><div class="tip"><strong>Tip foto:</strong> a las 12:30 la luz es ideal para fotos con Fuji al fondo (visibilidad típica 30-40% en mayo).</div></div>
+        <div class="ev food"><div class="when">13:30 · Almuerzo</div><h4>Almuerzo cerca de Tokyo Tower</h4><p class="desc">Opciones a 5-10 min andando:</p>
+<ul style="margin:6px 0;padding-left:18px;font-size:.9rem;color:var(--ink-soft);">
+<li><strong>Café la Tour</strong> (dentro del Footown de Tokyo Tower): vistas + comida ligera japonesa-occidental</li>
+<li><strong>T'sukimi-zaka</strong> (Shiba Park): bento bento o curry casero</li>
+<li><strong>Tofuya Ukai</strong> (kaiseki tofu legendario en jardín, reserva recomendada): ~¥8.000</li>
+<li><strong>Tonkatsu Wako</strong> (Roppongi Hills, 15 min en metro): casual y bueno</li>
+</ul></div>
+        <div class="ev move"><div class="when">15:30</div><h4>Metro a Ginza</h4><p class="desc">Línea Mita o Hibiya · ~10 min. Salid en Ginza Station (estación bajo el Wako).</p></div>
+        <div class="ev"><div class="when">15:45 · Tarde</div><h4>Ginza: cafés y tiendas ✨</h4><p class="desc">El barrio comercial más sofisticado del mundo. Calle Chuo-dori es peatonal los fines de semana.</p>
+<ul style="margin:6px 0;padding-left:18px;font-size:.9rem;color:var(--ink-soft);">
+<li><strong>Itoya</strong> (12 plantas de papelería + cafetería): la mejor tienda de papelería de Japón</li>
+<li><strong>Ginza Six</strong> (centro comercial premium): edificio de Yoshio Taniguchi, terraza con jardín</li>
+<li><strong>Tokyu Plaza Ginza</strong> (KIRIKO LOUNGE en la 11ª): vistas + diseño edo-kiriko</li>
+<li><strong>Muji Flagship</strong> Yurakucho (gigantesco)</li>
+<li><strong>Pierre Hermé</strong> macarons / <strong>Henri Charpentier</strong> mille-feuille</li>
+<li><strong>Mitsukoshi</strong> y <strong>Matsuya</strong> (depachika subterráneo de delicatessen)</li>
+</ul>
+<div class="actions"><a href="https://maps.google.com/?q=Ginza+Tokyo" target="_blank">📍 Maps</a></div></div>
+        <div class="ev food"><div class="when">19:30 · Cena</div><h4>Shabusen Ginza <span class="badge">shabu-shabu</span></h4><p class="desc">Shabu-shabu y sukiyaki dentro de Ginza Core (B1-B2). Bienvenida culinaria sin agobiar el primer día.</p><div class="actions"><a href="https://maps.google.com/?q=Shabusen+Ginza+Tokyo" target="_blank">📍 Maps</a></div><div class="tip"><strong>Cómo pedir:</strong> el camarero os trae caldo y vais hirviendo carne y verdura. Pedid el wagyu si está disponible.</div></div>
+        <div class="ev"><div class="when">21:00</div><h4>Paseo nocturno por Ginza iluminado</h4><p class="desc">Ginza nocturna es otra cosa: los grandes almacenes con sus fachadas iluminadas, escaparates de lujo, el edificio Hermès cuadriculado iluminado por dentro. Vuelta al hotel en metro (línea Mita, ~10 min).</p></div>
       </div>
 
       <details class="discover"><summary><div class="em">📸</div><div class="label"><h4>Más para descubrir + spots Instagram</h4><div class="sub">Si os queda energía o tiempo extra</div></div><div class="chev">▾</div></summary>
@@ -532,15 +643,45 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
     <div class="body">
       <div class="day-overview">Día equilibrado entre naturaleza espiritual, cultura juvenil y la mejor vista de Tokyo.</div>
       <div class="ev-img tokyo-fb" data-wiki="Meiji_Shrine" data-emoji="⛩️"><img loading="lazy" alt="Meiji Jingu"></div>
-      <div class="story"><div class="label">🌳 La historia</div><h4>Meiji Jingu: un bosque plantado a mano</h4><p>Cuando murió el emperador Meiji en <strong>1912</strong>, los ciudadanos donaron <strong>100.000 árboles de 365 especies distintas</strong> de todas las regiones de Japón para crear este bosque urbano de 70 hectáreas. Los voluntarios eran 110.000 jóvenes que plantaron sin paga durante los años siguientes. La idea: que en 100 años (es decir, ahora) el bosque pareciera virgen, sin intervención humana. <strong>Cumplido</strong>.</p><p>El emperador Meiji (1852-1912) lideró la transformación de Japón de feudalismo a potencia industrial en una sola generación. Cuando subió al trono, los samuráis aún tenían dos espadas en la cintura; cuando murió, Japón había derrotado a Rusia y tenía la cuarta marina del mundo. Su santuario simboliza esa transformación.</p><p>El edificio actual es de 1958 — el original fue arrasado por los bombardeos de 1945. Lo reconstruyeron con donaciones populares: cualquiera podía contribuir <em>una teja</em>. Hay <strong>120.000 nombres</strong> grabados en placas de bronce dentro del santuario.</p><div class="funfact"><span class="em">🍶</span><span>Los <strong>barriles de sake</strong> a la entrada son ofrendas de las casas productoras del país. Enfrente, barriles de vino de Borgoña — ofrenda francesa de 1933, porque Meiji era amante del vino francés y solía cenar con sopa, pescado, carne, ensalada y queso (escándalo en su corte).</span></div><div class="funfact"><span class="em">💍</span><span><strong>Detalle luna de miel:</strong> es uno de los lugares más populares para bodas tradicionales sintoístas en Japón. Si tenéis suerte, veréis pasar una procesión nupcial: novia con kimono blanco, novio con haori negro, sacerdotes con vestiduras blancas y púrpuras.</span></div></div>
+      <details class="story-collapse"><summary><span class="story-icon">🌳 La historia</span><h5>Meiji Jingu: un bosque plantado a mano</h5><span class="story-chev">▾</span></summary><div class="story-body"><p>Cuando murió el emperador Meiji en <strong>1912</strong>, los ciudadanos donaron <strong>100.000 árboles de 365 especies distintas</strong> de todas las regiones de Japón para crear este bosque urbano de 70 hectáreas. Los voluntarios eran 110.000 jóvenes que plantaron sin paga durante los años siguientes. La idea: que en 100 años (es decir, ahora) el bosque pareciera virgen, sin intervención humana. <strong>Cumplido</strong>.</p><p>El emperador Meiji (1852-1912) lideró la transformación de Japón de feudalismo a potencia industrial en una sola generación. Cuando subió al trono, los samuráis aún tenían dos espadas en la cintura; cuando murió, Japón había derrotado a Rusia y tenía la cuarta marina del mundo. Su santuario simboliza esa transformación.</p><p>El edificio actual es de 1958 — el original fue arrasado por los bombardeos de 1945. Lo reconstruyeron con donaciones populares: cualquiera podía contribuir <em>una teja</em>. Hay <strong>120.000 nombres</strong> grabados en placas de bronce dentro del santuario.</p><div class="funfact"><span class="em">🍶</span><span>Los <strong>barriles de sake</strong> a la entrada son ofrendas de las casas productoras del país. Enfrente, barriles de vino de Borgoña — ofrenda francesa de 1933, porque Meiji era amante del vino francés y solía cenar con sopa, pescado, carne, ensalada y queso (escándalo en su corte).</span></div><div class="funfact"><span class="em">💍</span><span><strong>Detalle luna de miel:</strong> es uno de los lugares más populares para bodas tradicionales sintoístas en Japón. Si tenéis suerte, veréis pasar una procesión nupcial: novia con kimono blanco, novio con haori negro, sacerdotes con vestiduras blancas y púrpuras.</span></div></div></details>
       <div class="ev-img tokyo-fb" data-wiki="Shibuya_Crossing" data-emoji="🚦"><img loading="lazy" alt="Shibuya Crossing"></div>
-      <div class="story"><div class="label">🚦 ¿Sabíais que…?</div><h4>El cruce de Shibuya: 3.000 personas a la vez</h4><p>Cuando el semáforo cambia, hasta <strong>3.000 personas cruzan simultáneamente</strong> desde 5 direcciones. Y casi nunca hay colisiones. Es el cruce peatonal más concurrido del mundo: <strong>2,5 millones de personas al día</strong>, mientras la Gran Vía de Madrid mueve 200.000.</p><p>Para que funcione, todos los semáforos para coches en las 5 direcciones se ponen rojos a la vez (sistema "scramble crossing" o "diagonal crossing"). Solo hay 47 segundos para cruzar antes de que vuelvan los coches. La precisión social japonesa es la única razón por la que esto no es el caos.</p><p>Cerca, frente a la estación, está la estatua de <strong>Hachiko</strong> — el perro Akita que durante <strong>9 años, 9 meses y 15 días</strong> acudió cada día a la estación a esperar a su dueño ya fallecido (un profesor universitario que murió de hemorragia cerebral en 1925). Hachiko murió en 1935 esperando. Su historia se hizo viral en los periódicos de los años 30 y se convirtió en símbolo de fidelidad nacional.</p><div class="funfact"><span class="em">🎬</span><span>El cruce ha aparecido en <em>Lost in Translation</em>, <em>Resident Evil: Afterlife</em>, el clip de Avicii "Wake Me Up", y miles de animes. Hay tres miradores oficiales: el Starbucks Tsutaya (gratis), Mag's Park (¥600), y Shibuya Sky (¥2.500, donde iréis).</span></div><div class="funfact"><span class="em">🐕</span><span><strong>Curiosidad:</strong> En el aniversario de la muerte de Hachiko (8 marzo) se celebra una ceremonia anual en su estatua. Suele haber un perro Akita real disfrazado del original recibiendo flores.</span></div></div>
+      <details class="story-collapse"><summary><span class="story-icon">🚦 ¿Sabíais que…?</span><h5>El cruce de Shibuya: 3.000 personas a la vez</h5><span class="story-chev">▾</span></summary><div class="story-body"><p>Cuando el semáforo cambia, hasta <strong>3.000 personas cruzan simultáneamente</strong> desde 5 direcciones. Y casi nunca hay colisiones. Es el cruce peatonal más concurrido del mundo: <strong>2,5 millones de personas al día</strong>, mientras la Gran Vía de Madrid mueve 200.000.</p><p>Para que funcione, todos los semáforos para coches en las 5 direcciones se ponen rojos a la vez (sistema "scramble crossing" o "diagonal crossing"). Solo hay 47 segundos para cruzar antes de que vuelvan los coches. La precisión social japonesa es la única razón por la que esto no es el caos.</p><p>Cerca, frente a la estación, está la estatua de <strong>Hachiko</strong> — el perro Akita que durante <strong>9 años, 9 meses y 15 días</strong> acudió cada día a la estación a esperar a su dueño ya fallecido (un profesor universitario que murió de hemorragia cerebral en 1925). Hachiko murió en 1935 esperando. Su historia se hizo viral en los periódicos de los años 30 y se convirtió en símbolo de fidelidad nacional.</p><div class="funfact"><span class="em">🎬</span><span>El cruce ha aparecido en <em>Lost in Translation</em>, <em>Resident Evil: Afterlife</em>, el clip de Avicii "Wake Me Up", y miles de animes. Hay tres miradores oficiales: el Starbucks Tsutaya (gratis), Mag's Park (¥600), y Shibuya Sky (¥2.500, donde iréis).</span></div><div class="funfact"><span class="em">🐕</span><span><strong>Curiosidad:</strong> En el aniversario de la muerte de Hachiko (8 marzo) se celebra una ceremonia anual en su estatua. Suele haber un perro Akita real disfrazado del original recibiendo flores.</span></div></div></details>
       <div class="timeline">
-        <div class="ev"><div class="when">09:30</div><h4>Meiji Jingu ⛩️</h4><p class="desc">Templo sintoísta más importante de Tokyo, en pleno bosque urbano. Llegad temprano para evitar grupos.</p><div class="actions"><a href="https://maps.google.com/?q=Meiji+Jingu+Shrine" target="_blank">📍 Maps</a></div><div class="tip"><strong>Ritual del temizuya:</strong> enjuagad mano izquierda → derecha → boca → mango del cazo.</div></div>
-        <div class="ev"><div class="when">11:00</div><h4>Yoyogi Park · Harajuku</h4><p class="desc">Yoyogi fue villa olímpica en 1964. Adyacente, Takeshita Street es la cuna del kawaii pop japonés desde los 70.</p></div>
-        <div class="ev"><div class="when">13:00</div><h4>Omotesando</h4><p class="desc">"Los Campos Elíseos de Tokyo": arquitectura de Tadao Ando, Toyo Ito, Kengo Kuma. Un museo de arquitectura contemporánea.</p></div>
-        <div class="ev"><div class="when">15:00</div><h4>Shibuya y el Cruce</h4><p class="desc">El cruce más famoso del mundo. Vistas desde el Starbucks Tsutaya o Magnet by Shibuya 109.</p><div class="actions"><a href="https://maps.google.com/?q=Shibuya+Crossing" target="_blank">📍 Maps</a></div></div>
-        <div class="ev"><div class="when">17:30 · atardecer</div><h4>Shibuya Sky <span class="badge pending">por reservar</span></h4><p class="desc">Mirador 360° en el techo. Reservad slot al atardecer (1h antes del sunset). Imprescindible.</p><div class="meta"><span>⏱️ 1h30</span><span>💴 ¥2.500</span></div><div class="actions"><a href="https://maps.google.com/?q=Shibuya+Sky" target="_blank">📍 Maps</a><a href="https://www.shibuya-scramble-square.com/sky/" target="_blank" class="book">🎫 Reservar</a></div></div>
+        <div class="ev"><div class="when">09:00</div><h4>Meiji Jingu ⛩️</h4><p class="desc">Templo sintoísta más importante de Tokyo, en pleno bosque urbano. Llegad temprano para evitar grupos.</p><div class="actions"><a href="https://maps.google.com/?q=Meiji+Jingu+Shrine" target="_blank">📍 Maps</a></div><div class="tip"><strong>Ritual del temizuya:</strong> enjuagad mano izquierda → derecha → boca → mango del cazo.</div></div>
+        <div class="ev"><div class="when">10:30</div><h4>Yoyogi Park · Harajuku</h4><p class="desc">Yoyogi fue villa olímpica en 1964. Adyacente, Takeshita Street es la cuna del kawaii pop japonés desde los 70.</p></div>
+        <div class="ev"><div class="when">12:00</div><h4>Omotesando</h4><p class="desc">"Los Campos Elíseos de Tokyo": arquitectura de Tadao Ando, Toyo Ito, Kengo Kuma. Un museo de arquitectura contemporánea.</p></div>
+        <div class="ev food"><div class="when">13:00 · Almuerzo</div><h4>Almuerzo en Harajuku / Omotesando</h4><p class="desc">Opciones cercanas antes de Shibuya Sky:</p>
+<ul style="margin:6px 0;padding-left:18px;font-size:.9rem;color:var(--ink-soft);">
+<li><strong>Maisen Aoyama</strong> · tonkatsu legendario en machiya tradicional</li>
+<li><strong>Afuri Harajuku</strong> · ramen yuzu-shio ligero, ideal antes del mirador</li>
+<li><strong>Sakura-tei</strong> · okonomiyaki que cocináis vosotros (cerca de Takeshita)</li>
+<li><strong>Café Reissue</strong> · latte art famoso con caras</li>
+</ul></div>
+        <div class="ev move"><div class="when">14:00</div><h4>Metro a Shibuya (2 min)</h4><p class="desc">Línea Ginza · Omotesando → Shibuya · ¥170. Salid por la salida B6 (Hikarie/Scramble Square).</p></div>
+        <div class="ev"><div class="when">14:20 · Mirador 360°</div><h4>Shibuya Sky <span class="badge confirmed">confirmado</span></h4><p class="desc">Mirador 360° en el techo de Shibuya Scramble Square (47ª planta + tejado abierto a 230m). Vistas espectaculares de día con cielo claro — posible Monte Fuji al SW.</p>
+<div class="resv-info"><span class="resv-title">✓ Reserva confirmada</span><div class="resv-grid">
+<span class="k">Fecha</span><span class="v">Miércoles 20 may · 14:20</span>
+<span class="k">Personas</span><span class="v">2</span>
+<span class="k">Duración</span><span class="v">~1h30 (acceso libre dentro del slot)</span>
+<span class="k">Precio</span><span class="v">¥2.500/persona</span>
+</div></div>
+<div class="actions"><a href="https://maps.google.com/?q=Shibuya+Sky" target="_blank">📍 Maps</a></div>
+<div class="tip"><strong>Sky Edge:</strong> haced cola para la esquina abierta sin barandilla — la foto icónica. Llevad ropa ligera con bolsillos cerrados (viento) y móvil con correa OBLIGATORIO (lo confiscan si no).</div></div>
+        <div class="ev"><div class="when">16:00</div><h4>Cruce de Shibuya 🚦</h4><p class="desc">Bajando del Sky estáis a 30 segundos del cruce más famoso del mundo. Hasta 3.000 personas cruzando a la vez.</p><div class="actions"><a href="https://maps.google.com/?q=Shibuya+Crossing" target="_blank">📍 Maps</a></div>
+<div class="tip"><strong>Foto:</strong> desde Starbucks Tsutaya (1ª planta — pedid bebida) o Mag's Park (3ª planta, ¥600). Pasad a saludar a <em>Hachiko</em> a 50m: la estatua del perro Akita más famoso del mundo.</div></div>
+        <div class="ev"><div class="when">16:30 · Tarde compras</div><h4>Shibuya shopping ✨</h4><p class="desc">Tarde libre para tiendas y cafés. Recomendaciones (todas en radio 5-10 min andando):</p>
+<ul style="margin:6px 0;padding-left:18px;font-size:.9rem;color:var(--ink-soft);">
+<li><strong>Shibuya Parco</strong> · Nintendo Tokyo + Pokémon Center + Capcom Store, además de moda</li>
+<li><strong>Tokyu Hands Shibuya</strong> · la mejor tienda "todo en uno" de Japón (papelería, gadgets, cosmética, manualidades)</li>
+<li><strong>Shibuya 109</strong> · 10 plantas de moda femenina trendy, icono de los 2000</li>
+<li><strong>Mega Don Quijote Shibuya</strong> · snacks raros, electrónica, disfraces · 24h</li>
+<li><strong>Loft Shibuya</strong> · papelería de diseño y regalos kawaii</li>
+<li><strong>Mandarake Complex</strong> · manga vintage, figuras anime (sótano) — solo si os gusta</li>
+<li><strong>Center Gai</strong> · calle peatonal con crepes, takoyaki, tiendas pop</li>
+<li><strong>Shibuya Stream</strong> · centro comercial moderno junto al río Shibuya</li>
+</ul>
+<div class="tip"><strong>Café break sugerido:</strong> <em>% Arabica Shibuya</em> (especialidad), <em>Streamer Coffee</em> (latte art), o <em>About Life Coffee Brewers</em> (en una ventana mini).</div></div>
+        <div class="ev"><div class="when">18:30</div><h4>Andando a Sakuragaoka</h4><p class="desc">5-7 min andando hacia el barrio elegante encima de la estación. Calle silenciosa con cafés boutique. El restaurante Hakushu queda al lado del Tokyu Cerulean Tower.</p></div>
         <div class="ev food"><div class="when">19:30 · Cena</div><h4>Hakushu Teppanyaki <span class="badge confirmed">confirmado</span></h4><p class="desc">Teppanyaki Kobe en Sakuragaoka desde 1966. Wagyu A4/A5 cocinado delante de vosotros. Pequeño y familiar.</p>
 <div class="resv-info"><span class="resv-title">✓ Reserva confirmada · Retty</span><div class="resv-grid">
 <span class="k">Fecha</span><span class="v">Miércoles 20 may · 19:30</span>
@@ -571,7 +712,7 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
     <div class="body">
       <div class="day-overview">El día <strong>más auténtico culturalmente</strong> de Tokyo. Senso-ji al amanecer es mágico (sin gente).</div>
       <div class="ev-img tokyo-fb" data-wiki="Sensō-ji" data-emoji="🏮"><img loading="lazy" alt="Senso-ji"></div>
-      <div class="story"><div class="label">📖 La leyenda</div><h4>Senso-ji: el templo nacido de un río</h4><p>En el año <strong>628</strong>, dos hermanos pescadores —Hinokuma Hamanari y su hermano Takenari— encontraron en sus redes una pequeña estatua dorada de Kannon, la diosa de la compasión. La devolvieron al río pensando que era un objeto perdido — pero volvía a aparecer. Cada vez. El jefe del pueblo, Hajino Nakatomo, lo entendió como una señal divina y construyó un templo para custodiarla. <em>Asakusa nació esa mañana</em>.</p><p>Catorce siglos después, esa misma diosa sigue ahí (aunque <em>nadie la ha visto en mil años</em> — está oculta en el santuario interior, escondida bajo siete capas de telas, y solo el sumo sacerdote tiene permiso de verificar su existencia una vez al año). Senso-ji es el templo más antiguo de Tokyo, sobrevivió a tsunamis, terremotos y los bombardeos de marzo de 1945 que arrasaron el barrio entero matando a 100.000 personas. El templo actual es una reconstrucción fiel de 1958.</p><p>Hay un árbol gingko milenario en el recinto que sobrevivió al bombardeo. Su tronco quedó carbonizado en un lado y desde entonces creció torcido, pero sigue vivo. Es uno de los pocos testigos vegetales del Tokyo pre-1945.</p><div class="funfact"><span class="em">🏮</span><span>El gigantesco farol rojo del <strong>Kaminarimon</strong> ("puerta del trueno") pesa <strong>700 kg</strong> y se desmonta cuando hay tifones. Lo donó Konosuke Matsushita — fundador de Panasonic — tras curarse de una enfermedad rezando aquí en 1960. Cada 10 años se renueva con papel de arroz nuevo.</span></div><div class="funfact"><span class="em">🎭</span><span><strong>Tres deidades, tres edificios:</strong> Senso-ji es budista, pero al lado hay un santuario sintoísta (Asakusa-jinja) dedicado a los hermanos pescadores y al jefe del pueblo. Sintoísmo y budismo conviven en el mismo recinto — una mezcla típicamente japonesa.</span></div><div class="funfact"><span class="em">🎰</span><span><strong>Omikuji:</strong> en el templo podéis sacar una "fortuna" (¥100) — un papelito con una predicción. Si os toca <em>"daikichi"</em> (gran suerte), guardadlo. Si es <em>"kyo"</em> (mala suerte), atadlo a las cuerdas del templo para que se quede ahí.</span></div></div>
+      <details class="story-collapse"><summary><span class="story-icon">📖 La leyenda</span><h5>Senso-ji: el templo nacido de un río</h5><span class="story-chev">▾</span></summary><div class="story-body"><p>En el año <strong>628</strong>, dos hermanos pescadores —Hinokuma Hamanari y su hermano Takenari— encontraron en sus redes una pequeña estatua dorada de Kannon, la diosa de la compasión. La devolvieron al río pensando que era un objeto perdido — pero volvía a aparecer. Cada vez. El jefe del pueblo, Hajino Nakatomo, lo entendió como una señal divina y construyó un templo para custodiarla. <em>Asakusa nació esa mañana</em>.</p><p>Catorce siglos después, esa misma diosa sigue ahí (aunque <em>nadie la ha visto en mil años</em> — está oculta en el santuario interior, escondida bajo siete capas de telas, y solo el sumo sacerdote tiene permiso de verificar su existencia una vez al año). Senso-ji es el templo más antiguo de Tokyo, sobrevivió a tsunamis, terremotos y los bombardeos de marzo de 1945 que arrasaron el barrio entero matando a 100.000 personas. El templo actual es una reconstrucción fiel de 1958.</p><p>Hay un árbol gingko milenario en el recinto que sobrevivió al bombardeo. Su tronco quedó carbonizado en un lado y desde entonces creció torcido, pero sigue vivo. Es uno de los pocos testigos vegetales del Tokyo pre-1945.</p><div class="funfact"><span class="em">🏮</span><span>El gigantesco farol rojo del <strong>Kaminarimon</strong> ("puerta del trueno") pesa <strong>700 kg</strong> y se desmonta cuando hay tifones. Lo donó Konosuke Matsushita — fundador de Panasonic — tras curarse de una enfermedad rezando aquí en 1960. Cada 10 años se renueva con papel de arroz nuevo.</span></div><div class="funfact"><span class="em">🎭</span><span><strong>Tres deidades, tres edificios:</strong> Senso-ji es budista, pero al lado hay un santuario sintoísta (Asakusa-jinja) dedicado a los hermanos pescadores y al jefe del pueblo. Sintoísmo y budismo conviven en el mismo recinto — una mezcla típicamente japonesa.</span></div><div class="funfact"><span class="em">🎰</span><span><strong>Omikuji:</strong> en el templo podéis sacar una "fortuna" (¥100) — un papelito con una predicción. Si os toca <em>"daikichi"</em> (gran suerte), guardadlo. Si es <em>"kyo"</em> (mala suerte), atadlo a las cuerdas del templo para que se quede ahí.</span></div></div></details>
       <div class="timeline">
         <div class="ev"><div class="when">08:30</div><h4>Senso-ji + calle Nakamise</h4><p class="desc">El templo más antiguo de Tokyo (645 d.C.). Llegad temprano para fotos sin multitud. La calle Nakamise tiene ~250 puestos tradicionales — algunos en la misma familia desde el siglo XVIII.</p><div class="actions"><a href="https://maps.google.com/?q=Senso-ji+Asakusa" target="_blank">📍 Maps</a></div><div class="tip"><strong>Snack:</strong> ningyo-yaki (pasteles de bizcocho rellenos) y melon pan recién hecho de Asakusa Kagetsudo.</div></div>
         <div class="ev"><div class="when">11:00</div><h4>Sumida Riverwalk</h4><p class="desc">El río Sumida fue la autopista comercial de Edo. Ukiyo-e de Hokusai inmortalizaron su paisaje. Hoy lo cruza el puente Azuma con vistas a Tokyo Skytree.</p></div>
@@ -606,7 +747,7 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
   <details class="day"><summary><div class="num">4</div><div class="title"><div class="day-tag">Vie 22 may · Día 4</div><h3>Gastronomía + Experiencia</h3></div><div class="chev">▾</div></summary>
     <div class="body">
       <div class="day-overview">Día <strong>experiencial</strong> centrado en la gastronomía japonesa. Aprendéis a hacer sushi.</div>
-      <div class="story"><div class="label">🐟 ¿Sabíais que…?</div><h4>Tsukiji: el mercado donde se inventó el atún rojo</h4><p>Hasta los años 60, el <strong>maguro</strong> (atún rojo) era considerado <em>basura</em> en Japón — solo lo comían los gatos del puerto. Su carne grasa se desechaba. Fue el sushi americanizado de los 70 lo que invirtió la moda y disparó su precio. Hoy un atún rojo de primera puede pasar de los <strong>3 millones de euros</strong> en la primera subasta del año en Toyosu.</p><p>El mercado mayorista se trasladó a Toyosu en 2018, pero Tsukiji conserva el "outer market" con tradición intacta — los puestos están en las mismas familias desde hace 5 generaciones.</p></div>
+      <details class="story-collapse"><summary><span class="story-icon">🐟 ¿Sabíais que…?</span><h5>Tsukiji: el mercado donde se inventó el atún rojo</h5><span class="story-chev">▾</span></summary><div class="story-body"><p>Hasta los años 60, el <strong>maguro</strong> (atún rojo) era considerado <em>basura</em> en Japón — solo lo comían los gatos del puerto. Su carne grasa se desechaba. Fue el sushi americanizado de los 70 lo que invirtió la moda y disparó su precio. Hoy un atún rojo de primera puede pasar de los <strong>3 millones de euros</strong> en la primera subasta del año en Toyosu.</p><p>El mercado mayorista se trasladó a Toyosu en 2018, pero Tsukiji conserva el "outer market" con tradición intacta — los puestos están en las mismas familias desde hace 5 generaciones.</p></div></details>
       <div class="timeline">
         <div class="ev"><div class="when">08:30</div><h4>Tsukiji Outer Market</h4><p class="desc">Sashimi, tamagoyaki, mochi de fresa, té matcha. Paraíso gastro.</p><div class="actions"><a href="https://maps.google.com/?q=Tsukiji+Outer+Market" target="_blank">📍 Maps</a></div><div class="tip"><strong>Imprescindible:</strong> tamagoyaki en palillo de Yamacho (¥150) y oysters frescas con limón.</div></div>
         <div class="ev food"><div class="when">13:00</div><h4>Clase de sushi en Tsukiji <span class="badge confirmed">pagada</span> <span class="badge special">💕 luna de miel</span></h4><p class="desc">Aprenderéis a preparar nigiri y maki con un chef profesional en Tsukiji. 90 minutos de clase. Os llevaréis recetario.</p>
@@ -652,13 +793,11 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
     <img loading="lazy" alt="Kyoto">
     <div class="overlay"><div class="caption"><div class="kanji-deco">京都 · KYŌTO</div><div class="name">La capital del corazón</div></div></div>
   </div>
-  <div class="story">
-    <div class="label">📖 La historia</div>
-    <h4>Mil años siendo el centro del mundo</h4>
+  <details class="story-collapse"><summary><span class="story-icon">📖 La historia</span><h5>Mil años siendo el centro del mundo</h5><span class="story-chev">▾</span></summary><div class="story-body">
     <p>Cuando Kyoto se fundó en <strong>794</strong>, lo hizo siguiendo el plano de Chang'an, capital de la dinastía Tang china. Era una ciudad imperial perfectamente cuadriculada, con el palacio al norte y avenidas anchas como avenidas. Fue capital de Japón durante <strong>1.074 años</strong> — más tiempo del que España ha existido como nación.</p>
     <p>Aquí se inventó casi todo lo "japonés" como lo conocemos: la ceremonia del té, el ikebana, el teatro Noh, el haiku, el zen, las geishas, el kimono moderno. Los Estados Unidos consideraron bombardearla en 1945 — el secretario de guerra Henry Stimson, que la había visitado en luna de miel, la sacó de la lista. Kyoto sobrevivió intacta porque alguien la amaba.</p>
     <p><em>Vais a entrar en una ciudad museo de mil años</em>. Caminad despacio.</p>
-  </div>
+  </div></details>
   <div class="hotel-block"><div class="icon">🏯</div><div class="info"><div class="label">Hotel · 3 noches</div><h4>The Thousand Kyoto</h4><p>A 2 minutos a pie de la salida central de la estación Kyoto. Diseño minimalista contemporáneo, restaurante italiano SCALAE.</p><div class="acts"><a href="https://maps.google.com/?q=The+Thousand+Kyoto" target="_blank">📍 Mapa</a><a href="https://www.keihanhotels-resorts.co.jp/the-thousand-kyoto/en/" target="_blank">🌐 Web</a></div></div></div>
   <div class="alert info"><strong>🚄 Llegada:</strong> Shinkansen Tokyo → Kyoto (~2h20, Nozomi). Asientos D/E lado derecho para ver el Monte Fuji al pasar Mishima (despejado mañanas).</div>
 
@@ -666,7 +805,7 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
     <div class="body">
       <div class="day-overview"><strong>Ambiente romántico</strong> + introducción cultural. Gion al atardecer es uno de los momentos más bellos del viaje.</div>
       <div class="ev-img kyoto-fb" data-wiki="Gion" data-emoji="🏮"><img loading="lazy" alt="Hanamikoji Gion"></div>
-      <div class="story"><div class="label">🎎 La cultura</div><h4>Las geiko de Gion: las últimas guardianas</h4><p>En Kyoto no se llaman <em>geishas</em> sino <strong>geiko</strong> ("mujer de las artes") y sus aprendices son las <strong>maiko</strong> ("niña que baila"). Su mundo se llama <em>karyukai</em>, "el mundo de las flores y los sauces". En 1920 había 80.000 en Japón. Hoy quedan menos de <strong>200</strong>, casi todas en Gion.</p><p>Si veis a una <em>maiko</em> caminando deprisa al atardecer, es probable que vaya a un <em>ozashiki</em> (banquete privado en una <em>ochaya</em> tradicional). Su pelo lleva accesorios estacionales — en mayo, hortensias o iris violetas.</p><p class="funfact" style="margin:8px 0 0;"><span class="em">📸</span><span><strong>Importante:</strong> está prohibido fotografiarlas sin permiso. Multas reales (¥10.000+) y rotunda mala educación. Nunca las paréis ni les bloqueéis el paso.</span></p></div>
+      <details class="story-collapse"><summary><span class="story-icon">🎎 La cultura</span><h5>Las geiko de Gion: las últimas guardianas</h5><span class="story-chev">▾</span></summary><div class="story-body"><p>En Kyoto no se llaman <em>geishas</em> sino <strong>geiko</strong> ("mujer de las artes") y sus aprendices son las <strong>maiko</strong> ("niña que baila"). Su mundo se llama <em>karyukai</em>, "el mundo de las flores y los sauces". En 1920 había 80.000 en Japón. Hoy quedan menos de <strong>200</strong>, casi todas en Gion.</p><p>Si veis a una <em>maiko</em> caminando deprisa al atardecer, es probable que vaya a un <em>ozashiki</em> (banquete privado en una <em>ochaya</em> tradicional). Su pelo lleva accesorios estacionales — en mayo, hortensias o iris violetas.</p><p class="funfact" style="margin:8px 0 0;"><span class="em">📸</span><span><strong>Importante:</strong> está prohibido fotografiarlas sin permiso. Multas reales (¥10.000+) y rotunda mala educación. Nunca las paréis ni les bloqueéis el paso.</span></p></div></details>
       <div class="timeline">
         <div class="ev move"><div class="when">10:00</div><h4>Shinkansen Tokyo → Kyoto</h4><p class="desc">Considera enviar maletas (Yamato) un día antes para llegar ligeros.</p></div>
         <div class="ev food"><div class="when">12:30 · Almuerzo</div><h4>SCALAE (Thousand Kyoto) <span class="badge confirmed">confirmado</span></h4><p class="desc">Italiano contemporáneo dentro del hotel. Práctico tras el Shinkansen.</p>
@@ -720,9 +859,9 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
     <div class="body">
       <div class="day-overview">Uno de los días <strong>más bonitos visualmente</strong> del viaje. Salir muy temprano es clave.</div>
       <div class="ev-img kyoto-fb" data-wiki="Sagano_Bamboo_Forest" data-emoji="🎋"><img loading="lazy" alt="Bamboo Grove Arashiyama"></div>
-      <div class="story"><div class="label">🎋 ¿Sabíais que…?</div><h4>El bambú de Arashiyama es "soundscape" oficial</h4><p>El gobierno japonés mantiene una lista oficial llamada <em>"Los 100 paisajes sonoros que merecen la pena conservar"</em>. El bosque de bambú de Sagano-Arashiyama está en ella desde 1996. El sonido del viento entre los troncos huecos crujiendo y golpeándose entre sí es considerado <strong>patrimonio acústico nacional</strong> — algo único en el mundo.</p><p>El bambú puede crecer <strong>91 cm en 24 horas</strong> en condiciones ideales — es la planta de crecimiento más rápido del mundo. Estos troncos pueden tener décadas: en realidad <em>no son árboles, sino una hierba gigante</em>. La raíz subterránea es una sola, conectando todo el bosque. Si arrancas un tronco, no muere — vuelve a brotar.</p><p>El bambú es tan resistente y elástico que tradicionalmente se usaba como <strong>andamiaje en obras de construcción</strong> (todavía se usa en Hong Kong). En Japón, también se hacen kendō (espadas de práctica), shinai (fustas), flautas shakuhachi, cestería, papel washi, y arquitectura. Es uno de los materiales más versátiles del país.</p><p>Arashiyama era reserva imperial de caza desde el siglo IX. Los aristócratas Heian venían aquí a recitar poesía bajo la luna de otoño. La emperatriz Suiko (s. VII) vivía cerca. <em>Aquí ha pasado más historia japonesa que en muchos castillos famosos</em>.</p><div class="funfact"><span class="em">🐼</span><span><strong>Curiosidad zoológica:</strong> aunque ningún panda vive en Japón salvaje, el bambú de Arashiyama es considerado de calidad "panda-friendly" — los pandas del zoo de Ueno reciben bambú importado de zonas similares.</span></div><div class="funfact"><span class="em">🎬</span><span><strong>Cine:</strong> el bosque aparece en <em>Memorias de una geisha</em> (2005), <em>El último samurái</em>, y muchas películas de Akira Kurosawa. La iluminación natural a media mañana es lo que lo hace tan fotogénico.</span></div></div>
+      <details class="story-collapse"><summary><span class="story-icon">🎋 ¿Sabíais que…?</span><h5>El bambú de Arashiyama es "soundscape" oficial</h5><span class="story-chev">▾</span></summary><div class="story-body"><p>El gobierno japonés mantiene una lista oficial llamada <em>"Los 100 paisajes sonoros que merecen la pena conservar"</em>. El bosque de bambú de Sagano-Arashiyama está en ella desde 1996. El sonido del viento entre los troncos huecos crujiendo y golpeándose entre sí es considerado <strong>patrimonio acústico nacional</strong> — algo único en el mundo.</p><p>El bambú puede crecer <strong>91 cm en 24 horas</strong> en condiciones ideales — es la planta de crecimiento más rápido del mundo. Estos troncos pueden tener décadas: en realidad <em>no son árboles, sino una hierba gigante</em>. La raíz subterránea es una sola, conectando todo el bosque. Si arrancas un tronco, no muere — vuelve a brotar.</p><p>El bambú es tan resistente y elástico que tradicionalmente se usaba como <strong>andamiaje en obras de construcción</strong> (todavía se usa en Hong Kong). En Japón, también se hacen kendō (espadas de práctica), shinai (fustas), flautas shakuhachi, cestería, papel washi, y arquitectura. Es uno de los materiales más versátiles del país.</p><p>Arashiyama era reserva imperial de caza desde el siglo IX. Los aristócratas Heian venían aquí a recitar poesía bajo la luna de otoño. La emperatriz Suiko (s. VII) vivía cerca. <em>Aquí ha pasado más historia japonesa que en muchos castillos famosos</em>.</p><div class="funfact"><span class="em">🐼</span><span><strong>Curiosidad zoológica:</strong> aunque ningún panda vive en Japón salvaje, el bambú de Arashiyama es considerado de calidad "panda-friendly" — los pandas del zoo de Ueno reciben bambú importado de zonas similares.</span></div><div class="funfact"><span class="em">🎬</span><span><strong>Cine:</strong> el bosque aparece en <em>Memorias de una geisha</em> (2005), <em>El último samurái</em>, y muchas películas de Akira Kurosawa. La iluminación natural a media mañana es lo que lo hace tan fotogénico.</span></div></div></details>
       <div class="ev-img kyoto-fb" data-wiki="Tenryū-ji" data-emoji="🪷"><img loading="lazy" alt="Tenryu-ji"></div>
-      <div class="story"><div class="label">🪷 La historia</div><h4>Tenryu-ji: el jardín más antiguo de Japón</h4><p>Fundado en <strong>1339</strong> por el shogun Ashikaga Takauji. Su jardín <em>Sogenchi</em> ("manantial dragón") fue diseñado por el monje Muso Soseki — no se ha modificado en <strong>700 años</strong>. Es el jardín zen más antiguo de Japón en su estado original.</p><p>El nombre del templo significa "Templo del dragón celestial". El shogun lo hizo construir tras soñar con un dragón saliendo del estanque — interpretado como mensaje del emperador difunto Go-Daigo, su rival.</p></div>
+      <details class="story-collapse"><summary><span class="story-icon">🪷 La historia</span><h5>Tenryu-ji: el jardín más antiguo de Japón</h5><span class="story-chev">▾</span></summary><div class="story-body"><p>Fundado en <strong>1339</strong> por el shogun Ashikaga Takauji. Su jardín <em>Sogenchi</em> ("manantial dragón") fue diseñado por el monje Muso Soseki — no se ha modificado en <strong>700 años</strong>. Es el jardín zen más antiguo de Japón en su estado original.</p><p>El nombre del templo significa "Templo del dragón celestial". El shogun lo hizo construir tras soñar con un dragón saliendo del estanque — interpretado como mensaje del emperador difunto Go-Daigo, su rival.</p></div></details>
       <div class="timeline">
         <div class="ev move"><div class="when">07:30</div><h4>Taxi → Arashiyama</h4><p class="desc">~30 min, ¥3.500-4.000. Vital madrugar.</p></div>
         <div class="ev"><div class="when">08:00</div><h4>Bamboo Grove 🎋</h4><p class="desc">El bosque de bambú más famoso del mundo. A las 8 am hay calma; a partir de las 10 am es imposible.</p><div class="actions"><a href="https://maps.google.com/?q=Arashiyama+Bamboo+Grove" target="_blank">📍 Maps</a></div></div>
@@ -760,12 +899,18 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
     <div class="body">
       <div class="day-overview">Día <strong>más especial a nivel "luna de miel"</strong> 💕. Fotos con kimono en Higashiyama tras los miles de torii rojos.</div>
       <div class="ev-img kyoto-fb" data-wiki="Fushimi_Inari-taisha" data-emoji="⛩️"><img loading="lazy" alt="Fushimi Inari"></div>
-      <div class="story"><div class="label">🦊 La leyenda</div><h4>Fushimi Inari: 10.000 puertas y un dios zorro</h4><p>El santuario, fundado en el año <strong>711</strong>, está dedicado a <strong>Inari Ōkami</strong>, deidad sintoísta del arroz, del comercio y de la prosperidad. Sus mensajeros son los zorros (<em>kitsune</em>) — por eso veréis estatuas de zorros con llaves doradas en la boca: la llave del granero del arroz, símbolo de abundancia.</p><p>En el folklore japonés, los zorros pueden vivir <strong>hasta 1.000 años</strong> y, al envejecer, ganan colas: a los 100 años una segunda cola, a los 200 una tercera... Los más viejos tienen nueve colas (<em>kyūbi no kitsune</em>) y poderes casi divinos. Pueden transformarse en humanos — sobre todo en mujeres bellas — para tentar a los hombres. Hay miles de cuentos populares sobre amores entre kitsune y campesinos.</p><p>Los miles de torii rojos son <strong>donaciones</strong>: cada uno ha sido pagado por un comerciante o empresa pidiendo prosperidad o agradeciendo un éxito. Si miráis las inscripciones negras, son los nombres de los donantes y la fecha. Un torii pequeño cuesta unos <strong>400.000 yen</strong>; uno grande supera el <strong>1.000.000 yen</strong>. Hay <strong>~10.000 torii</strong> a lo largo de 4 km de sendero subiendo el monte Inari (233 m).</p><p>El color rojo (bermellón, <em>shuiro</em>) se obtenía tradicionalmente del cinabrio (sulfuro de mercurio) — caro y tóxico, pero el más duradero contra la lluvia. Es el color sagrado del sintoísmo: ahuyenta los espíritus malos. Los torii se repintan cada 10 años aproximadamente.</p><div class="funfact"><span class="em">🍣</span><span>El sushi <strong>"inari"</strong> (bolsita de tofu frito rellena de arroz) lleva ese nombre porque a los zorros les gusta el tofu frito según la tradición. Los puestos de la subida lo venden todavía. También probad <em>kitsune udon</em> — fideos con la misma bolsita de tofu.</span></div><div class="funfact"><span class="em">📈</span><span><strong>Marketing milenario:</strong> Toyota, Mitsubishi, Sony y la mayoría de grandes empresas japonesas tienen torii donados aquí. Las empresas tech del Silicon Valley empezaron a hacerlo también. Hay un torii donado por Google en algún punto.</span></div><div class="funfact"><span class="em">🌙</span><span><strong>Yamadachi (montaña arriba):</strong> después de 30-45 min subiendo llegáis a Yotsutsuji, una pequeña intersección con vistas a Kyoto. Pocos siguen más allá. Si subís hasta la cima total son 2-3h, pero el bosque y los pequeños altares son sublimes.</span></div></div>
+      <details class="story-collapse"><summary><span class="story-icon">🦊 La leyenda</span><h5>Fushimi Inari: 10.000 puertas y un dios zorro</h5><span class="story-chev">▾</span></summary><div class="story-body"><p>El santuario, fundado en el año <strong>711</strong>, está dedicado a <strong>Inari Ōkami</strong>, deidad sintoísta del arroz, del comercio y de la prosperidad. Sus mensajeros son los zorros (<em>kitsune</em>) — por eso veréis estatuas de zorros con llaves doradas en la boca: la llave del granero del arroz, símbolo de abundancia.</p><p>En el folklore japonés, los zorros pueden vivir <strong>hasta 1.000 años</strong> y, al envejecer, ganan colas: a los 100 años una segunda cola, a los 200 una tercera... Los más viejos tienen nueve colas (<em>kyūbi no kitsune</em>) y poderes casi divinos. Pueden transformarse en humanos — sobre todo en mujeres bellas — para tentar a los hombres. Hay miles de cuentos populares sobre amores entre kitsune y campesinos.</p><p>Los miles de torii rojos son <strong>donaciones</strong>: cada uno ha sido pagado por un comerciante o empresa pidiendo prosperidad o agradeciendo un éxito. Si miráis las inscripciones negras, son los nombres de los donantes y la fecha. Un torii pequeño cuesta unos <strong>400.000 yen</strong>; uno grande supera el <strong>1.000.000 yen</strong>. Hay <strong>~10.000 torii</strong> a lo largo de 4 km de sendero subiendo el monte Inari (233 m).</p><p>El color rojo (bermellón, <em>shuiro</em>) se obtenía tradicionalmente del cinabrio (sulfuro de mercurio) — caro y tóxico, pero el más duradero contra la lluvia. Es el color sagrado del sintoísmo: ahuyenta los espíritus malos. Los torii se repintan cada 10 años aproximadamente.</p><div class="funfact"><span class="em">🍣</span><span>El sushi <strong>"inari"</strong> (bolsita de tofu frito rellena de arroz) lleva ese nombre porque a los zorros les gusta el tofu frito según la tradición. Los puestos de la subida lo venden todavía. También probad <em>kitsune udon</em> — fideos con la misma bolsita de tofu.</span></div><div class="funfact"><span class="em">📈</span><span><strong>Marketing milenario:</strong> Toyota, Mitsubishi, Sony y la mayoría de grandes empresas japonesas tienen torii donados aquí. Las empresas tech del Silicon Valley empezaron a hacerlo también. Hay un torii donado por Google en algún punto.</span></div><div class="funfact"><span class="em">🌙</span><span><strong>Yamadachi (montaña arriba):</strong> después de 30-45 min subiendo llegáis a Yotsutsuji, una pequeña intersección con vistas a Kyoto. Pocos siguen más allá. Si subís hasta la cima total son 2-3h, pero el bosque y los pequeños altares son sublimes.</span></div></div></details>
       <div class="ev-img kyoto-fb" data-wiki="Kiyomizu-dera" data-emoji="🏯"><img loading="lazy" alt="Kiyomizu-dera"></div>
-      <div class="story"><div class="label">🏯 ¿Sabíais que…?</div><h4>Kiyomizu-dera: construido sin un solo clavo</h4><p>El balcón de madera del templo (139 columnas, 13 metros sobre la ladera) está ensamblado <strong>sin un solo clavo</strong>. Solo encajes de madera. Lleva en pie así desde <strong>1633</strong>.</p><p>Hay una expresión japonesa: <em>"Saltar del balcón de Kiyomizu"</em> — equivalente a "tirarse a la piscina" en español. Durante el periodo Edo, hubo 234 saltos registrados (de los cuales 200 sobrevivieron — los árboles amortiguaban). El gobierno lo prohibió en 1872.</p></div>
+      <details class="story-collapse"><summary><span class="story-icon">🏯 ¿Sabíais que…?</span><h5>Kiyomizu-dera: construido sin un solo clavo</h5><span class="story-chev">▾</span></summary><div class="story-body"><p>El balcón de madera del templo (139 columnas, 13 metros sobre la ladera) está ensamblado <strong>sin un solo clavo</strong>. Solo encajes de madera. Lleva en pie así desde <strong>1633</strong>.</p><p>Hay una expresión japonesa: <em>"Saltar del balcón de Kiyomizu"</em> — equivalente a "tirarse a la piscina" en español. Durante el periodo Edo, hubo 234 saltos registrados (de los cuales 200 sobrevivieron — los árboles amortiguaban). El gobierno lo prohibió en 1872.</p></div></details>
       <div class="timeline">
         <div class="ev"><div class="when">07:30</div><h4>Fushimi Inari Taisha ⛩️</h4><p class="desc">A las 7-8 am no hay nadie. Subid al menos hasta Yotsutsuji (30 min, vistas de Kyoto).</p><div class="meta"><span>💴 gratis</span><span>👟 calzado cómodo</span></div><div class="actions"><a href="https://maps.google.com/?q=Fushimi+Inari" target="_blank">📍 Maps</a></div></div>
-        <div class="ev"><div class="when">11:00</div><h4>Experiencia kimono + fotos <span class="badge pending">por reservar</span> <span class="badge special">💕</span></h4><p class="desc">Vestiros con kimono tradicional (peinado y accesorios) y sesión de fotos por Higashiyama.</p><div class="meta"><span>⏱️ medio día</span><span>💴 ~¥15.000-30.000 por pareja</span></div></div>
+        <div class="ev"><div class="when">11:00</div><h4>Experiencia kimono + fotos <span class="badge confirmed">confirmado</span> <span class="badge special">💕 luna de miel</span></h4><p class="desc">Vestiros con kimono tradicional (peinado y accesorios) y sesión de fotos por Higashiyama.</p>
+<div class="resv-info"><span class="resv-title">✓ Reserva confirmada</span><div class="resv-grid">
+<span class="k">Fecha</span><span class="v">Lunes 25 may · 11:00</span>
+<span class="k">Personas</span><span class="v">2 (pareja)</span>
+<span class="k">Duración</span><span class="v">Medio día (kimono + peinado + fotos)</span>
+</div></div>
+<div class="meta"><span>💴 ~¥15.000-30.000 por pareja</span></div></div>
         <div class="ev"><div class="when">13:30</div><h4>Higashiyama: Kiyomizu-dera + Sannenzaka</h4><p class="desc">Templo Patrimonio UNESCO. Calles de piedra Sannenzaka/Ninenzaka entre tiendas tradicionales.</p><div class="meta"><span>💴 ¥400</span></div><div class="actions"><a href="https://maps.google.com/?q=Kiyomizu-dera" target="_blank">📍 Maps</a></div></div>
         <div class="ev food"><div class="when">19:00 · Cena</div><h4>Kyoto Sushi Matsumoto <span class="badge michelin">Michelin</span> <span class="badge confirmed">confirmado</span></h4><p class="desc">Edomae sushi en una machiya renovada de Gion. Chef formado en Sushi Shimizu (Shinbashi).</p>
 <div class="resv-info"><span class="resv-title">✓ Reserva confirmada · Tabelog</span><div class="resv-grid">
@@ -800,21 +945,19 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
     <img loading="lazy" alt="Dotonbori">
     <div class="overlay"><div class="caption"><div class="kanji-deco">大阪 · ŌSAKA</div><div class="name">La cocina de Japón</div></div></div>
   </div>
-  <div class="story">
-    <div class="label">📖 La historia</div>
-    <h4>Osaka: el contrapunto perfecto a Kyoto</h4>
+  <details class="story-collapse"><summary><span class="story-icon">📖 La historia</span><h5>Osaka: el contrapunto perfecto a Kyoto</h5><span class="story-chev">▾</span></summary><div class="story-body">
     <p>Si Kyoto es el alma aristocrática de Japón, Osaka es <strong>el corazón comerciante</strong>. Históricamente conocida como <em>tenka no daidokoro</em> ("la cocina del país"), aquí se concentraba el arroz de todo Japón en la era Edo. Mientras Tokyo era política y Kyoto cultura, Osaka era <strong>negocio</strong>.</p>
     <p>Los <em>osakaben</em> (acento de Osaka) hablan más rápido, dicen <em>"ookini"</em> en vez de "arigatō", y se ríen mucho más alto que en el resto del país. La gente os parará en la calle para charlar — algo impensable en Tokyo. Es la única ciudad japonesa donde la pregunta es <em>"¿cuánto te ha costado?"</em> en vez de <em>"¿qué tal te va?"</em>.</p>
     <p>Y luego está la comida. <strong>Kuidaore</strong>: "comer hasta arruinarse". Es el verbo oficial de Osaka.</p>
-  </div>
+  </div></details>
   <div class="hotel-block"><div class="icon">🌃</div><div class="info"><div class="label">Hotel · 4 noches</div><h4>Centara Grand Hotel Osaka</h4><p>33 plantas en pleno corazón de Namba. A 5 min andando de la estación Namba.</p><div class="acts"><a href="https://maps.google.com/?q=Centara+Grand+Hotel+Osaka" target="_blank">📍 Mapa</a></div></div></div>
 
   <details class="day" open><summary><div class="num">1</div><div class="title"><div class="day-tag">Mar 26 may · Día 1</div><h3>Castillo · Dotonbori</h3></div><div class="chev">▾</div></summary>
     <div class="body">
       <div class="ev-img osaka-fb" data-wiki="Osaka_Castle" data-emoji="🏯"><img loading="lazy" alt="Osaka Castle"></div>
-      <div class="story"><div class="label">🏯 ¿Sabíais que…?</div><h4>Osaka Castle: el sueño imposible de un campesino</h4><p><strong>Toyotomi Hideyoshi</strong> (1537-1598) es uno de los personajes más fascinantes de la historia mundial. Hijo de un humilde campesino sin apellido, sirvió como mozo y luego soldado raso de Oda Nobunaga. Cuando Nobunaga fue asesinado por traición, Hideyoshi vengó su muerte en 11 días y se apoderó del país. <strong>Es el único japonés sin sangre noble que se convirtió en gobernante absoluto</strong>.</p><p>Construyó este castillo en <strong>1583</strong> con el oro confiscado a los señores rivales como muestra deslumbrante de su poder. Empleó <strong>50.000 trabajadores</strong> durante 3 años. Hideyoshi era pequeño, feo y físicamente débil — sus contemporáneos lo apodaban <em>Saru</em> ("el mono"). Pero era brillante en estrategia, propaganda y logística. Inventó el primer registro nacional de tierras de Japón. Fue él quien llamó "japoneses" a los japoneses por primera vez.</p><p>El castillo ha sido destruido y reconstruido tres veces. El que veréis es de 1931 — pero <strong>las piedras de la base son las originales</strong>, traídas desde la isla de Shodoshima en barcos especiales del Mar Interior. Algunas pesan más de <strong>100 toneladas</strong>. Hideyoshi marcó cada una con su sello (kamon en forma de hojas de paulownia), todavía visibles si miráis bien al pie de las murallas.</p><p>Tras su muerte, el castillo fue tomado y arrasado por Tokugawa Ieyasu en la batalla de Osaka de 1614-15 — donde murió el hijo de Hideyoshi (Hideyori) y se extinguió la dinastía Toyotomi. Es el inicio del shogunato Tokugawa que duraría 250 años.</p><div class="funfact"><span class="em">🍑</span><span><strong>El "Momotaro" real:</strong> Hideyoshi nació en una aldea pobre y, según la leyenda popular, su madre lo encontró dentro de un melocotón gigante (variante japonesa de Pulgarcito). Esto inspiró el cuento de Momotaro. Hay quien dice que Hideyoshi mismo difundió esta historia para legitimar su origen humilde.</span></div><div class="funfact"><span class="em">🌸</span><span><strong>Hanami imperial:</strong> Hideyoshi celebró aquí el hanami más legendario de la historia japonesa en 1594: 5.000 invitados, 700 cerezos plantados expresamente, banquetes durante 3 días. Inauguró la cultura moderna del hanami.</span></div><div class="funfact"><span class="em">🥷</span><span><strong>Ninja en el castillo:</strong> el sótano del torreón actual tiene un museo con armaduras, espadas y un pasadizo secreto descubierto en los 90. Los Toyotomi tenían un sistema de túneles para escapar — usado en el sitio de 1615.</span></div></div>
+      <details class="story-collapse"><summary><span class="story-icon">🏯 ¿Sabíais que…?</span><h5>Osaka Castle: el sueño imposible de un campesino</h5><span class="story-chev">▾</span></summary><div class="story-body"><p><strong>Toyotomi Hideyoshi</strong> (1537-1598) es uno de los personajes más fascinantes de la historia mundial. Hijo de un humilde campesino sin apellido, sirvió como mozo y luego soldado raso de Oda Nobunaga. Cuando Nobunaga fue asesinado por traición, Hideyoshi vengó su muerte en 11 días y se apoderó del país. <strong>Es el único japonés sin sangre noble que se convirtió en gobernante absoluto</strong>.</p><p>Construyó este castillo en <strong>1583</strong> con el oro confiscado a los señores rivales como muestra deslumbrante de su poder. Empleó <strong>50.000 trabajadores</strong> durante 3 años. Hideyoshi era pequeño, feo y físicamente débil — sus contemporáneos lo apodaban <em>Saru</em> ("el mono"). Pero era brillante en estrategia, propaganda y logística. Inventó el primer registro nacional de tierras de Japón. Fue él quien llamó "japoneses" a los japoneses por primera vez.</p><p>El castillo ha sido destruido y reconstruido tres veces. El que veréis es de 1931 — pero <strong>las piedras de la base son las originales</strong>, traídas desde la isla de Shodoshima en barcos especiales del Mar Interior. Algunas pesan más de <strong>100 toneladas</strong>. Hideyoshi marcó cada una con su sello (kamon en forma de hojas de paulownia), todavía visibles si miráis bien al pie de las murallas.</p><p>Tras su muerte, el castillo fue tomado y arrasado por Tokugawa Ieyasu en la batalla de Osaka de 1614-15 — donde murió el hijo de Hideyoshi (Hideyori) y se extinguió la dinastía Toyotomi. Es el inicio del shogunato Tokugawa que duraría 250 años.</p><div class="funfact"><span class="em">🍑</span><span><strong>El "Momotaro" real:</strong> Hideyoshi nació en una aldea pobre y, según la leyenda popular, su madre lo encontró dentro de un melocotón gigante (variante japonesa de Pulgarcito). Esto inspiró el cuento de Momotaro. Hay quien dice que Hideyoshi mismo difundió esta historia para legitimar su origen humilde.</span></div><div class="funfact"><span class="em">🌸</span><span><strong>Hanami imperial:</strong> Hideyoshi celebró aquí el hanami más legendario de la historia japonesa en 1594: 5.000 invitados, 700 cerezos plantados expresamente, banquetes durante 3 días. Inauguró la cultura moderna del hanami.</span></div><div class="funfact"><span class="em">🥷</span><span><strong>Ninja en el castillo:</strong> el sótano del torreón actual tiene un museo con armaduras, espadas y un pasadizo secreto descubierto en los 90. Los Toyotomi tenían un sistema de túneles para escapar — usado en el sitio de 1615.</span></div></div></details>
       <div class="ev-img osaka-fb" data-wiki="Dōtonbori" data-emoji="🌃"><img loading="lazy" alt="Dotonbori"></div>
-      <div class="story"><div class="label">🌃 La curiosidad</div><h4>Dotonbori: el "Running Man" de Glico tiene casi 90 años</h4><p>El neón del corredor Glico es de <strong>1935</strong>. Es el cartel publicitario más antiguo del mundo aún en funcionamiento. Glico es la marca de los Pocky — aquellos palitos cubiertos de chocolate. El eslogan original era: <em>"un caramelo te da 300 metros de carrera"</em> (300 metros = una calorías, según los cálculos de la marca).</p><p>El cangrejo gigante mecánico de Kani Doraku <em>"mueve las patas"</em> desde 1960. Y los signos de fugu (pez globo) iluminados en azul son una protesta de los restauradores: durante años el pez globo fue el plato más caro de Japón porque solo chefs licenciados podían cortarlo (un error y mata).</p></div>
+      <details class="story-collapse"><summary><span class="story-icon">🌃 La curiosidad</span><h5>Dotonbori: el "Running Man" de Glico tiene casi 90 años</h5><span class="story-chev">▾</span></summary><div class="story-body"><p>El neón del corredor Glico es de <strong>1935</strong>. Es el cartel publicitario más antiguo del mundo aún en funcionamiento. Glico es la marca de los Pocky — aquellos palitos cubiertos de chocolate. El eslogan original era: <em>"un caramelo te da 300 metros de carrera"</em> (300 metros = una calorías, según los cálculos de la marca).</p><p>El cangrejo gigante mecánico de Kani Doraku <em>"mueve las patas"</em> desde 1960. Y los signos de fugu (pez globo) iluminados en azul son una protesta de los restauradores: durante años el pez globo fue el plato más caro de Japón porque solo chefs licenciados podían cortarlo (un error y mata).</p></div></details>
       <div class="timeline">
         <div class="ev move"><div class="when">10:02</div><h4>Shinkansen Kyoto → Shin-Osaka <span class="badge confirmed">confirmado</span></h4><p class="desc">Nozomi 13. Trayecto 13 min. Plataforma 14.</p>
 <div class="resv-info"><span class="resv-title">✓ Reserva confirmada · Klook</span><div class="resv-grid">
@@ -837,16 +980,7 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
 <span class="k">Tel.</span><span class="v">06-4307-6546</span>
 <span class="k">Política</span><span class="v">100% si cancelas el día anterior o el día. Mini cutlet puede agotarse.</span>
 </div></div>
-<div class="alert" style="margin-top:8px;font-size:.82rem;"><strong>⚠️ Conflicto:</strong> tienes <em>otra reserva</em> el mismo día a las 20:00 en <strong>Tonkatsu Nagikatsu</strong> (¿duplicada por error?). Verifica si tienes que cancelar una.</div>
 <div class="actions"><a href="https://maps.google.com/?q=Tonkatsu+Koshiro+Osaka" target="_blank">📍 Maps</a><a href="https://tblc.hk/rW4NLUR" target="_blank" class="manage">Gestionar</a></div></div>
-<div class="ev food"><div class="when">20:00 · Cena alternativa</div><h4>Tonkatsu Nagikatsu <span class="badge confirmed">confirmado</span> <span class="badge" style="background:#fef0e4;color:#a86a30;">posible duplicado</span></h4><p class="desc">Otra reserva de tonkatsu el mismo día — verifica si era backup o por error.</p>
-<div class="resv-info"><span class="resv-title">✓ Reserva confirmada · Tabelog</span><div class="resv-grid">
-<span class="k">Fecha</span><span class="v">Martes 26 may · 20:00 (1h30)</span>
-<span class="k">Personas</span><span class="v">2 · solo asientos</span>
-<span class="k">Reserva n°</span><span class="v code">J8T2KCJ93U</span>
-<span class="k">Política</span><span class="v">Cancelación día = ¥3.000/persona</span>
-</div></div>
-<div class="actions"><a href="https://tabelog.com/en/osaka/A2701/A270201/27150605/" target="_blank" class="manage">Tabelog</a></div></div>
         <div class="ev"><div class="when">21:30</div><h4>Dotonbori 🌃</h4><p class="desc">Neones, el cangrejo gigante, el Glico Running Man. Foto obligatoria desde el puente Ebisubashi.</p><div class="actions"><a href="https://maps.google.com/?q=Dotonbori" target="_blank">📍 Maps</a></div></div>
       </div>
       <details class="discover"><summary><div class="em">📸</div><div class="label"><h4>Más para descubrir + spots Instagram</h4><div class="sub">Osaka neón, comida callejera y cuevas escondidas</div></div><div class="chev">▾</div></summary>
@@ -867,7 +1001,7 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
     <div class="body">
       <div class="day-overview">El día <strong>más divertido</strong> del viaje. Súper Nintendo World es el highlight.</div>
       <div class="alert"><strong>⚠️ Crítico 2026:</strong> 25º aniversario y lanzamiento "Discover U!!" — uno de los años más concurridos. Express Pass <strong>imprescindible</strong>, comprado con semanas de antelación.</div>
-      <div class="story"><div class="label">🎮 La historia</div><h4>Nintendo World: 17 años de planificación</h4><p>Shigeru Miyamoto — creador de Mario, Zelda y Donkey Kong — empezó a diseñar el parque en <strong>2003</strong>, pero solo abrió en <strong>2021</strong>. La razón: quería que el público <em>"sintiera que entra dentro del videojuego"</em>. Tuvo que esperar a que la tecnología (RFID, IoT, AR) permitiera replicar fielmente las mecánicas de Mario en el mundo real.</p><p>La <strong>Power-Up Band</strong> es el detalle clave: una pulsera que se conecta con tu app y permite <em>"recoger monedas"</em> golpeando bloques, ganar puntos y desbloquear minijuegos. Cuando os la pongáis, no estaréis en un parque de atracciones — estaréis <strong>jugando a Mario</strong>.</p></div>
+      <details class="story-collapse"><summary><span class="story-icon">🎮 La historia</span><h5>Nintendo World: 17 años de planificación</h5><span class="story-chev">▾</span></summary><div class="story-body"><p>Shigeru Miyamoto — creador de Mario, Zelda y Donkey Kong — empezó a diseñar el parque en <strong>2003</strong>, pero solo abrió en <strong>2021</strong>. La razón: quería que el público <em>"sintiera que entra dentro del videojuego"</em>. Tuvo que esperar a que la tecnología (RFID, IoT, AR) permitiera replicar fielmente las mecánicas de Mario en el mundo real.</p><p>La <strong>Power-Up Band</strong> es el detalle clave: una pulsera que se conecta con tu app y permite <em>"recoger monedas"</em> golpeando bloques, ganar puntos y desbloquear minijuegos. Cuando os la pongáis, no estaréis en un parque de atracciones — estaréis <strong>jugando a Mario</strong>.</p></div></details>
       <div class="timeline">
         <div class="ev"><div class="when">07:30</div><h4>Salida temprana al parque</h4><p class="desc">Llegad antes de la apertura oficial. Tren JR Yumesaki desde Osaka Station.</p><div class="actions"><a href="https://maps.google.com/?q=Universal+Studios+Japan" target="_blank">📍 Maps</a></div></div>
         <div class="ev"><div class="when">08:30</div><h4>USJ Super Value Combo <span class="badge confirmed">confirmado</span></h4><p class="desc">Pase de día completo + Super Nintendo World + Have Fun in Kansai Pass.</p>
@@ -894,8 +1028,8 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
     <div class="body">
       <div class="day-overview">Día <strong>cultural relajado</strong>. Los ciervos sagrados son adorables y atrevidos.</div>
       <div class="ev-img osaka-fb" data-wiki="Nara_Park" data-emoji="🦌"><img loading="lazy" alt="Nara deer"></div>
-      <div class="story"><div class="label">🦌 La leyenda</div><h4>Los ciervos de Nara: mensajeros de los dioses</h4><p>En el año <strong>768</strong>, según la leyenda, el dios sintoísta <strong>Takemikazuchi</strong> llegó a Nara montado en un <em>ciervo blanco</em> para proteger la nueva capital imperial. Desde entonces, los ciervos del parque son considerados <strong>mensajeros divinos</strong> (<em>shinroku</em>). Hasta 1637, matar uno era castigado con la <strong>pena de muerte</strong>. Esta protección milenaria explica por qué hoy son tan dóciles con los humanos — han evolucionado sin miedo durante 1.250 años.</p><p>Hoy son alrededor de <strong>1.300 ciervos sika</strong> que vagan libres por la ciudad — entran en tiendas, restaurantes, taxis, hoteles. Las farolas tienen guardas anti-ciervo, los semáforos cuentan con un timing especial para que crucen, y los autobuses paran si uno duerme en la calle.</p><p>Aprenden a hacer reverencia para conseguir <em>shika senbei</em> (galletas vegetales de arroz, ¥200/paquete). Algunos saben <em>cobrar</em>: un estudio académico de la <strong>Universidad de Tokyo de 2016</strong> demostró que su comportamiento de saludo es <strong>aprendido culturalmente</strong>, transmitido de madre a hijo entre generaciones. <em>Son los únicos animales del mundo conocidos por hacer esto</em> (junto a algunos primates).</p><p>Las galletas se hacen específicamente para ellos: salvado de arroz y harina, sin azúcar ni sal. Se las venden ancianas autorizadas (la asociación de protección de ciervos de Nara) — no compréis a vendedores no oficiales. Una parte de la venta financia la atención veterinaria de los ciervos.</p><div class="funfact"><span class="em">⚠️</span><span><strong>Cuidado:</strong> Si tenéis algo en una bolsa de papel, lo intentarán. Han aprendido a <strong>abrir cremalleras y mochilas</strong>. No traigáis comida visible. Pueden picar mochilas y morder ropa. Mantén el plano del museo en bolsillo cerrado.</span></div><div class="funfact"><span class="em">🦌</span><span><strong>Ritual del cuerno:</strong> cada octubre se celebra el <em>Shika no Tsunokiri</em> ("corte de cuernos"). Los machos son arreados a un recinto y se les cortan los cuernos para evitar que se hieran entre sí. Tradición milenaria.</span></div><div class="funfact"><span class="em">📊</span><span><strong>Datos curiosos:</strong> El 9 de junio en Japón es el "Día Internacional de los Ciervos de Nara". Cada año mueren 300-400 atropellados — los conductores de Nara aprenden a esperarlos. La población se estabiliza por sí sola: cuando hay demasiados, se trasladan a santuarios cercanos.</span></div><div class="funfact"><span class="em">📜</span><span><strong>Diccionario:</strong> los ciervos sika reconocen <em>"hai"</em> (sí) y <em>"baibai"</em> (adiós). Un estudio de Universidad de Kioto demostró que entienden tono más que palabras — pero la asociación es real.</span></div></div>
-      <div class="story"><div class="label">🛕 La historia</div><h4>Todai-ji: el Buda y el agujero de la nariz</h4><p>El templo Todai-ji alberga el <strong>Buda de bronce más grande del mundo</strong> (15 metros, 500 toneladas), terminado en <strong>752</strong>. Para fundirlo se gastó toda la reserva de bronce de Japón, lo que casi quiebra la economía del país.</p><p>El edificio que lo alberga (Daibutsuden) era originalmente un <strong>33% más grande</strong> que el actual. Aún así, sigue siendo el edificio de madera más grande del mundo. Dentro hay un pilar con un agujero del tamaño exacto de la <em>nariz del Buda</em>: la tradición dice que pasar por él trae iluminación. Los niños lo logran fácil; los adultos sufren.</p></div>
+      <details class="story-collapse"><summary><span class="story-icon">🦌 La leyenda</span><h5>Los ciervos de Nara: mensajeros de los dioses</h5><span class="story-chev">▾</span></summary><div class="story-body"><p>En el año <strong>768</strong>, según la leyenda, el dios sintoísta <strong>Takemikazuchi</strong> llegó a Nara montado en un <em>ciervo blanco</em> para proteger la nueva capital imperial. Desde entonces, los ciervos del parque son considerados <strong>mensajeros divinos</strong> (<em>shinroku</em>). Hasta 1637, matar uno era castigado con la <strong>pena de muerte</strong>. Esta protección milenaria explica por qué hoy son tan dóciles con los humanos — han evolucionado sin miedo durante 1.250 años.</p><p>Hoy son alrededor de <strong>1.300 ciervos sika</strong> que vagan libres por la ciudad — entran en tiendas, restaurantes, taxis, hoteles. Las farolas tienen guardas anti-ciervo, los semáforos cuentan con un timing especial para que crucen, y los autobuses paran si uno duerme en la calle.</p><p>Aprenden a hacer reverencia para conseguir <em>shika senbei</em> (galletas vegetales de arroz, ¥200/paquete). Algunos saben <em>cobrar</em>: un estudio académico de la <strong>Universidad de Tokyo de 2016</strong> demostró que su comportamiento de saludo es <strong>aprendido culturalmente</strong>, transmitido de madre a hijo entre generaciones. <em>Son los únicos animales del mundo conocidos por hacer esto</em> (junto a algunos primates).</p><p>Las galletas se hacen específicamente para ellos: salvado de arroz y harina, sin azúcar ni sal. Se las venden ancianas autorizadas (la asociación de protección de ciervos de Nara) — no compréis a vendedores no oficiales. Una parte de la venta financia la atención veterinaria de los ciervos.</p><div class="funfact"><span class="em">⚠️</span><span><strong>Cuidado:</strong> Si tenéis algo en una bolsa de papel, lo intentarán. Han aprendido a <strong>abrir cremalleras y mochilas</strong>. No traigáis comida visible. Pueden picar mochilas y morder ropa. Mantén el plano del museo en bolsillo cerrado.</span></div><div class="funfact"><span class="em">🦌</span><span><strong>Ritual del cuerno:</strong> cada octubre se celebra el <em>Shika no Tsunokiri</em> ("corte de cuernos"). Los machos son arreados a un recinto y se les cortan los cuernos para evitar que se hieran entre sí. Tradición milenaria.</span></div><div class="funfact"><span class="em">📊</span><span><strong>Datos curiosos:</strong> El 9 de junio en Japón es el "Día Internacional de los Ciervos de Nara". Cada año mueren 300-400 atropellados — los conductores de Nara aprenden a esperarlos. La población se estabiliza por sí sola: cuando hay demasiados, se trasladan a santuarios cercanos.</span></div><div class="funfact"><span class="em">📜</span><span><strong>Diccionario:</strong> los ciervos sika reconocen <em>"hai"</em> (sí) y <em>"baibai"</em> (adiós). Un estudio de Universidad de Kioto demostró que entienden tono más que palabras — pero la asociación es real.</span></div></div></details>
+      <details class="story-collapse"><summary><span class="story-icon">🛕 La historia</span><h5>Todai-ji: el Buda y el agujero de la nariz</h5><span class="story-chev">▾</span></summary><div class="story-body"><p>El templo Todai-ji alberga el <strong>Buda de bronce más grande del mundo</strong> (15 metros, 500 toneladas), terminado en <strong>752</strong>. Para fundirlo se gastó toda la reserva de bronce de Japón, lo que casi quiebra la economía del país.</p><p>El edificio que lo alberga (Daibutsuden) era originalmente un <strong>33% más grande</strong> que el actual. Aún así, sigue siendo el edificio de madera más grande del mundo. Dentro hay un pilar con un agujero del tamaño exacto de la <em>nariz del Buda</em>: la tradición dice que pasar por él trae iluminación. Los niños lo logran fácil; los adultos sufren.</p></div></details>
       <div class="timeline">
         <div class="ev move"><div class="when">09:00</div><h4>Tren Osaka → Nara</h4><p class="desc">Kintetsu Nara desde Namba (~40 min, más cerca del parque).</p></div>
         <div class="ev"><div class="when">10:30</div><h4>Nara Park · ciervos 🦌</h4><p class="desc">~1.300 ciervos sika sagrados. Comprad senbei (¥200) — saben hacer reverencia.</p><div class="actions"><a href="https://maps.google.com/?q=Nara+Park" target="_blank">📍 Maps</a></div></div>
@@ -938,7 +1072,7 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
 
   <details class="day"><summary><div class="num">4</div><div class="title"><div class="day-tag">Vie 29 may · Día 4</div><h3>Osaka urbano · Despedida</h3></div><div class="chev">▾</div></summary>
     <div class="body">
-      <div class="story"><div class="label">🥞 La curiosidad</div><h4>Okonomiyaki: "lo que tú quieras a la plancha"</h4><p>El nombre significa literalmente <em>"lo que quieras (okonomi) cocinado a la plancha (yaki)"</em>. Nació en Osaka durante la Segunda Guerra Mundial, cuando el arroz estaba racionado y la gente necesitaba aprovechar lo que había a mano: harina, repollo, huevos.</p><p>Es el <strong>plato más democrático de Japón</strong>. En Osaka se mezclan todos los ingredientes antes de cocinar. En Hiroshima, se sirven en capas (con fideos yakisoba dentro). Los osakanos defienden con fervor que el suyo es el original, aunque históricamente Hiroshima podría disputarlo. Esta rivalidad es real y tiene sus libros académicos.</p></div>
+      <details class="story-collapse"><summary><span class="story-icon">🥞 La curiosidad</span><h5>Okonomiyaki: "lo que tú quieras a la plancha"</h5><span class="story-chev">▾</span></summary><div class="story-body"><p>El nombre significa literalmente <em>"lo que quieras (okonomi) cocinado a la plancha (yaki)"</em>. Nació en Osaka durante la Segunda Guerra Mundial, cuando el arroz estaba racionado y la gente necesitaba aprovechar lo que había a mano: harina, repollo, huevos.</p><p>Es el <strong>plato más democrático de Japón</strong>. En Osaka se mezclan todos los ingredientes antes de cocinar. En Hiroshima, se sirven en capas (con fideos yakisoba dentro). Los osakanos defienden con fervor que el suyo es el original, aunque históricamente Hiroshima podría disputarlo. Esta rivalidad es real y tiene sus libros académicos.</p></div></details>
       <div class="timeline">
         <div class="ev"><div class="when">10:00</div><h4>Umeda Sky Building</h4><p class="desc">Floating Garden Observatory. Vistas 360°. Arquitectura de Hiroshi Hara — diseñador también de Kyoto Station.</p><div class="meta"><span>💴 ¥1.500</span></div><div class="actions"><a href="https://maps.google.com/?q=Umeda+Sky+Building" target="_blank">📍 Maps</a></div></div>
         <div class="ev food"><div class="when">13:00 · Almuerzo</div><h4>Kiji <span class="badge">okonomiyaki</span></h4><p class="desc">El okonomiyaki más famoso de Osaka. Hay cola siempre.</p><div class="meta"><span>💴 ¥1.000-1.500</span></div></div>
@@ -976,13 +1110,11 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
     <img loading="lazy" alt="Okinawa">
     <div class="overlay"><div class="caption"><div class="kanji-deco">沖縄 · OKINAWA</div><div class="name">El reino de Ryukyu</div></div></div>
   </div>
-  <div class="story">
-    <div class="label">📖 La historia</div>
-    <h4>Okinawa: el otro Japón</h4>
+  <details class="story-collapse"><summary><span class="story-icon">📖 La historia</span><h5>Okinawa: el otro Japón</h5><span class="story-chev">▾</span></summary><div class="story-body">
     <p>Hasta <strong>1879</strong>, Okinawa no era Japón. Era el <strong>Reino de Ryukyu</strong>, un estado independiente que comerciaba entre Japón, China, Corea y el sudeste asiático durante 450 años. Su cultura, idioma, comida y arquitectura son mucho más cercanos a las islas tropicales del Pacífico que al continente nipón.</p>
     <p>El idioma local <em>uchinaaguchi</em> es tan diferente del japonés que se considera un <strong>idioma propio</strong>, no un dialecto. La gente saluda con <em>"haisai"</em> en vez de "konnichiwa". El plato típico no es ramen sino <em>goya champuru</em> (revuelto de melón amargo). Y los <em>shisa</em> — leones-perros guardianes que veréis en cada tejado — son su versión local de los <em>komainu</em> japoneses.</p>
     <p>Aquí también está la mayor concentración de <strong>centenarios del mundo</strong>: el secreto de la longevidad japonesa no está en Tokyo, sino en estas islas. Sopa de verduras, batata púrpura y <em>"hara hachi bu"</em> (comer hasta el 80% de saciedad).</p>
-  </div>
+  </div></details>
   <div class="hotel-block"><div class="icon">🌴</div><div class="info"><div class="label">Hotel · 5 noches</div><h4>Hiyori Ocean Resort Okinawa</h4><p>En Onna village (Nakadomari, 836-1). El resort de Onna más cercano a Naha (~49 min en coche). A 16 min andando de Nakadomari Beach.</p><div class="acts"><a href="https://maps.google.com/?q=Hiyori+Ocean+Resort+Okinawa" target="_blank">📍 Mapa</a></div></div></div>
   <div class="alert"><strong>⚠️ Aviso ferry Zamami:</strong> El ferry rápido Queen Zamami estará en mantenimiento del <strong>27 mayo al 5 junio 2026</strong>. Solo operará el ferry regular (~2h por trayecto en lugar de 50 min). Reserva en <a href="https://www.zamamienglishguide.com/ferries/" target="_blank">zamamienglishguide.com</a> o tel. 098-868-4567.</div>
   <div class="alert info"><strong>🚗 Coche imprescindible:</strong> Necesitáis <strong>traducción JAF</strong> de vuestro carnet (~¥4.000, 1 sem). El permiso internacional español NO es válido — solo carnet español + traducción JAF.</div>
@@ -1033,7 +1165,7 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
   <details class="day"><summary><div class="num">2</div><div class="title"><div class="day-tag">Dom 31 may · Día 2</div><h3>Costa Oeste</h3></div><div class="chev">▾</div></summary>
     <div class="body">
       <div class="ev-img okinawa-fb" data-wiki="Cape_Manzamo" data-emoji="🌅"><img loading="lazy" alt="Cabo Manzamo"></div>
-      <div class="story"><div class="label">📖 La leyenda</div><h4>Cabo Manzamo: el rey y los 10.000 asientos</h4><p>En el <strong>siglo XVIII</strong>, el rey <strong>Sho Kei</strong> del reino de Ryukyu (1700-1751, decimotercer rey) visitó este acantilado durante un tour real por la isla. Tras subir y mirar el mar declaró: <em>"En la cima de este risco caben 10.000 personas sentadas"</em>. Los kanji que componen el nombre son por eso: <strong>万 (man = 10.000) · 座 (za = sentarse) · 毛 (mo = pradera)</strong>.</p><p>El icónico arco con forma de <em>"trompa de elefante"</em> es <strong>caliza coralina</strong> esculpida durante miles de años por el oleaje del Mar de China Oriental. La plataforma del acantilado está a 20 metros sobre el mar. En días claros, la visibilidad se extiende kilómetros — verás incluso las islas Kerama en el horizonte.</p><p>El rey Sho Kei fue uno de los grandes reyes de Ryukyu — promovió la educación, codificó las leyes (su <em>"Sho Kei Code"</em> aún se cita) y fundó la primera universidad pública del reino. Llevó a Ryukyu a su edad de oro cultural antes de la anexión por Japón en 1879.</p><p>El reino de Ryukyu pagaba tributo simultáneamente a <strong>China y Japón</strong> durante 400 años — diplomáticamente neutral, prosperaba comerciando con ambos. Aquí no había samuráis ni guerras civiles: era un reino marítimo budista pacifista. Hasta que Japón lo anexó. La cultura ryukyuana sobrevivió, pero el reino independiente desapareció.</p><div class="funfact"><span class="em">🌅</span><span><strong>El mejor momento:</strong> atardecer. El color del mar pasa de turquesa → naranja → rojo → púrpura en menos de 30 minutos. Hay food court abierto hasta las 19h con cerveza Orion local.</span></div><div class="funfact"><span class="em">🐍</span><span><strong>Habu:</strong> Okinawa tiene una serpiente venenosa endémica, el <em>habu</em> (Trimeresurus flavoviridis), de hasta 2 metros. Es el reptil más temido de la isla. En los acantilados de Manzamo a veces aparece — pero solo de noche y nunca en zonas turísticas. Tranquilos.</span></div><div class="funfact"><span class="em">🪨</span><span><strong>Geología:</strong> toda Okinawa es coral fosilizado. Hace 100 millones de años, esta zona estaba bajo el mar. Los acantilados de Manzamo son arrecifes antiguos que emergieron por movimientos tectónicos. Si miráis las paredes con cuidado, veréis fósiles de conchas marinas incrustadas.</span></div></div>
+      <details class="story-collapse"><summary><span class="story-icon">📖 La leyenda</span><h5>Cabo Manzamo: el rey y los 10.000 asientos</h5><span class="story-chev">▾</span></summary><div class="story-body"><p>En el <strong>siglo XVIII</strong>, el rey <strong>Sho Kei</strong> del reino de Ryukyu (1700-1751, decimotercer rey) visitó este acantilado durante un tour real por la isla. Tras subir y mirar el mar declaró: <em>"En la cima de este risco caben 10.000 personas sentadas"</em>. Los kanji que componen el nombre son por eso: <strong>万 (man = 10.000) · 座 (za = sentarse) · 毛 (mo = pradera)</strong>.</p><p>El icónico arco con forma de <em>"trompa de elefante"</em> es <strong>caliza coralina</strong> esculpida durante miles de años por el oleaje del Mar de China Oriental. La plataforma del acantilado está a 20 metros sobre el mar. En días claros, la visibilidad se extiende kilómetros — verás incluso las islas Kerama en el horizonte.</p><p>El rey Sho Kei fue uno de los grandes reyes de Ryukyu — promovió la educación, codificó las leyes (su <em>"Sho Kei Code"</em> aún se cita) y fundó la primera universidad pública del reino. Llevó a Ryukyu a su edad de oro cultural antes de la anexión por Japón en 1879.</p><p>El reino de Ryukyu pagaba tributo simultáneamente a <strong>China y Japón</strong> durante 400 años — diplomáticamente neutral, prosperaba comerciando con ambos. Aquí no había samuráis ni guerras civiles: era un reino marítimo budista pacifista. Hasta que Japón lo anexó. La cultura ryukyuana sobrevivió, pero el reino independiente desapareció.</p><div class="funfact"><span class="em">🌅</span><span><strong>El mejor momento:</strong> atardecer. El color del mar pasa de turquesa → naranja → rojo → púrpura en menos de 30 minutos. Hay food court abierto hasta las 19h con cerveza Orion local.</span></div><div class="funfact"><span class="em">🐍</span><span><strong>Habu:</strong> Okinawa tiene una serpiente venenosa endémica, el <em>habu</em> (Trimeresurus flavoviridis), de hasta 2 metros. Es el reptil más temido de la isla. En los acantilados de Manzamo a veces aparece — pero solo de noche y nunca en zonas turísticas. Tranquilos.</span></div><div class="funfact"><span class="em">🪨</span><span><strong>Geología:</strong> toda Okinawa es coral fosilizado. Hace 100 millones de años, esta zona estaba bajo el mar. Los acantilados de Manzamo son arrecifes antiguos que emergieron por movimientos tectónicos. Si miráis las paredes con cuidado, veréis fósiles de conchas marinas incrustadas.</span></div></div></details>
       <div class="timeline">
         <div class="ev food"><div class="when">09:00 · Desayuno</div><h4>Paanilani Bakery <span class="badge" style="background:#fff;color:var(--ink-mute);font-style:italic;">verificar nombre</span></h4><p class="desc">Bakery local en Onna (verifica el nombre con el hotel).</p></div>
         <div class="ev"><div class="when">11:00</div><h4>Cabo Manzamo</h4><p class="desc">Acantilado caliza con la famosa "trompa de elefante". Vistas 180° del Mar de China Oriental.</p><div class="meta"><span>💴 ¥100</span><span>🚗 parking gratis</span></div><div class="actions"><a href="https://maps.google.com/?q=Cape+Manzamo" target="_blank">📍 Maps</a></div></div>
@@ -1057,9 +1189,9 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
     <div class="body">
       <div class="day-overview">Día completo al norte. Empezar con el acuario y terminar en una de las playas más bellas de Japón.</div>
       <div class="ev-img okinawa-fb" data-wiki="Okinawa_Churaumi_Aquarium" data-emoji="🐋"><img loading="lazy" alt="Churaumi"></div>
-      <div class="story"><div class="label">🐋 ¿Sabíais que…?</div><h4>Churaumi: el primer acuario que crió tiburón ballena en cautividad</h4><p>El tanque <strong>Kuroshio</strong> (7.500 m³, 35 m de largo, 8,2 m de profundidad) era el más grande del mundo cuando se inauguró en 2002. Hoy es el tercero (superado por Atlanta y Dubai), pero su mayor logro fue científico: en <strong>1995</strong> Churaumi se convirtió en el <strong>primer acuario del planeta en mantener vivo un tiburón ballena</strong> en cautividad por más de un año. Hoy hay tres: el más grande mide <strong>8,8 metros y pesa más de 6 toneladas</strong>.</p><p>Los tiburones ballena (<em>Rhincodon typus</em>) son el pez más grande del mundo — pueden alcanzar los <strong>18 metros</strong> en libertad. Pese al tamaño, son inofensivos: filtran plancton con su boca de 1,5 m. Se les caen los dientes y vuelven a salir. Pueden vivir <strong>100-150 años</strong>. Y nadie sabe dónde se aparean — uno de los grandes misterios de la biología marina actual.</p><p>El nombre "Churaumi" significa <em>"mar bonito"</em> en <em>uchinaaguchi</em> (el idioma de Okinawa). El acuario es parte del <strong>Ocean Expo Park</strong>, construido para la Expo Internacional del Océano de <strong>1975</strong> — la primera exposición universal celebrada en Asia tras la Segunda Guerra Mundial. Su lema fue: <em>"El mar que queremos ver"</em>.</p><p>Curiosidad técnica: el agua del tanque es <strong>agua de mar real</strong>, bombeada desde el océano y filtrada en tiempo real (no agua artificial). Cada hora pasa por el tanque el equivalente al volumen de 3 piscinas olímpicas. La pared frontal de acrílico mide <strong>22,5 × 8,2 m</strong> y es la más grande del mundo (~60 toneladas).</p><div class="funfact"><span class="em">⏰</span><span><strong>Horarios clave:</strong> alimentación de mantas a las 9:30, alimentación del tiburón ballena a las 15:00 y 17:00. No os los perdáis.</span></div><div class="funfact"><span class="em">🎬</span><span><strong>Cine:</strong> el tanque Kuroshio aparece en la película de animación "Ponyo" de Studio Ghibli. Hayao Miyazaki visitó el acuario para inspirarse durante la producción.</span></div><div class="funfact"><span class="em">🐢</span><span><strong>Conservación:</strong> Churaumi tiene un programa de cría de tortugas marinas en peligro de extinción. Los bebés nacidos en cautividad se sueltan en playas de Okinawa. Si tenéis suerte podríais ver una suelta — los anuncian en la web.</span></div></div>
+      <details class="story-collapse"><summary><span class="story-icon">🐋 ¿Sabíais que…?</span><h5>Churaumi: el primer acuario que crió tiburón ballena en cautividad</h5><span class="story-chev">▾</span></summary><div class="story-body"><p>El tanque <strong>Kuroshio</strong> (7.500 m³, 35 m de largo, 8,2 m de profundidad) era el más grande del mundo cuando se inauguró en 2002. Hoy es el tercero (superado por Atlanta y Dubai), pero su mayor logro fue científico: en <strong>1995</strong> Churaumi se convirtió en el <strong>primer acuario del planeta en mantener vivo un tiburón ballena</strong> en cautividad por más de un año. Hoy hay tres: el más grande mide <strong>8,8 metros y pesa más de 6 toneladas</strong>.</p><p>Los tiburones ballena (<em>Rhincodon typus</em>) son el pez más grande del mundo — pueden alcanzar los <strong>18 metros</strong> en libertad. Pese al tamaño, son inofensivos: filtran plancton con su boca de 1,5 m. Se les caen los dientes y vuelven a salir. Pueden vivir <strong>100-150 años</strong>. Y nadie sabe dónde se aparean — uno de los grandes misterios de la biología marina actual.</p><p>El nombre "Churaumi" significa <em>"mar bonito"</em> en <em>uchinaaguchi</em> (el idioma de Okinawa). El acuario es parte del <strong>Ocean Expo Park</strong>, construido para la Expo Internacional del Océano de <strong>1975</strong> — la primera exposición universal celebrada en Asia tras la Segunda Guerra Mundial. Su lema fue: <em>"El mar que queremos ver"</em>.</p><p>Curiosidad técnica: el agua del tanque es <strong>agua de mar real</strong>, bombeada desde el océano y filtrada en tiempo real (no agua artificial). Cada hora pasa por el tanque el equivalente al volumen de 3 piscinas olímpicas. La pared frontal de acrílico mide <strong>22,5 × 8,2 m</strong> y es la más grande del mundo (~60 toneladas).</p><div class="funfact"><span class="em">⏰</span><span><strong>Horarios clave:</strong> alimentación de mantas a las 9:30, alimentación del tiburón ballena a las 15:00 y 17:00. No os los perdáis.</span></div><div class="funfact"><span class="em">🎬</span><span><strong>Cine:</strong> el tanque Kuroshio aparece en la película de animación "Ponyo" de Studio Ghibli. Hayao Miyazaki visitó el acuario para inspirarse durante la producción.</span></div><div class="funfact"><span class="em">🐢</span><span><strong>Conservación:</strong> Churaumi tiene un programa de cría de tortugas marinas en peligro de extinción. Los bebés nacidos en cautividad se sueltan en playas de Okinawa. Si tenéis suerte podríais ver una suelta — los anuncian en la web.</span></div></div></details>
       <div class="ev-img okinawa-fb" data-wiki="Kouri_Island" data-emoji="🌉"><img loading="lazy" alt="Kouri Bridge"></div>
-      <div class="story"><div class="label">💕 La leyenda</div><h4>Kouri Island: la isla de Adán y Eva de Japón</h4><p>La leyenda local dice que <strong>los primeros habitantes de Okinawa fueron una pareja</strong> que cayó del cielo en la isla Kouri. Se convirtieron en los antepasados del pueblo Ryukyu. Por eso es conocida como <em>"la isla del amor"</em>. Su puente de 1,9 km — uno de los más bellos de Japón — se inauguró en 2005, y desde entonces es destino popular de bodas y lunas de miel.</p><p>La <strong>Heart Rock</strong> son dos rocas que en marea baja forman un corazón perfecto. Saltó a la fama mundial en 2014 cuando una marca japonesa de teléfonos las usó en un anuncio. <em>Consultad la tabla de mareas antes de ir</em> — solo se ven con marea baja.</p></div>
+      <details class="story-collapse"><summary><span class="story-icon">💕 La leyenda</span><h5>Kouri Island: la isla de Adán y Eva de Japón</h5><span class="story-chev">▾</span></summary><div class="story-body"><p>La leyenda local dice que <strong>los primeros habitantes de Okinawa fueron una pareja</strong> que cayó del cielo en la isla Kouri. Se convirtieron en los antepasados del pueblo Ryukyu. Por eso es conocida como <em>"la isla del amor"</em>. Su puente de 1,9 km — uno de los más bellos de Japón — se inauguró en 2005, y desde entonces es destino popular de bodas y lunas de miel.</p><p>La <strong>Heart Rock</strong> son dos rocas que en marea baja forman un corazón perfecto. Saltó a la fama mundial en 2014 cuando una marca japonesa de teléfonos las usó en un anuncio. <em>Consultad la tabla de mareas antes de ir</em> — solo se ven con marea baja.</p></div></details>
       <div class="timeline">
         <div class="ev"><div class="when">09:00</div><h4>Churaumi Aquarium 🐋</h4><p class="desc">Uno de los acuarios más grandes del mundo. ~50 min en coche desde Onna.</p><div class="meta"><span>🕐 8:30-18:30</span><span>💴 ¥2.180</span></div><div class="actions"><a href="https://maps.google.com/?q=Churaumi+Aquarium" target="_blank">📍 Maps</a></div></div>
         <div class="ev food"><div class="when">13:00 · Almuerzo</div><h4>L LOTA Café</h4><p class="desc">Café en zona norte (verificar ubicación).</p></div>
@@ -1095,7 +1227,7 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
     <div class="body">
       <div class="day-overview">El día <strong>más paradisíaco</strong> 🌴.</div>
       <div class="ev-img okinawa-fb" data-wiki="Zamami,_Okinawa" data-emoji="🏖️"><img loading="lazy" alt="Zamami"></div>
-      <div class="story"><div class="label">🌊 La curiosidad</div><h4>El "Kerama Blue": un color que tiene nombre propio</h4><p>El azul del archipiélago Kerama es tan particular que en Japón tiene <strong>nombre oficial</strong>: <em>Kerama Blue</em>. La visibilidad bajo el agua alcanza los <strong>50-60 metros</strong> — comparable a las Maldivas o el Caribe. La razón: el agua es excepcionalmente baja en plancton (lo que la hace pobre en nutrientes pero brutalmente cristalina).</p><p>En invierno (enero-marzo), la zona es <strong>la mejor del mundo para avistar ballenas jorobadas</strong> que migran desde Alaska a parir. En vuestra fecha (junio) las ballenas ya se han ido, pero podríais ver <em>tortugas verdes y carey</em> directamente desde la orilla, especialmente en Ama Beach.</p><p class="funfact" style="margin:8px 0 0;"><span class="em">🐢</span><span>Las islas Kerama son <strong>parque nacional desde 2014</strong>. Llevad solo protector solar <em>reef-safe</em> — los químicos del solar normal matan los corales.</span></p></div>
+      <details class="story-collapse"><summary><span class="story-icon">🌊 La curiosidad</span><h5>El "Kerama Blue": un color que tiene nombre propio</h5><span class="story-chev">▾</span></summary><div class="story-body"><p>El azul del archipiélago Kerama es tan particular que en Japón tiene <strong>nombre oficial</strong>: <em>Kerama Blue</em>. La visibilidad bajo el agua alcanza los <strong>50-60 metros</strong> — comparable a las Maldivas o el Caribe. La razón: el agua es excepcionalmente baja en plancton (lo que la hace pobre en nutrientes pero brutalmente cristalina).</p><p>En invierno (enero-marzo), la zona es <strong>la mejor del mundo para avistar ballenas jorobadas</strong> que migran desde Alaska a parir. En vuestra fecha (junio) las ballenas ya se han ido, pero podríais ver <em>tortugas verdes y carey</em> directamente desde la orilla, especialmente en Ama Beach.</p><p class="funfact" style="margin:8px 0 0;"><span class="em">🐢</span><span>Las islas Kerama son <strong>parque nacional desde 2014</strong>. Llevad solo protector solar <em>reef-safe</em> — los químicos del solar normal matan los corales.</span></p></div></details>
       <div class="alert"><strong>📅 Día largo:</strong> Con ferry regular (Queen Zamami en mantenimiento), planificad <strong>10:00 ida / 16:00 vuelta</strong> aprox.</div>
       <div class="timeline">
         <div class="ev move"><div class="when">07:30</div><h4>Salida temprana → Tomari Port (Naha)</h4><p class="desc">~50 min en coche. Aparcar (~¥1.500/día). Llegar 30 min antes.</p></div>
@@ -1354,6 +1486,241 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
 
   </div>
 
+  
+  <h3 style="margin-top:22px;">🍽️ Qué pedir en cada restaurante</h3>
+  <p style="font-size:.88rem;color:var(--ink-soft);font-style:italic;margin:0 0 14px;">Recomendaciones basadas en reseñas de Tabelog, Tripadvisor y guías locales — los platos que más piden los comensales y los que se llevan los elogios.</p>
+
+  <div class="order-guide">
+
+    <div class="order-card">
+      <div class="head"><span class="em">🍤</span><h4>Tempura Shimomura<small>⭐ Michelin · Asakusa, Tokyo</small></h4><span class="day-pill tokyo">21 may</span></div>
+      <div class="picks">
+        <div class="pick"><span><strong>Sweet potato (boniato) caramelizado</strong> · 30 min en aceite — la pieza estrella, sedoso y caramelizado</span></div>
+        <div class="pick"><span><strong>Conger eel (anago)</strong> · técnica perfeccionada del chef Shimomura tras 20 años</span></div>
+        <div class="pick"><span><strong>Sea urchin (uni)</strong> · solo en temporada, espectacular cuando lo tienen</span></div>
+        <div class="pick"><span><strong>Chi ayu (sweetfish)</strong> · pequeño pez de río de temporada, muy elogiado</span></div>
+        <div class="pick"><span><strong>Sillago (kisu)</strong> · pescado blanco delicado, otra firma de la casa</span></div>
+      </div>
+      <div class="tip-pick"><strong>El omakase</strong> es la única opción — alternará pescado y verdura. La cuenta ronda los <strong>¥18-25.000/persona</strong>, mucho más asequible que otros tempura Michelin.</div>
+    </div>
+
+    <div class="order-card">
+      <div class="head"><span class="em">🥩</span><h4>Hakushu Teppanyaki<small>Sakuragaoka, Shibuya</small></h4><span class="day-pill tokyo">20 may</span></div>
+      <div class="picks">
+        <div class="pick"><span><strong>Filet steak course</strong> (lo que tienes reservado: ¥12.100) · el más fino del wagyu</span></div>
+        <div class="pick"><span><strong>Okonomiyaki estilo Kansai</strong> · especialidad del fundador (originario de Kobe). Pídelo de postre/cierre</span></div>
+        <div class="pick"><span><strong>Garlic chips</strong> y verduras planchadas · acompañamiento clásico</span></div>
+        <div class="pick"><span><strong>Sake premium local</strong> · pedid recomendación al chef</span></div>
+      </div>
+      <div class="tip-pick"><strong>Wagyu A5</strong> es el grado máximo (Beef Marbling Score 11-12). Pedid <em>"medium-rare"</em> para apreciar la grasa intramuscular.</div>
+    </div>
+
+    <div class="order-card">
+      <div class="head"><span class="em">🍣</span><h4>Sushi Murakami Jiro<small>⭐ Michelin · Sonezakishinchi, Osaka</small></h4><span class="day-pill osaka">29 may</span></div>
+      <div class="picks">
+        <div class="pick"><span><strong>Tuna nigiri marinada (zuke maguro)</strong> · plato firma, "el mejor atún" según muchos reviews</span></div>
+        <div class="pick"><span><strong>Chutoro &amp; otoro</strong> · diferentes cortes del atún rojo</span></div>
+        <div class="pick"><span><strong>Uni (sea urchin)</strong> · cuando lo tienen, sublime</span></div>
+        <div class="pick"><span><strong>Tamagoyaki final</strong> · cierre dulce-salado, hecho con receta secreta de Saeki</span></div>
+      </div>
+      <div class="tip-pick"><strong>Su salsa de soja</strong> es propia, y el <strong>arroz akazu (vinagre rojo)</strong> viene del pueblo natal del chef. Ambos hablan inglés bien — preguntad y os explican cada pieza.</div>
+    </div>
+
+    <div class="order-card">
+      <div class="head"><span class="em">🍣</span><h4>Sushi Matsumoto<small>⭐ Michelin · Gion, Kyoto</small></h4><span class="day-pill kyoto">25 may</span></div>
+      <div class="picks">
+        <div class="pick"><span><strong>Skipjack tuna a la paja (warayaki katsuo)</strong> · plato firma del chef, ahumado a la paja de arroz con cebolleta</span></div>
+        <div class="pick"><span><strong>Uni / urchin</strong> · selecciones cambiantes según temporada</span></div>
+        <div class="pick"><span><strong>Toro y chutoro</strong> · varios cortes de atún rojo</span></div>
+        <div class="pick"><span><strong>Tsumami (entrantes pequeños)</strong> · si pedís el curso completo, vienen primero</span></div>
+      </div>
+      <div class="tip-pick"><strong>Arroz único:</strong> shari sazonado con sal y vinagre rojo (sin azúcar). El chef Matsumoto usa una técnica de salado lento del pescado que concentra el umami. <strong>Toque suave</strong> con la salsa para que cada pieza brille.</div>
+    </div>
+
+    <div class="order-card">
+      <div class="head"><span class="em">🍵</span><h4>Kiyama (kaiseki)<small>⭐ Michelin · Nakagyo, Kyoto</small></h4><span class="day-pill kyoto">24 may</span></div>
+      <div class="picks">
+        <div class="pick"><span><strong>Sea urchin egg bowl (uni-tamago)</strong> · plato firma — uni cremoso sobre tortilla dulce-suave de arroz</span></div>
+        <div class="pick"><span><strong>Hard shell clam rice (hamaguri gohan)</strong> · arroz cocido con almeja en la cáscara sobre hojas verdes</span></div>
+        <div class="pick"><span><strong>Wagyu del curso</strong> · especialmente tierno gracias a la técnica del chef</span></div>
+        <div class="pick"><span><strong>Té matcha preparado con el agua del manantial imperial</strong></span></div>
+      </div>
+      <div class="tip-pick"><strong>El agua es la estrella oculta:</strong> el restaurante está sobre la misma fuente que abastece al Palacio Imperial. Veréis al chef preparar el dashi de bonito frente a vosotros. Ambiente menos rígido que kaiseki tradicional.</div>
+    </div>
+
+    <div class="order-card">
+      <div class="head"><span class="em">🍢</span><h4>Wabiya Korekido<small>Yakitori · Gion, Kyoto</small></h4><span class="day-pill kyoto">23 may</span></div>
+      <div class="picks">
+        <div class="pick"><span><strong>Kyoto Yakitori Style Course</strong> (lo que tienes reservado, ¥10.000) · variedad de partes del pollo</span></div>
+        <div class="pick"><span><strong>Tsukune (albóndiga)</strong> · jugosa, técnica de la casa</span></div>
+        <div class="pick"><span><strong>Nankotsu (cartílago)</strong> · crujiente, sorprendente</span></div>
+        <div class="pick"><span><strong>Negima (con cebolleta)</strong> · el clásico imprescindible</span></div>
+        <div class="pick"><span><strong>Stone-grilled oyakodon</strong> de cierre · arroz con pollo y huevo a la piedra caliente — el plato estrella, pedidlo cocido al gusto</span></div>
+      </div>
+      <div class="tip-pick"><strong>Pollo Wabiya de Tottori</strong> — considerado el mejor de Japón. El oyakodon es el momento mágico: podéis personalizar la cocción del huevo y, al final, transformarlo en <em>ochazuke</em> añadiendo el caldo de pollo.</div>
+    </div>
+
+    <div class="order-card">
+      <div class="head"><span class="em">🐟</span><h4>Nodaiwa Iikura Honten<small>⭐ Michelin · Higashi-Azabu, Tokyo</small></h4><span class="day-pill tokyo">22 may</span></div>
+      <div class="picks">
+        <div class="pick"><span><strong>Unaju de mejor categoría (Yamabuki ¥5.000 o Katsura ¥6.200)</strong> · anguila kabayaki sobre arroz en caja laqueada</span></div>
+        <div class="pick"><span><strong>Shirayaki course (¥8.200)</strong> · anguila vaporizada SIN salsa, comida con wasabi y sal de roca — más limpia y elegante</span></div>
+        <div class="pick"><span><strong>Shiba Unagi-ju Course (¥10.000)</strong> · curso completo: aperitivo + shirayaki + cazuela + unaju + sopa de hígado</span></div>
+        <div class="pick"><span><strong>Kimosui (sopa de hígado de anguila)</strong> · pequeña pero intensa</span></div>
+      </div>
+      <div class="tip-pick">La calidad de la anguila es <strong>la misma en todos los niveles</strong> — solo cambia la cantidad sobre el arroz. 5 generaciones desde la era Edo. Estilo Kanto: <strong>cuecen al vapor primero</strong> para liberar la grasa antes de asar.</div>
+    </div>
+
+    <div class="order-card">
+      <div class="head"><span class="em">🍱</span><h4>Tonkatsu Koshiro<small>Razas heritage · Minamisemba, Osaka</small></h4><span class="day-pill osaka">26 may</span></div>
+      <div class="picks">
+        <div class="pick"><span><strong>Fillet katsu sandwich</strong> (apertura del curso) · plato firma — empanado finísimo y crujiente</span></div>
+        <div class="pick"><span><strong>Rib loin Mangalica</strong> · cerdo lanudo húngaro</span></div>
+        <div class="pick"><span><strong>Loin Sangen pork</strong> · raza japonesa premium</span></div>
+        <div class="pick"><span><strong>Premium loin Berkshire</strong> (kurobuta inglés) · el más jugoso del curso</span></div>
+        <div class="pick"><span><strong>Schwäbisch-Hall shoulder loin</strong> · cerdo alemán heritage</span></div>
+        <div class="pick"><span><strong>Mini minced cutlet + porridge risotto</strong> · cambio de textura a mitad del curso</span></div>
+      </div>
+      <div class="tip-pick">El curso de 6 cortes con razas distintas (~¥10.000) es <strong>imposible de encontrar en ningún otro sitio del mundo</strong>. Empieza con sándwich, sigue con cortes alternados grasa/magro, termina con dulce.</div>
+    </div>
+
+    <div class="order-card">
+      <div class="head"><span class="em">🥩</span><h4>Sushi Class Tsukiji<small>Japan Wonder Travel</small></h4><span class="day-pill tokyo">22 may</span></div>
+      <div class="picks">
+        <div class="pick"><span><strong>Nigiri practice</strong> · aprenderéis el "gestor" del shari (apriete justo)</span></div>
+        <div class="pick"><span><strong>Maki rolls</strong> · técnica del esterilla makisu</span></div>
+        <div class="pick"><span><strong>Tamagoyaki</strong> · si tienen tiempo, la tortilla dulce de sushi</span></div>
+      </div>
+      <div class="tip-pick">Antes de la clase, dad un paseo por el <strong>Tsukiji Outer Market</strong> y comed <strong>tamagoyaki en palillo de Yamacho</strong> (¥150) — el más famoso del barrio — y <strong>ostras frescas con limón</strong>.</div>
+    </div>
+
+    <div class="order-card">
+      <div class="head"><span class="em">🍲</span><h4>Shabusen Ginza<small>Shabu-shabu</small></h4><span class="day-pill tokyo">19 may</span></div>
+      <div class="picks">
+        <div class="pick"><span><strong>Wagyu shabu-shabu course</strong> · láminas finas de wagyu en caldo dashi</span></div>
+        <div class="pick"><span><strong>Tofu, setas y hortalizas</strong> · acompañamiento estándar</span></div>
+        <div class="pick"><span><strong>Salsa ponzu</strong> (cítrico-soja) para la carne · más ligera</span></div>
+        <div class="pick"><span><strong>Salsa goma-dare</strong> (sésamo) para la carne · más rica</span></div>
+        <div class="pick"><span><strong>Udon o arroz final</strong> · cocido en el caldo que queda — el cierre clásico</span></div>
+      </div>
+      <div class="tip-pick"><strong>Cómo se come:</strong> agarrad lonchas con palillos, sumergid en caldo durante 3-5 segundos haciendo <em>"shabu shabu"</em> (onomatopeya del agitado), mojad en salsa y al boca. <em>NO</em> hervir la carne — solo escaldar.</div>
+    </div>
+
+    <div class="order-card">
+      <div class="head"><span class="em">🥞</span><h4>Sometaro Okonomiyaki<small>Casa de 1937 · Asakusa, Tokyo</small></h4><span class="day-pill tokyo">21 may</span></div>
+      <div class="picks">
+        <div class="pick"><span><strong>Buta-tama</strong> (cerdo + huevo) · el clásico básico para empezar</span></div>
+        <div class="pick"><span><strong>Mix okonomiyaki</strong> (panceta + gambas + calamar) · más completo</span></div>
+        <div class="pick"><span><strong>Yakisoba con cerdo</strong> · fideos a la plancha como alternativa</span></div>
+        <div class="pick"><span><strong>Cerveza Asahi de barril</strong> · ambiente local</span></div>
+      </div>
+      <div class="tip-pick">Lo cocináis vosotros en la plancha del tatami. El staff os enseña los primeros pasos. <strong>Acabad con mayonesa + salsa okonomi + katsuobushi (escamas de bonito que se mueven con el calor) + aonori (alga seca)</strong>.</div>
+    </div>
+
+    <div class="order-card">
+      <div class="head"><span class="em">🥞</span><h4>Kiji Okonomiyaki<small>Umeda, Osaka</small></h4><span class="day-pill osaka">29 may</span></div>
+      <div class="picks">
+        <div class="pick"><span><strong>Modan-yaki</strong> · okonomiyaki + yakisoba dentro = doble carbohidrato glorioso (el más popular)</span></div>
+        <div class="pick"><span><strong>Mix-yaki</strong> (calamar + gamba + panceta)</span></div>
+        <div class="pick"><span><strong>Negi-yaki</strong> · variante con cebolleta verde abundante</span></div>
+        <div class="pick"><span><strong>Cerveza Suntory Premium</strong> · clásico maridaje</span></div>
+      </div>
+      <div class="tip-pick">Sentaros en mostrador para ver al chef. Mucha cola — id antes de las 13h o después de las 14:30. Solo efectivo en algunas mesas. Estilo <strong>Osaka</strong>: todo mezclado en la masa (no en capas como Hiroshima).</div>
+    </div>
+
+    <div class="order-card">
+      <div class="head"><span class="em">🍝</span><h4>SCALAE<small>Italiano · The Thousand Kyoto</small></h4><span class="day-pill kyoto">23 may</span></div>
+      <div class="picks">
+        <div class="pick"><span><strong>Stelo Course</strong> (lo que tienes reservado, ¥5.500) · menú italiano contemporáneo</span></div>
+        <div class="pick"><span><strong>Pasta del día</strong> · suelen tener una especial con productos de Kyoto</span></div>
+        <div class="pick"><span><strong>Verduras locales kioto-shoku</strong> · usan productos de mercados de Kyoto</span></div>
+      </div>
+      <div class="tip-pick">No es japonés pero la cocina italiana usa productos locales de Kyoto. Práctico tras el Shinkansen (justo bajo el hotel). Servicio del 15% incluido (cobrado al final).</div>
+    </div>
+
+    <div class="order-card">
+      <div class="head"><span class="em">🍵</span><h4>Gion Kitagawa Hanbei Honten<small>Té y wagashi · Gion</small></h4><span class="day-pill kyoto">23 may</span></div>
+      <div class="picks">
+        <div class="pick"><span><strong>Matcha ceremonial preparado en mostrador</strong> · té batido al momento con chasen</span></div>
+        <div class="pick"><span><strong>Wagashi de temporada</strong> · dulces tradicionales pintados a mano; en mayo: hortensia (ajisai), iris (shobu)</span></div>
+        <div class="pick"><span><strong>Hojicha</strong> · té tostado más suave si el matcha es muy amargo</span></div>
+      </div>
+      <div class="tip-pick"><strong>Etiqueta:</strong> giréis 2 veces el cuenco con el dibujo hacia el anfitrión antes de beber. Tomad <em>el wagashi PRIMERO</em>, luego el matcha — la amargura del té limpia el dulce del wagashi.</div>
+    </div>
+
+    <div class="order-card">
+      <div class="head"><span class="em">🍱</span><h4>Momoshiki Sukiyaki<small>Yamato beef · Nara</small></h4><span class="day-pill osaka">28 may</span></div>
+      <div class="picks">
+        <div class="pick"><span><strong>Yamato Beef Premium Sukiyaki Course (180g)</strong> · lo reservado, ¥7.680/persona</span></div>
+        <div class="pick"><span><strong>Salsa warishita</strong> (soja + mirin + azúcar) · el chef la prepara delante</span></div>
+        <div class="pick"><span><strong>Huevo crudo batido</strong> para mojar la carne · la magia del sukiyaki</span></div>
+        <div class="pick"><span><strong>Verduras del wok</strong> · tofu, setas, negi, hortalizas</span></div>
+        <div class="pick"><span><strong>Udon final cocido en el caldo</strong> · el cierre tradicional</span></div>
+      </div>
+      <div class="tip-pick"><strong>Yamato gyu</strong> es la wagyu local de Nara, criada en pastos de la prefectura. La forma de comer: cuece carne 30 segundos, moja en huevo batido, devorad. El estilo Kansai usa azúcar directamente sobre la carne; el Kanto usa solo salsa.</div>
+    </div>
+
+    <div class="order-card">
+      <div class="head"><span class="em">🥩</span><h4>Yakiniku Ryukyu no Ushi<small>Wagyu Okinawa · Onna</small></h4><span class="day-pill okinawa">2 jun</span></div>
+      <div class="picks">
+        <div class="pick"><span><strong>Motobu beef / Ishigaki beef variedad</strong> · wagyu local de Okinawa</span></div>
+        <div class="pick"><span><strong>Yakiniku tasting platter</strong> · varios cortes para comparar</span></div>
+        <div class="pick"><span><strong>Tongue salt-pepper (gyutan)</strong> · empezar el ritual</span></div>
+        <div class="pick"><span><strong>Premium kalbi</strong> (chuleta marmoleada)</span></div>
+        <div class="pick"><span><strong>Awamori shochu local</strong> · destilado de arroz de Okinawa</span></div>
+        <div class="pick"><span><strong>Arroz koshihikari de Nagano gratis</strong> · pedidlo en menú a ¥0</span></div>
+      </div>
+      <div class="tip-pick">¡No es lo mismo que "Annex"! Tienda principal. Cargo de mesa <strong>¥385/p</strong>. Cada uno cuece su propia carne. Empezar por cortes más ligeros (sal-pimienta) y acabar con los grasos (salsa).</div>
+    </div>
+
+    <div class="order-card">
+      <div class="head"><span class="em">🥩</span><h4>Teppanyaki Zen<small>Hiyori Ocean Resort · Onna</small></h4><span class="day-pill okinawa">1 jun</span></div>
+      <div class="picks">
+        <div class="pick"><span><strong>Dinner course</strong> (lo reservado, 2 personas)</span></div>
+        <div class="pick"><span><strong>Wagyu Ishigaki / Motobu</strong> a la plancha · cortes premium frente a vosotros</span></div>
+        <div class="pick"><span><strong>Seafood local de Okinawa</strong> · gambas tigre, vieiras</span></div>
+        <div class="pick"><span><strong>Verduras isleñas</strong> (goya = melón amargo, beni-imo = batata morada)</span></div>
+        <div class="pick"><span><strong>Pacharang (postre)</strong> · tradicional ryukyu</span></div>
+      </div>
+      <div class="tip-pick"><strong>Cita confirmada</strong> en tu reserva. Pedid mesa con vistas al mar al hacer check-in. El chef cocina y os habla en inglés.</div>
+    </div>
+
+    <div class="order-card">
+      <div class="head"><span class="em">🌊</span><h4>Hillside Grill<small>Hiyori Ocean Resort · Onna</small></h4><span class="day-pill okinawa">30 may</span></div>
+      <div class="picks">
+        <div class="pick"><span><strong>Steak okinawan grass-fed</strong> · ternera local en parrilla</span></div>
+        <div class="pick"><span><strong>Pasta del mar (frutos de Okinawa)</strong></span></div>
+        <div class="pick"><span><strong>Mojitos locales con shikuwasa</strong> (cítrico autóctono)</span></div>
+        <div class="pick"><span><strong>Plato vegetariano de la isla</strong> (goya champuru moderno)</span></div>
+      </div>
+      <div class="tip-pick">Práctico para el primer día sin moverse — agotados del viaje. Cocina internacional con guiños a Okinawa. Ambiente relajado con vistas.</div>
+    </div>
+
+    <div class="order-card">
+      <div class="head"><span class="em">✨</span><h4>International Brasserie Kunsei<small>Centara Grand · Namba, Osaka</small></h4><span class="day-pill osaka">28 may</span></div>
+      <div class="picks">
+        <div class="pick"><span><strong>Pescado ahumado del día</strong> · "kunsei" = ahumado, la firma del restaurante</span></div>
+        <div class="pick"><span><strong>Wagyu con sal ahumada</strong> · técnica original</span></div>
+        <div class="pick"><span><strong>Cocktails con licores ahumados</strong> · maridaje a juego</span></div>
+        <div class="pick"><span><strong>Postre con caramelo ahumado</strong></span></div>
+      </div>
+      <div class="tip-pick"><strong>Está en tu propio hotel</strong> (planta 33). Pedid mesa con vistas para el atardecer sobre Osaka. Cocina internacional con técnica ahumada como hilo conductor.</div>
+    </div>
+
+    <div class="order-card">
+      <div class="head"><span class="em">🌿</span><h4>Yudofu Sagano<small>Tofu kaiseki · Arashiyama</small></h4><span class="day-pill kyoto">24 may</span></div>
+      <div class="picks">
+        <div class="pick"><span><strong>Yudofu (tofu hervido en dashi)</strong> · plato principal, traído a la mesa en cazuela individual</span></div>
+        <div class="pick"><span><strong>Tofu dengaku</strong> · brocheta de tofu glaseado con miso</span></div>
+        <div class="pick"><span><strong>Yuba (piel de tofu)</strong> · suave y delicada</span></div>
+        <div class="pick"><span><strong>Goma-dofu</strong> (sésamo) · entrante clásico</span></div>
+        <div class="pick"><span><strong>Tempura de verduras locales</strong></span></div>
+      </div>
+      <div class="tip-pick">Cocina zen budista (<em>shojin ryori</em>) en una casa histórica con jardín. El agua de Arashiyama tiene minerales perfectos para tofu — esta zona es la cuna del yudofu en Japón. <strong>Ideal en día de templos</strong>.</div>
+    </div>
+
+  </div>
+
   <div class="gastro-cal">
     <h3>📅 Mapa gastronómico día por día</h3>
     <div class="gastro-day"><div class="date">19 may<small>Tokyo</small></div><div class="meals"><span class="meal">Shabu-shabu</span><span class="meal">Ginza nocturno</span></div></div>
@@ -1410,62 +1777,6 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
   </div>
 </section>
 
-<section id="reservas" class="panel" role="tabpanel">
-  <div class="sh"><span class="em">📌</span><h2>Reservas</h2><span class="accent">23 confirmadas · 6 pendientes</span><span class="sub">Todo registrado y bajo control</span></div>
-  <div class="reslist-actions">
-    <button id="markAllPending">Solo pendientes</button>
-    <button id="markAllConfirmed">Solo confirmadas</button>
-    <button id="resetAll">Resetear marcas</button>
-  </div>
-  <h3 style="margin-top:18px;">✅ Confirmadas (23)</h3>
-  <ul class="reslist" id="resConfirmed">
-    <li data-id="r-prince"><input type="checkbox"><div class="info"><div class="name"><span class="city tokyo">TOKYO</span>Hotel Prince Park Tower (4 noches)</div><div class="meta">19-23 may · Shiba Park</div></div></li>
-    <li data-id="r-shabusen"><input type="checkbox"><div class="info"><div class="name"><span class="city tokyo">TOKYO</span>Shabusen (sin reserva)</div><div class="meta">19 may · Ginza · llegar y entrar</div></div></li>
-    <li data-id="r-hakushu"><input type="checkbox"><div class="info"><div class="name"><span class="city tokyo">TOKYO</span>Hakushu Teppanyaki ✓</div><div class="meta">20 may · 19:30 · Counter · Retty #903752891</div></div></li>
-    <li data-id="r-shimomura"><input type="checkbox"><div class="info"><div class="name"><span class="city tokyo">TOKYO</span>Tempura Shimomura ⭐ ✓</div><div class="meta">21 may · 18:00 · Counter · JPNEAZY #166138</div></div></li>
-    <li data-id="r-sushiclass"><input type="checkbox"><div class="info"><div class="name"><span class="city tokyo">TOKYO</span>Clase de sushi Tsukiji ✓</div><div class="meta">22 may · 13:00-14:30 · Plat Tsukiji · Booking RE-4A84F75337</div></div></li>
-    <li data-id="r-nodaiwa"><input type="checkbox"><div class="info"><div class="name"><span class="city tokyo">TOKYO</span>Nodaiwa Iikura Honten Annex ⭐ ✓</div><div class="meta">22 may · 19:00 · Higashi-Azabu · concierge Prince Park</div></div></li>
-    <li data-id="r-shinkansen-kyo"><input type="checkbox"><div class="info"><div class="name"><span class="city kyoto">KYOTO</span>Shinkansen Tokyo→Kyoto</div><div class="meta">23 may · pendiente comprar Nozomi</div></div></li>
-    <li data-id="r-thousand"><input type="checkbox"><div class="info"><div class="name"><span class="city kyoto">KYOTO</span>Hotel The Thousand Kyoto (3 noches)</div><div class="meta">23-26 may · al lado de Kyoto Station</div></div></li>
-    <li data-id="r-scalae"><input type="checkbox"><div class="info"><div class="name"><span class="city kyoto">KYOTO</span>SCALAE ✓</div><div class="meta">23 may · 12:30 · Stelo ¥5.500/p · Tabelog VMP94JKRRW</div></div></li>
-    <li data-id="r-hanbei"><input type="checkbox"><div class="info"><div class="name"><span class="city kyoto">KYOTO</span>Gion Kitagawa Hanbei (té) ✓</div><div class="meta">23 may · 16:30 · TableCheck</div></div></li>
-    <li data-id="r-wabiya"><input type="checkbox"><div class="info"><div class="name"><span class="city kyoto">KYOTO</span>Wabiya Korekido ✓</div><div class="meta">23 may · 19:30 · Counter ¥21.000 · TableCheck</div></div></li>
-    <li data-id="r-kiyama"><input type="checkbox"><div class="info"><div class="name"><span class="city kyoto">KYOTO</span>Kiyama ⭐ ✓</div><div class="meta">24 may · 19:30 · Omakase ¥67.156 · JPNEAZY #170910</div></div></li>
-    <li data-id="r-matsumoto"><input type="checkbox"><div class="info"><div class="name"><span class="city kyoto">KYOTO</span>Sushi Matsumoto ⭐ ✓</div><div class="meta">25 may · 19:00 · Omakase ¥18.000/p · Tabelog FVJ6E36N4U</div></div></li>
-    <li data-id="r-shinkansen-osa"><input type="checkbox"><div class="info"><div class="name"><span class="city osaka">KYO/OSA</span>Shinkansen Kyoto→Shin-Osaka ✓</div><div class="meta">26 may · 10:02 · Nozomi 13 · Klook GHX774331 · CAR4 6A/6B</div></div></li>
-    <li data-id="r-centara"><input type="checkbox"><div class="info"><div class="name"><span class="city osaka">OSAKA</span>Hotel Centara Grand Osaka (4 noches)</div><div class="meta">26-30 may · Namba</div></div></li>
-    <li data-id="r-koshiro"><input type="checkbox"><div class="info"><div class="name"><span class="city osaka">OSAKA</span>Tonkatsu Koshiro ✓</div><div class="meta">26 may · 18:30 · 6 varieties course · TableCheck</div></div></li>
-    <li data-id="r-nagikatsu"><input type="checkbox"><div class="info"><div class="name"><span class="city osaka">OSAKA</span>Tonkatsu Nagikatsu ⚠️ duplicado</div><div class="meta">26 may · 20:00 · Tabelog J8T2KCJ93U · CONFLICTO con Koshiro</div></div></li>
-    <li data-id="r-usj"><input type="checkbox"><div class="info"><div class="name"><span class="city osaka">OSAKA</span>USJ Super Value Combo ✓</div><div class="meta">27 may · 12:00 · Klook KZN248161 · €169,60</div></div></li>
-    <li data-id="r-momoshiki"><input type="checkbox"><div class="info"><div class="name"><span class="city osaka">NARA</span>Momoshiki ✓</div><div class="meta">28 may · 13:00 · Yamato Beef ¥7.680/p · Tabelog PKUTLPPSTQ</div></div></li>
-    <li data-id="r-kunsei"><input type="checkbox"><div class="info"><div class="name"><span class="city osaka">OSAKA</span>Brasserie Kunsei ✓</div><div class="meta">28 may · 20:00 · Centara 33F · Google Reserve</div></div></li>
-    <li data-id="r-murakami"><input type="checkbox"><div class="info"><div class="name"><span class="city osaka">OSAKA</span>Sushi Murakami Jiro ⭐ ✓</div><div class="meta">29 may · 20:40 · JPNEAZY #166676 · ¥38.500</div></div></li>
-    <li data-id="r-nh767"><input type="checkbox"><div class="info"><div class="name"><span class="city okinawa">VUELO</span>ANA NH767 ITM→OKA ✓</div><div class="meta">30 may · 14:05 · ANA E6YYFZ · e-ticket PDF</div></div></li>
-    <li data-id="r-budget"><input type="checkbox"><div class="info"><div class="name"><span class="city okinawa">OKINAWA</span>Coche Budget Japan ✓</div><div class="meta">30 may 17:30 · 4 jun 11:00 · Toyota Raize · Conf. 764711149 · €313,34</div></div></li>
-    <li data-id="r-hiyori"><input type="checkbox"><div class="info"><div class="name"><span class="city okinawa">OKINAWA</span>Hotel Hiyori Ocean Resort (5 noches)</div><div class="meta">30 may - 4 jun · Onna village</div></div></li>
-    <li data-id="r-hillside"><input type="checkbox"><div class="info"><div class="name"><span class="city okinawa">OKINAWA</span>Hillside Grill ✓</div><div class="meta">30 may · 19:30 · Hiyori · Reserva ab35fa59</div></div></li>
-    <li data-id="r-zen"><input type="checkbox"><div class="info"><div class="name"><span class="city okinawa">OKINAWA</span>Teppanyaki Zen ✓</div><div class="meta">1 jun · 21:00 · Dinner course · TableCheck</div></div></li>
-    <li data-id="r-yakiniku"><input type="checkbox"><div class="info"><div class="name"><span class="city okinawa">OKINAWA</span>Yakiniku Ryukyunoushi Onna ✓</div><div class="meta">2 jun · 19:00 · TableCheck</div></div></li>
-    <li data-id="r-nh464"><input type="checkbox"><div class="info"><div class="name"><span class="city tokyo">VUELO</span>ANA NH464 OKA→HND ✓</div><div class="meta">4 jun · 12:05-14:30 · Asientos 25A/B · ANA E79H7V · €168,08</div></div></li>
-    <li data-id="r-ib0281"><input type="checkbox"><div class="info"><div class="name"><span class="city tokyo">VUELO</span>Iberia IB0281 MAD→HND</div><div class="meta">18 may · 12:30 · vuelo internacional</div></div></li>
-    <li data-id="r-ib0282"><input type="checkbox"><div class="info"><div class="name"><span class="city tokyo">VUELO</span>Iberia IB0282 HND→MAD</div><div class="meta">5 jun · 11:10 · vuelo internacional</div></div></li>
-  </ul>
-
-  <h3 style="margin-top:24px;">⏳ Pendientes (6)</h3>
-  <ul class="reslist" id="resPending">
-    <li data-id="r-shibuyasky"><input type="checkbox"><div class="info"><div class="name"><span class="city tokyo">TOKYO</span>Shibuya Sky</div><div class="meta">20 may · slot atardecer · reservar 2-3 sem antes</div></div></li>
-    <li data-id="r-kimono"><input type="checkbox"><div class="info"><div class="name"><span class="city kyoto">KYOTO</span>Experiencia kimono + fotos</div><div class="meta">25 may · medio día · 💕 luna de miel</div></div></li>
-    <li data-id="r-yudofu"><input type="checkbox"><div class="info"><div class="name"><span class="city kyoto">KYOTO</span>Yudofu Sagano</div><div class="meta">24 may · almuerzo · Arashiyama</div></div></li>
-    <li data-id="r-jaf"><input type="checkbox"><div class="info"><div class="name"><span class="city okinawa">OKINAWA</span>Traducción JAF carnet</div><div class="meta">Antes del viaje · 1 sem · ¥4.000 · imprescindible</div></div></li>
-    <li data-id="r-yamato"><input type="checkbox"><div class="info"><div class="name"><span class="city tokyo">LOG.</span>Yamato luggage forwarding</div><div class="meta">Tokyo → Kyoto · 1 día antes</div></div></li>
-    <li data-id="r-hotel-hnd"><input type="checkbox"><div class="info"><div class="name"><span class="city tokyo">TOKYO</span>Hotel Tokyo (4 jun · cerca Haneda)</div><div class="meta">Royal Park HND / Villa Fontaine HND</div></div></li>
-  </ul>
-
-  <div class="alert" style="margin-top:18px;"><strong>⚠️ Atención:</strong> tienes <strong>dos reservas de tonkatsu</strong> el 26 may (Koshiro 18:30 y Nagikatsu 20:00). Cancela una para evitar penalización (ambas tienen política de 100% día anterior).</div>
-
-  <div class="alert info"><strong>📎 Tickets adjuntos:</strong> los e-tickets de ANA y el voucher de USJ están en la carpeta <em>tickets/</em>. Se abren directamente desde cada evento del itinerario.</div>
-</section>
-
 <section id="practico" class="panel" role="tabpanel">
   <div class="sh"><span class="em">🧭</span><h2>Práctico</h2><span class="accent">presupuesto · packing · etiqueta</span></div>
   <h3 style="margin-top:8px;">💴 Presupuesto orientativo (por persona/día)</h3>
@@ -1476,7 +1787,34 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
     <div class="bar"><div class="name">Okinawa</div><div class="track"><div class="fill" style="width:80%;"></div></div><div class="val">¥27k</div></div>
     <p style="font-size:.8rem;margin:10px 0 0;color:var(--ink-mute);">* Sin contar hotel ni vuelos. Cifras orientativas para gastronomía premium + entradas + transporte.</p>
   </div>
-  <div class="card"><h3>💸 Tipo de cambio</h3><p>~¥160 = 1€. Llevad parte en efectivo (¥30.000-50.000). ATM en 7-Eleven aceptan tarjetas extranjeras. IC card (Suica/PASMO) en Apple Wallet.</p></div>
+  <div class="card" id="currencyCalc">
+  <h3>💱 Conversor de divisas</h3>
+  <p style="font-size:.85rem;color:var(--ink-mute);margin-bottom:14px;">Tasa actualizada automáticamente desde Open Exchange Rates. Pulsa refresh para actualizar.</p>
+  <div style="display:grid;gap:10px;">
+    <div style="display:flex;align-items:center;gap:10px;background:var(--cream);padding:12px;border-radius:12px;border:1px solid var(--line);">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--rose);flex:0 0 30px;text-align:center;">€</span>
+      <input type="number" id="curEUR" inputmode="decimal" placeholder="0" style="flex:1;font-size:1.2rem;border:none;background:transparent;font-family:inherit;color:var(--ink);outline:none;font-weight:500;">
+      <span style="color:var(--ink-mute);font-size:.85rem;">EUR</span>
+    </div>
+    <div style="text-align:center;color:var(--gold);font-size:1.2rem;">⇅</div>
+    <div style="display:flex;align-items:center;gap:10px;background:var(--cream);padding:12px;border-radius:12px;border:1px solid var(--line);">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--rose);flex:0 0 30px;text-align:center;">¥</span>
+      <input type="number" id="curJPY" inputmode="decimal" placeholder="0" style="flex:1;font-size:1.2rem;border:none;background:transparent;font-family:inherit;color:var(--ink);outline:none;font-weight:500;">
+      <span style="color:var(--ink-mute);font-size:.85rem;">JPY</span>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-size:.8rem;color:var(--ink-mute);">
+    <span id="rateInfo">1 € = <strong id="rateVal" style="color:var(--rose);">…</strong> ¥</span>
+    <button id="rateRefresh" style="background:var(--paper);border:1px solid var(--line);padding:4px 10px;border-radius:999px;font-size:.75rem;font-family:inherit;color:var(--rose);cursor:pointer;">↻ Actualizar</button>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:14px;">
+    <button class="quick-eur" data-eur="10" style="background:var(--sakura-soft);border:none;padding:8px;border-radius:8px;font-size:.78rem;color:var(--rose);font-weight:600;cursor:pointer;font-family:inherit;">10€</button>
+    <button class="quick-eur" data-eur="50" style="background:var(--sakura-soft);border:none;padding:8px;border-radius:8px;font-size:.78rem;color:var(--rose);font-weight:600;cursor:pointer;font-family:inherit;">50€</button>
+    <button class="quick-eur" data-eur="100" style="background:var(--sakura-soft);border:none;padding:8px;border-radius:8px;font-size:.78rem;color:var(--rose);font-weight:600;cursor:pointer;font-family:inherit;">100€</button>
+    <button class="quick-eur" data-eur="200" style="background:var(--sakura-soft);border:none;padding:8px;border-radius:8px;font-size:.78rem;color:var(--rose);font-weight:600;cursor:pointer;font-family:inherit;">200€</button>
+  </div>
+  <p style="font-size:.78rem;color:var(--ink-mute);margin-top:14px;line-height:1.5;">Llevad parte en efectivo (<strong>¥30.000-50.000</strong>) — muchos templos, restaurantes pequeños y taxis solo aceptan cash. ATM en <strong>7-Eleven</strong> aceptan tarjetas extranjeras. IC card (<strong>Suica</strong>/<strong>PASMO</strong>) en Apple Wallet desde España antes del viaje.</p>
+</div>
   <h3 style="margin-top:20px;">🧳 Packing list (mayo-junio)</h3>
   <div class="card">
     <p style="font-size:.86rem;">Tokyo/Kyoto/Osaka mayo: <strong>18-25°C</strong>. Okinawa empieza <strong>temporada de lluvias</strong> finales de mayo (26-30°C).</p>
@@ -1511,38 +1849,163 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
 </section>
 
 <section id="frases" class="panel" role="tabpanel">
-  <div class="sh"><span class="em">🗣️</span><h2>Frases útiles</h2><span class="accent">supervivencia + cortesía</span></div>
-  <h3>👋 Saludos</h3>
+  <div class="sh"><span class="em">🗣️</span><h2>Frases útiles</h2><span class="accent">100+ palabras esenciales</span><span class="sub">Lo justo para sobrevivir y encantar</span></div>
+
+  <div class="alert info" style="font-size:.85rem;"><strong>💡 Tip de pronunciación:</strong> el japonés se pronuncia tal como se escribe en romaji. <strong>U</strong> casi muda al final ("desu" → "des"). <strong>R</strong> a medio camino entre R y L española. Las dobles consonantes <strong>tt/kk/pp</strong> tienen una micropausa.</div>
+
+  <h3 style="margin-top:20px;">👋 Saludos y cortesía</h3>
   <div class="phrases">
     <div class="phrase"><p class="jp">こんにちは</p><p class="romaji">Konnichiwa</p><p class="es">Hola (mediodía-tarde)</p></div>
     <div class="phrase"><p class="jp">おはようございます</p><p class="romaji">Ohayō gozaimasu</p><p class="es">Buenos días</p></div>
     <div class="phrase"><p class="jp">こんばんは</p><p class="romaji">Konbanwa</p><p class="es">Buenas tardes/noches</p></div>
+    <div class="phrase"><p class="jp">おやすみなさい</p><p class="romaji">Oyasumi nasai</p><p class="es">Buenas noches (antes de dormir)</p></div>
+    <div class="phrase"><p class="jp">さようなら</p><p class="romaji">Sayōnara</p><p class="es">Adiós (formal/largo plazo)</p></div>
+    <div class="phrase"><p class="jp">じゃあね / またね</p><p class="romaji">Jā ne / Mata ne</p><p class="es">Hasta luego (informal)</p></div>
     <div class="phrase"><p class="jp">ありがとうございます</p><p class="romaji">Arigatō gozaimasu</p><p class="es">Muchas gracias</p></div>
-    <div class="phrase"><p class="jp">すみません</p><p class="romaji">Sumimasen</p><p class="es">Perdón / disculpe</p></div>
+    <div class="phrase"><p class="jp">どうもありがとう</p><p class="romaji">Dōmo arigatō</p><p class="es">Muchísimas gracias</p></div>
+    <div class="phrase"><p class="jp">どういたしまして</p><p class="romaji">Dō itashimashite</p><p class="es">De nada</p></div>
+    <div class="phrase"><p class="jp">すみません</p><p class="romaji">Sumimasen</p><p class="es">Perdón / disculpe (también 'gracias')</p></div>
+    <div class="phrase"><p class="jp">ごめんなさい</p><p class="romaji">Gomen nasai</p><p class="es">Lo siento (disculpa más fuerte)</p></div>
     <div class="phrase"><p class="jp">お願いします</p><p class="romaji">Onegaishimasu</p><p class="es">Por favor</p></div>
+    <div class="phrase"><p class="jp">はい</p><p class="romaji">Hai</p><p class="es">Sí</p></div>
+    <div class="phrase"><p class="jp">いいえ</p><p class="romaji">Iie</p><p class="es">No</p></div>
+    <div class="phrase"><p class="jp">わかりました</p><p class="romaji">Wakarimashita</p><p class="es">Entendido</p></div>
+    <div class="phrase"><p class="jp">わかりません</p><p class="romaji">Wakarimasen</p><p class="es">No entiendo</p></div>
   </div>
-  <h3 style="margin-top:20px;">🍣 En restaurantes</h3>
+
+  <h3 style="margin-top:20px;">🤝 Conocer y presentarse</h3>
   <div class="phrases">
-    <div class="phrase"><p class="jp">いただきます</p><p class="romaji">Itadakimasu</p><p class="es">Antes de comer</p></div>
-    <div class="phrase"><p class="jp">ごちそうさまでした</p><p class="romaji">Gochisō-sama deshita</p><p class="es">Después de comer</p></div>
-    <div class="phrase"><p class="jp">これをください</p><p class="romaji">Kore o kudasai</p><p class="es">Esto, por favor</p></div>
+    <div class="phrase"><p class="jp">はじめまして</p><p class="romaji">Hajimemashite</p><p class="es">Encantado de conocerle</p></div>
+    <div class="phrase"><p class="jp">私はペラヨです</p><p class="romaji">Watashi wa Pelayo desu</p><p class="es">Soy Pelayo</p></div>
+    <div class="phrase"><p class="jp">スペイン人です</p><p class="romaji">Supein-jin desu</p><p class="es">Soy español</p></div>
+    <div class="phrase"><p class="jp">よろしくお願いします</p><p class="romaji">Yoroshiku onegai shimasu</p><p class="es">Es un placer / mucho gusto</p></div>
+    <div class="phrase"><p class="jp">お元気ですか？</p><p class="romaji">O-genki desu ka?</p><p class="es">¿Cómo está usted?</p></div>
+    <div class="phrase"><p class="jp">元気です</p><p class="romaji">Genki desu</p><p class="es">Estoy bien</p></div>
+  </div>
+
+  <h3 style="margin-top:20px;">🍣 Restaurantes</h3>
+  <div class="phrases">
+    <div class="phrase"><p class="jp">いただきます</p><p class="romaji">Itadakimasu</p><p class="es">Antes de comer ('recibiré esta comida')</p></div>
+    <div class="phrase"><p class="jp">ごちそうさまでした</p><p class="romaji">Gochisō-sama deshita</p><p class="es">Después de comer ('ha sido un festín')</p></div>
+    <div class="phrase"><p class="jp">これをください</p><p class="romaji">Kore o kudasai</p><p class="es">Esto, por favor (señalando)</p></div>
     <div class="phrase"><p class="jp">お会計お願いします</p><p class="romaji">O-kaikei onegaishimasu</p><p class="es">La cuenta, por favor</p></div>
     <div class="phrase"><p class="jp">予約があります</p><p class="romaji">Yoyaku ga arimasu</p><p class="es">Tengo reserva</p></div>
     <div class="phrase"><p class="jp">美味しい！</p><p class="romaji">Oishii!</p><p class="es">¡Está delicioso!</p></div>
     <div class="phrase"><p class="jp">英語のメニューはありますか？</p><p class="romaji">Eigo no menyū wa arimasu ka?</p><p class="es">¿Tienen menú en inglés?</p></div>
     <div class="phrase"><p class="jp">アレルギーがあります</p><p class="romaji">Arerugī ga arimasu</p><p class="es">Tengo alergia</p></div>
+    <div class="phrase"><p class="jp">ベジタリアンです</p><p class="romaji">Bejitarian desu</p><p class="es">Soy vegetariano/a</p></div>
+    <div class="phrase"><p class="jp">水をください</p><p class="romaji">Mizu o kudasai</p><p class="es">Agua, por favor</p></div>
+    <div class="phrase"><p class="jp">ビール</p><p class="romaji">Bīru</p><p class="es">Cerveza</p></div>
+    <div class="phrase"><p class="jp">お酒 / 日本酒</p><p class="romaji">O-sake / Nihonshu</p><p class="es">Sake</p></div>
+    <div class="phrase"><p class="jp">お茶</p><p class="romaji">O-cha</p><p class="es">Té</p></div>
+    <div class="phrase"><p class="jp">乾杯！</p><p class="romaji">Kanpai!</p><p class="es">¡Salud! (brindando)</p></div>
+    <div class="phrase"><p class="jp">おすすめは何ですか？</p><p class="romaji">Osusume wa nan desu ka?</p><p class="es">¿Qué me recomienda?</p></div>
+    <div class="phrase"><p class="jp">辛くないでください</p><p class="romaji">Karaku nai de kudasai</p><p class="es">No picante por favor</p></div>
   </div>
-  <h3 style="margin-top:20px;">🚆 Transporte</h3>
+
+  <h3 style="margin-top:20px;">🛒 Compras y números</h3>
+  <div class="phrases">
+    <div class="phrase"><p class="jp">いくらですか？</p><p class="romaji">Ikura desu ka?</p><p class="es">¿Cuánto cuesta?</p></div>
+    <div class="phrase"><p class="jp">高いです</p><p class="romaji">Takai desu</p><p class="es">Es caro</p></div>
+    <div class="phrase"><p class="jp">安いです</p><p class="romaji">Yasui desu</p><p class="es">Es barato</p></div>
+    <div class="phrase"><p class="jp">クレジットカードは使えますか？</p><p class="romaji">Kurejitto kādo wa tsukaemasu ka?</p><p class="es">¿Aceptan tarjeta?</p></div>
+    <div class="phrase"><p class="jp">袋をください</p><p class="romaji">Fukuro o kudasai</p><p class="es">Una bolsa, por favor</p></div>
+    <div class="phrase"><p class="jp">免税できますか？</p><p class="romaji">Menzei dekimasu ka?</p><p class="es">¿Pueden hacer tax-free?</p></div>
+    <div class="phrase"><p class="jp">一 (1) · 二 (2) · 三 (3)</p><p class="romaji">Ichi · Ni · San</p><p class="es">1, 2, 3</p></div>
+    <div class="phrase"><p class="jp">四 (4) · 五 (5) · 六 (6)</p><p class="romaji">Yon · Go · Roku</p><p class="es">4, 5, 6</p></div>
+    <div class="phrase"><p class="jp">七 (7) · 八 (8) · 九 (9) · 十 (10)</p><p class="romaji">Nana · Hachi · Kyū · Jū</p><p class="es">7, 8, 9, 10</p></div>
+    <div class="phrase"><p class="jp">百 / 千 / 万</p><p class="romaji">Hyaku / Sen / Man</p><p class="es">100 / 1.000 / 10.000</p></div>
+  </div>
+
+  <h3 style="margin-top:20px;">🚆 Transporte y direcciones</h3>
   <div class="phrases">
     <div class="phrase"><p class="jp">〜駅はどこですか？</p><p class="romaji">~ eki wa doko desu ka?</p><p class="es">¿Dónde está la estación de ~?</p></div>
     <div class="phrase"><p class="jp">タクシーを呼んでください</p><p class="romaji">Takushī o yonde kudasai</p><p class="es">Llame un taxi por favor</p></div>
-    <div class="phrase"><p class="jp">この住所までお願いします</p><p class="romaji">Kono jūsho made onegaishimasu</p><p class="es">A esta dirección (mostrando móvil)</p></div>
+    <div class="phrase"><p class="jp">この住所までお願いします</p><p class="romaji">Kono jūsho made onegaishimasu</p><p class="es">A esta dirección, por favor</p></div>
+    <div class="phrase"><p class="jp">右 / 左</p><p class="romaji">Migi / Hidari</p><p class="es">Derecha / Izquierda</p></div>
+    <div class="phrase"><p class="jp">まっすぐ</p><p class="romaji">Massugu</p><p class="es">Recto/derecho</p></div>
+    <div class="phrase"><p class="jp">遠いですか？</p><p class="romaji">Tōi desu ka?</p><p class="es">¿Está lejos?</p></div>
+    <div class="phrase"><p class="jp">近いです</p><p class="romaji">Chikai desu</p><p class="es">Está cerca</p></div>
+    <div class="phrase"><p class="jp">何時ですか？</p><p class="romaji">Nan-ji desu ka?</p><p class="es">¿Qué hora es?</p></div>
+    <div class="phrase"><p class="jp">何時に出発しますか？</p><p class="romaji">Nan-ji ni shuppatsu shimasu ka?</p><p class="es">¿A qué hora sale?</p></div>
+    <div class="phrase"><p class="jp">切符</p><p class="romaji">Kippu</p><p class="es">Billete</p></div>
+    <div class="phrase"><p class="jp">改札</p><p class="romaji">Kaisatsu</p><p class="es">Torno de entrada</p></div>
+    <div class="phrase"><p class="jp">トイレはどこですか？</p><p class="romaji">Toire wa doko desu ka?</p><p class="es">¿Dónde está el baño?</p></div>
   </div>
+
+  <h3 style="margin-top:20px;">🏨 En el hotel</h3>
+  <div class="phrases">
+    <div class="phrase"><p class="jp">チェックインお願いします</p><p class="romaji">Chekku-in onegaishimasu</p><p class="es">Check-in por favor</p></div>
+    <div class="phrase"><p class="jp">チェックアウトお願いします</p><p class="romaji">Chekku-auto onegaishimasu</p><p class="es">Check-out por favor</p></div>
+    <div class="phrase"><p class="jp">WiFiのパスワードは？</p><p class="romaji">Wifi no pasuwādo wa?</p><p class="es">¿Contraseña del WiFi?</p></div>
+    <div class="phrase"><p class="jp">荷物を預けられますか？</p><p class="romaji">Nimotsu o azukeraremasu ka?</p><p class="es">¿Pueden guardarme el equipaje?</p></div>
+    <div class="phrase"><p class="jp">部屋の鍵</p><p class="romaji">Heya no kagi</p><p class="es">La llave de la habitación</p></div>
+    <div class="phrase"><p class="jp">朝食は何時からですか？</p><p class="romaji">Chōshoku wa nan-ji kara desu ka?</p><p class="es">¿A qué hora es el desayuno?</p></div>
+  </div>
+
+  <h3 style="margin-top:20px;">🌸 Tiempo y días</h3>
+  <div class="phrases">
+    <div class="phrase"><p class="jp">今日</p><p class="romaji">Kyō</p><p class="es">Hoy</p></div>
+    <div class="phrase"><p class="jp">明日</p><p class="romaji">Ashita</p><p class="es">Mañana</p></div>
+    <div class="phrase"><p class="jp">昨日</p><p class="romaji">Kinō</p><p class="es">Ayer</p></div>
+    <div class="phrase"><p class="jp">朝 / 昼 / 夜</p><p class="romaji">Asa / Hiru / Yoru</p><p class="es">Mañana / mediodía / noche</p></div>
+    <div class="phrase"><p class="jp">天気</p><p class="romaji">Tenki</p><p class="es">Tiempo (climatológico)</p></div>
+    <div class="phrase"><p class="jp">雨</p><p class="romaji">Ame</p><p class="es">Lluvia</p></div>
+    <div class="phrase"><p class="jp">晴れ</p><p class="romaji">Hare</p><p class="es">Soleado</p></div>
+    <div class="phrase"><p class="jp">暑い / 寒い</p><p class="romaji">Atsui / Samui</p><p class="es">Caluroso / Frío</p></div>
+  </div>
+
+  <h3 style="margin-top:20px;">🆘 Emergencias y salud</h3>
+  <div class="phrases">
+    <div class="phrase"><p class="jp">助けて！</p><p class="romaji">Tasukete!</p><p class="es">¡Ayuda!</p></div>
+    <div class="phrase"><p class="jp">病院はどこですか？</p><p class="romaji">Byōin wa doko desu ka?</p><p class="es">¿Dónde está el hospital?</p></div>
+    <div class="phrase"><p class="jp">薬局</p><p class="romaji">Yakkyoku</p><p class="es">Farmacia</p></div>
+    <div class="phrase"><p class="jp">警察</p><p class="romaji">Keisatsu</p><p class="es">Policía</p></div>
+    <div class="phrase"><p class="jp">大使館</p><p class="romaji">Taishikan</p><p class="es">Embajada</p></div>
+    <div class="phrase"><p class="jp">気分が悪いです</p><p class="romaji">Kibun ga warui desu</p><p class="es">No me encuentro bien</p></div>
+    <div class="phrase"><p class="jp">頭が痛いです</p><p class="romaji">Atama ga itai desu</p><p class="es">Me duele la cabeza</p></div>
+    <div class="phrase"><p class="jp">スペイン語を話せますか？</p><p class="romaji">Supein-go o hanasemasu ka?</p><p class="es">¿Habla español?</p></div>
+    <div class="phrase"><p class="jp">英語を話せますか？</p><p class="romaji">Eigo o hanasemasu ka?</p><p class="es">¿Habla inglés?</p></div>
+    <div class="phrase"><p class="jp">もう一度お願いします</p><p class="romaji">Mō ichido onegaishimasu</p><p class="es">Repita por favor</p></div>
+  </div>
+
+  <h3 style="margin-top:20px;">⛩️ Templos y cultura</h3>
+  <div class="phrases">
+    <div class="phrase"><p class="jp">お寺</p><p class="romaji">O-tera</p><p class="es">Templo budista</p></div>
+    <div class="phrase"><p class="jp">神社</p><p class="romaji">Jinja</p><p class="es">Santuario sintoísta</p></div>
+    <div class="phrase"><p class="jp">写真を撮ってもいいですか？</p><p class="romaji">Shashin o totte mo ii desu ka?</p><p class="es">¿Puedo hacer una foto?</p></div>
+    <div class="phrase"><p class="jp">きれい / 美しい</p><p class="romaji">Kirei / Utsukushii</p><p class="es">Bonito / Hermoso</p></div>
+    <div class="phrase"><p class="jp">すごい！</p><p class="romaji">Sugoi!</p><p class="es">¡Increíble!</p></div>
+    <div class="phrase"><p class="jp">かわいい！</p><p class="romaji">Kawaii!</p><p class="es">¡Qué mono! (cosas adorables)</p></div>
+  </div>
+
   <h3 style="margin-top:20px;">💕 Especial luna de miel</h3>
   <div class="phrases">
     <div class="phrase"><p class="jp">新婚旅行です</p><p class="romaji">Shinkon ryokō desu</p><p class="es">Estamos de luna de miel</p></div>
     <div class="phrase"><p class="jp">写真をお願いできますか？</p><p class="romaji">Shashin o onegai dekimasu ka?</p><p class="es">¿Nos puede hacer una foto?</p></div>
+    <div class="phrase"><p class="jp">妻 / 夫</p><p class="romaji">Tsuma / Otto</p><p class="es">Esposa / Esposo</p></div>
+    <div class="phrase"><p class="jp">愛してる</p><p class="romaji">Aishiteru</p><p class="es">Te quiero</p></div>
+    <div class="phrase"><p class="jp">幸せ</p><p class="romaji">Shiawase</p><p class="es">Feliz / Felicidad</p></div>
+    <div class="phrase"><p class="jp">記念日</p><p class="romaji">Kinenbi</p><p class="es">Aniversario</p></div>
   </div>
+
+  <h3 style="margin-top:20px;">😊 Útiles del día a día</h3>
+  <div class="phrases">
+    <div class="phrase"><p class="jp">大丈夫</p><p class="romaji">Daijōbu</p><p class="es">Está bien / OK / no pasa nada</p></div>
+    <div class="phrase"><p class="jp">ちょっと待ってください</p><p class="romaji">Chotto matte kudasai</p><p class="es">Un momento, por favor</p></div>
+    <div class="phrase"><p class="jp">もちろん</p><p class="romaji">Mochiron</p><p class="es">Por supuesto</p></div>
+    <div class="phrase"><p class="jp">たぶん</p><p class="romaji">Tabun</p><p class="es">Tal vez</p></div>
+    <div class="phrase"><p class="jp">少し / たくさん</p><p class="romaji">Sukoshi / Takusan</p><p class="es">Un poco / Mucho</p></div>
+    <div class="phrase"><p class="jp">熱い / 冷たい</p><p class="romaji">Atsui / Tsumetai</p><p class="es">Caliente / Frío (objetos)</p></div>
+    <div class="phrase"><p class="jp">大きい / 小さい</p><p class="romaji">Ōkii / Chiisai</p><p class="es">Grande / Pequeño</p></div>
+    <div class="phrase"><p class="jp">良い / 悪い</p><p class="romaji">Ii / Warui</p><p class="es">Bueno / Malo</p></div>
+    <div class="phrase"><p class="jp">楽しい！</p><p class="romaji">Tanoshii!</p><p class="es">¡Divertido!</p></div>
+    <div class="phrase"><p class="jp">面白い</p><p class="romaji">Omoshiroi</p><p class="es">Interesante / Curioso</p></div>
+    <div class="phrase"><p class="jp">あれ / これ / それ</p><p class="romaji">Are / Kore / Sore</p><p class="es">Aquello / Esto / Eso</p></div>
+    <div class="phrase"><p class="jp">どこ？/ いつ？/ なぜ？</p><p class="romaji">Doko? / Itsu? / Naze?</p><p class="es">¿Dónde? / ¿Cuándo? / ¿Por qué?</p></div>
+  </div>
+
+  <div class="alert" style="margin-top:20px;font-size:.85rem;"><strong>📱 App recomendada:</strong> <em>Google Translate</em> con la cámara para leer carteles. <em>Yomiwa</em> para identificar kanji individuales. Reconocen escritura japonesa instantáneamente.</div>
 </section>
 
 <section id="momentos" class="panel" role="tabpanel">
@@ -2101,6 +2564,348 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
       render();
     });
   } catch(e) { console.error('Weather init error:', e); }
+})();
+
+
+// ============================================================
+// Currency calculator (EUR ↔ JPY)
+// ============================================================
+(function initCurrency(){
+  try {
+    var FALLBACK_RATE = 160; // EUR to JPY fallback
+    var KEY = 'currency-rate-v1';
+    var rate = FALLBACK_RATE;
+    var eurInput = document.getElementById('curEUR');
+    var jpyInput = document.getElementById('curJPY');
+    var rateValEl = document.getElementById('rateVal');
+    var refreshBtn = document.getElementById('rateRefresh');
+    var rateInfoEl = document.getElementById('rateInfo');
+    if (!eurInput || !jpyInput || !rateValEl) return;
+
+    function setRate(r){
+      rate = r;
+      rateValEl.textContent = r.toFixed(2);
+    }
+
+    function loadCached(){
+      try {
+        var cached = JSON.parse(localStorage.getItem(KEY) || '{}');
+        if (cached.rate && cached.ts && (Date.now() - cached.ts < 24*60*60*1000)) {
+          setRate(cached.rate);
+          return true;
+        }
+      } catch(e){}
+      setRate(FALLBACK_RATE);
+      return false;
+    }
+
+    function fetchRate(){
+      // Use frankfurter.app (free, no API key, CORS-enabled, ECB rates)
+      fetch('https://api.frankfurter.app/latest?from=EUR&to=JPY')
+        .then(function(r){ return r.json(); })
+        .then(function(data){
+          if (data && data.rates && data.rates.JPY) {
+            setRate(data.rates.JPY);
+            try {
+              localStorage.setItem(KEY, JSON.stringify({rate: data.rates.JPY, ts: Date.now()}));
+            } catch(e){}
+            // Re-convert if input has value
+            if (eurInput.value) onEur();
+            else if (jpyInput.value) onJpy();
+            if (rateInfoEl) rateInfoEl.title = 'Última actualización: ' + new Date().toLocaleString('es-ES');
+          }
+        })
+        .catch(function(){});
+    }
+
+    function onEur(){
+      var v = parseFloat(eurInput.value);
+      jpyInput.value = isNaN(v) ? '' : Math.round(v * rate);
+    }
+    function onJpy(){
+      var v = parseFloat(jpyInput.value);
+      eurInput.value = isNaN(v) ? '' : (v / rate).toFixed(2);
+    }
+    eurInput.addEventListener('input', onEur);
+    jpyInput.addEventListener('input', onJpy);
+    if (refreshBtn) refreshBtn.addEventListener('click', fetchRate);
+
+    // Quick buttons
+    var quickBtns = document.querySelectorAll('.quick-eur');
+    for (var i=0; i<quickBtns.length; i++) {
+      (function(btn){
+        btn.addEventListener('click', function(){
+          eurInput.value = btn.dataset.eur;
+          onEur();
+        });
+      })(quickBtns[i]);
+    }
+
+    loadCached();
+    fetchRate(); // Always try fresh on load
+  } catch(e){ console.error('Currency error:', e); }
+})();
+
+
+// ============================================================
+// Chatbot (knowledge-based + Claude deep-link fallback)
+// ============================================================
+(function initChatbot(){
+  try {
+    var form = document.getElementById('chForm');
+    var input = document.getElementById('chInput');
+    var win = document.getElementById('chWindow');
+    var sugg = document.getElementById('chSuggestions');
+    if (!form || !input || !win) return;
+
+    // Knowledge base
+    var kb = {
+      hotels: {
+        tokyo: 'The Prince Park Tower Tokyo, junto a Shiba Park y Tokyo Tower. 4 noches (19-23 may).',
+        kyoto: 'The Thousand Kyoto, a 2 min de la estación. 3 noches (23-26 may).',
+        osaka: 'Centara Grand Hotel Osaka, en pleno Namba. 4 noches (26-30 may).',
+        okinawa: 'Hiyori Ocean Resort en Onna village. 5 noches (30 may - 4 jun).'
+      },
+      vuelos: 'Madrid→Haneda IB0281 (18 may 12:30). Tokyo→Kyoto Shinkansen Nozomi 13. Osaka(ITM)→Naha NH767 (30 may 14:05). Naha→Haneda NH464 (4 jun 12:05-14:30, asientos 25A/B). Haneda→Madrid IB0282 (5 jun 11:10).',
+      michelin: ['Tempura Shimomura ⭐ (21 may, Asakusa)', 'Nodaiwa ⭐ unagi (22 may, Higashi-Azabu)', 'Kiyama ⭐ kaiseki (24 may, Nakagyo)', 'Sushi Matsumoto ⭐ (25 may, Gion)', 'Sushi Murakami Jiro ⭐ (29 may, Osaka)'],
+      dias: {
+        '19 may': {city:'Tokyo', tag:'Llegada · Tokyo Tower mañana + Ginza tarde', cena:'Shabusen Ginza (shabu-shabu)'},
+        '20 may': {city:'Tokyo', tag:'Meiji Jingu + Shibuya Sky 14:20 + compras', cena:'Hakushu Teppanyaki 19:30'},
+        '21 may': {city:'Tokyo', tag:'Asakusa + Senso-ji', cena:'Tempura Shimomura ⭐ 18:00'},
+        '22 may': {city:'Tokyo', tag:'Tsukiji + clase de sushi 13:00 + Hamarikyu', cena:'Nodaiwa ⭐ 19:00'},
+        '23 may': {city:'Kyoto', tag:'Shinkansen + Gion', cena:'Wabiya Korekido yakitori 19:30 (té en Hanbei 16:30)'},
+        '24 may': {city:'Kyoto', tag:'Arashiyama (bambú + Tenryu-ji)', cena:'Kiyama ⭐ 19:30'},
+        '25 may': {city:'Kyoto', tag:'Fushimi Inari + kimono 11:00 + Higashiyama', cena:'Sushi Matsumoto ⭐ 19:00'},
+        '26 may': {city:'Osaka', tag:'Shinkansen 10:02 + Osaka Castle + Dotonbori', cena:'Tonkatsu Koshiro 18:30'},
+        '27 may': {city:'Osaka', tag:'Universal Studios Japan (Nintendo World)', cena:'En el parque'},
+        '28 may': {city:'Nara', tag:'Excursión Nara (ciervos + Todai-ji)', cena:'Momoshiki almuerzo · Kunsei cena 20:00'},
+        '29 may': {city:'Osaka', tag:'Umeda Sky + shopping', cena:'Sushi Murakami Jiro ⭐ 20:40'},
+        '30 may': {city:'Okinawa', tag:'Vuelo NH767 14:05 + coche Budget + Hiyori', cena:'Hillside Grill 19:30'},
+        '31 may': {city:'Okinawa', tag:'Costa Oeste · Cabo Manzamo · Cueva Azul', cena:'Blue Entrance Kitchen'},
+        '1 jun': {city:'Okinawa', tag:'Norte · Churaumi Aquarium + Kouri Island', cena:'Teppanyaki Zen 21:00'},
+        '2 jun': {city:'Okinawa', tag:'Zamami Island (ferry regular ~2h)', cena:'Yakiniku Ryukyu no Ushi 19:00'},
+        '3 jun': {city:'Okinawa', tag:'Día libre', cena:'A elegir (sugerencia: Shuri o Sefa-utaki)'},
+        '4 jun': {city:'Tokyo', tag:'Vuelo NH464 12:05 + tarde libre Tokyo', cena:'Última cena (ramen)'},
+        '5 jun': {city:'Madrid', tag:'Vuelta IB0282 11:10', cena:'En casa 💕'}
+      },
+      pedir: {
+        'sushi matsumoto':'Skipjack tuna a la paja (warayaki katsuo), uni, toro/chutoro. Arroz con vinagre rojo akazu.',
+        'sushi murakami':'Tuna marinada (zuke maguro) — la firma. Chutoro y otoro. Tamagoyaki final.',
+        'kiyama':'Sea urchin egg bowl (uni-tamago) y hard shell clam rice. El agua del manantial imperial es la estrella.',
+        'shimomura':'Boniato cocido 30 min en aceite (caramelizado). Conger eel (anago). Uni en temporada.',
+        'wabiya':'Yakitori variado en cena. Acabad con oyakodon a la piedra caliente — el plato firma.',
+        'koshiro':'Sandwich de katsu fillet de apertura. Mangalica, Sangen, Berkshire, Schwäbisch-Hall.',
+        'nodaiwa':'Unaju Yamabuki o Katsura (con kabayaki + arroz). Shirayaki con wasabi + sal. Sopa de hígado.',
+        'hakushu':'Filet steak course + okonomiyaki estilo Kansai de cierre.',
+        'kunsei':'Pescado ahumado del día y wagyu con sal ahumada. Cocktails con licores ahumados.',
+        'kiji':'Modan-yaki (okonomiyaki + yakisoba). Sentaros en mostrador.',
+        'sometaro':'Buta-tama (cerdo + huevo). Lo cocináis vosotros en la plancha del tatami.',
+        'momoshiki':'El curso de Yamato Beef sukiyaki reservado (¥7.680). Huevo crudo batido para mojar.',
+        'yakiniku ryukyu':'Wagyu Motobu / Ishigaki en tasting platter. Awamori shochu local.',
+        'hillside':'Steak okinawan grass-fed. Mojitos con shikuwasa (cítrico local).',
+        'teppanyaki zen':'Wagyu Ishigaki/Motobu, gambas tigre, verduras isleñas (goya, beni-imo).',
+        'yudofu sagano':'Yudofu en cazuela, yuba, goma-dofu, tempura de verduras locales.',
+        'scalae':'Stelo Course reservado. Pasta del día con productos de Kyoto.',
+        'kitagawa hanbei':'Matcha ceremonial + wagashi de temporada (ajisai/iris en mayo).',
+        'shabusen':'Wagyu shabu-shabu course. Salsas ponzu (cítrica) o goma-dare (sésamo).'
+      },
+      tips: {
+        'fushimi inari':'Id ANTES de las 8am — sin nadie. Subid a Yotsutsuji (30 min, vistas). El sushi inari (bolsita de tofu) lleva el nombre del santuario.',
+        'tokyo tower':'Mañana = sin cola y posible Monte Fuji al fondo. Tarde-noche = vista con luces pero hay cola.',
+        'shibuya sky':'Sky Edge: la esquina abierta sin barandilla. Móvil con correa OBLIGATORIO. Lleva ropa ligera (viento).',
+        'shibuya cruce':'Foto desde Starbucks Tsutaya (gratis, pedid bebida) o Mag\'s Park (¥600). Hachiko a 50m.',
+        'bamboo grove':'Llegad a las 8am — a las 10 es imposible. 91 cm de crecimiento en 24h.',
+        'churaumi':'Alimentación mantas 9:30, tiburón ballena 15:00 y 17:00. NO os perdáis las shows.',
+        'usj':'2026 es 25º aniversario — comprad Express Pass con SEMANAS antes (ya hecho ✓). Power-Up Band conecta con la app.',
+        'kimono':'Reservado para el 25 may a las 11. Higashiyama de fondo. Llevad solo lo esencial — el atelier guarda el resto.',
+        'zamami':'Ferry regular ~2h (Queen Zamami en mantenimiento). Salida temprana. Protector solar reef-safe.',
+        'manzamo':'Mejor al ATARDECER. Color del mar pasa de turquesa → naranja → púrpura en 30 min.',
+        'nara':'¡Los ciervos abren cremalleras! No traigáis comida visible. Senbei oficial ¥200.',
+        'geikos':'Prohibido fotografiarlas sin permiso. Multas reales (¥10.000+). Nunca paréis su paso.',
+        'onsen':'Ducha completa antes. Desnudo. NO meter toalla en el agua. Tatuajes pueden no ser bienvenidos.',
+        'propina':'NO se dejan propinas en Japón — se considera ofensivo. El servicio impecable está incluido.'
+      },
+      transporte: {
+        'shinkansen':'Tokyo→Kyoto: ~2h20 Nozomi. Asientos D/E lado derecho para ver Fuji al pasar Mishima.',
+        'kyoto osaka':'Klook GHX774331 confirmado: Nozomi 13, 26 may 10:02→10:15. Plataforma 14. CAR 4, asientos 6A/6B. Código de billete 09992051218.',
+        'metro':'IC card (Suica/PASMO) en Apple Wallet desde España. Recargable.',
+        'okinawa':'Coche Budget Japan recogida 30 may 17:30 Naha Airport (confirmación 764711149). Toyota Raize. Conducción por la izquierda.',
+        'jaf':'Traducción JAF del carnet — IMPRESCINDIBLE. ¥4.000, 1 semana para tramitarla.'
+      },
+      gastronomia: ['sushi','tempura','wagyu','kaiseki','okonomiyaki','yakitori','unagi','tonkatsu','shabu-shabu','matcha','ramen','ryukyuana'],
+      momentos_clave: ['Shibuya Sky atardecer (no aplica, vais a las 14:20)','Bamboo Grove al amanecer','Fushimi Inari sin nadie','Ciervos de Nara','Nintendo World en USJ','Aguas Kerama Blue','Clase de sushi en Tsukiji','Heart Rock en Kouri'],
+      checklist_pre: ['Traducción JAF carnet','Reserva Shibuya Sky','Hotel cerca Haneda (4 jun)','Yamato luggage forwarding (Tokyo→Kyoto)','Yudofu Sagano (24 may)']
+    };
+
+    function escapeHtml(s){return String(s).replace(/[&<>"\']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"\'":'&#39;'}[c]; });}
+
+    // Format date keys
+    function findDateKey(q){
+      var lower = q.toLowerCase();
+      var months = {'mayo':'may','junio':'jun'};
+      for (var dk in kb.dias) {
+        if (lower.indexOf(dk) > -1) return dk;
+      }
+      // Match "día N" or "day N"
+      var m = lower.match(/d[ií]a (\d+)/) || lower.match(/day (\d+)/);
+      if (m) {
+        var n = parseInt(m[1]);
+        var ordinals = ['', '19 may', '20 may', '21 may', '22 may', '23 may', '24 may', '25 may', '26 may', '27 may', '28 may', '29 may', '30 may', '31 may', '1 jun', '2 jun', '3 jun', '4 jun', '5 jun'];
+        if (n >= 1 && n < ordinals.length) return ordinals[n];
+      }
+      // Match weekdays
+      var weekdays = {
+        'lunes': ['25 may', '1 jun'],
+        'martes': ['19 may', '26 may', '2 jun'],
+        'mi[eé]rcoles': ['20 may', '27 may', '3 jun'],
+        'jueves': ['21 may', '28 may', '4 jun'],
+        'viernes': ['22 may', '29 may', '5 jun'],
+        's[aá]bado': ['23 may', '30 may'],
+        'domingo': ['24 may', '31 may']
+      };
+      for (var wd in weekdays) {
+        var re = new RegExp(wd);
+        if (re.test(lower)) {
+          // Return upcoming/first
+          return weekdays[wd][0];
+        }
+      }
+      return null;
+    }
+
+    function reply(q){
+      var lower = q.toLowerCase();
+      // 1. Day-specific question
+      var dk = findDateKey(lower);
+      if (dk && (lower.indexOf('día') > -1 || lower.indexOf('hago') > -1 || lower.indexOf('plan') > -1 || lower.indexOf('hago el') > -1 || lower.indexOf('toca') > -1 || /^\d+/.test(lower) || lower.indexOf('may') > -1 || lower.indexOf('jun') > -1)) {
+        var d = kb.dias[dk];
+        return '<strong>' + dk + ' · ' + d.city + '</strong><br>' + d.tag + '<br><em>Cena:</em> ' + d.cena;
+      }
+
+      // 2. Restaurant recommendations
+      for (var rest in kb.pedir) {
+        if (lower.indexOf(rest) > -1) {
+          return '<strong>Qué pedir en ' + rest + ':</strong><br>' + kb.pedir[rest];
+        }
+      }
+      if (lower.indexOf('qué pedir') > -1 || lower.indexOf('que pedir') > -1 || lower.indexOf('recomienda') > -1) {
+        return 'Decidme el restaurante concreto (ej. "qué pedir en Kiyama" o "Sushi Matsumoto"). En la pestaña <strong>Gastronomía</strong> hay un guía completa con todo.';
+      }
+
+      // 3. Hotels
+      if (lower.indexOf('hotel') > -1) {
+        if (lower.indexOf('tokyo') > -1) return kb.hotels.tokyo;
+        if (lower.indexOf('kyoto') > -1) return kb.hotels.kyoto;
+        if (lower.indexOf('osaka') > -1) return kb.hotels.osaka;
+        if (lower.indexOf('okinawa') > -1) return kb.hotels.okinawa;
+        return '<strong>Vuestros hoteles:</strong><br>• Tokyo: ' + kb.hotels.tokyo + '<br>• Kyoto: ' + kb.hotels.kyoto + '<br>• Osaka: ' + kb.hotels.osaka + '<br>• Okinawa: ' + kb.hotels.okinawa;
+      }
+
+      // 4. Flights / Transport
+      if (lower.indexOf('vuelo') > -1 || lower.indexOf('avión') > -1 || lower.indexOf('avion') > -1) {
+        return '<strong>Vuelos:</strong><br>' + kb.vuelos;
+      }
+      if (lower.indexOf('shinkansen') > -1 || lower.indexOf('tren') > -1) {
+        return kb.transporte['shinkansen'] + '<br><br><em>Kyoto→Osaka:</em> ' + kb.transporte['kyoto osaka'];
+      }
+      if (lower.indexOf('coche') > -1 || lower.indexOf('rental') > -1 || lower.indexOf('alquiler') > -1) {
+        return kb.transporte['okinawa'] + '<br>' + kb.transporte['jaf'];
+      }
+      if (lower.indexOf('metro') > -1 || lower.indexOf('suica') > -1 || lower.indexOf('pasmo') > -1) {
+        return kb.transporte['metro'];
+      }
+
+      // 5. Michelin
+      if (lower.indexOf('michelin') > -1 || lower.indexOf('estrella') > -1) {
+        return '<strong>Vuestras 5 estrellas Michelin:</strong><ul><li>' + kb.michelin.join('</li><li>') + '</li></ul>';
+      }
+
+      // 6. Tips
+      for (var t in kb.tips) {
+        if (lower.indexOf(t) > -1) {
+          return '<strong>Tips para ' + t + ':</strong><br>' + kb.tips[t];
+        }
+      }
+      if (lower.indexOf('tip') > -1 || lower.indexOf('consejo') > -1) {
+        return 'Decidme sobre qué — por ejemplo "tips para Fushimi Inari" o "tips para onsen". Tengo consejos específicos para Tokyo Tower, Shibuya Sky, Bamboo Grove, Churaumi, USJ, kimono, Zamami, Manzamo, Nara, geikos, onsen y propinas.';
+      }
+
+      // 7. Weather
+      if (lower.indexOf('tiempo') > -1 || lower.indexOf('clima') > -1 || lower.indexOf('lluvia') > -1 || lower.indexOf('temperatura') > -1) {
+        return 'En mayo Tokyo/Kyoto/Osaka tienen <strong>18-26°C</strong>. Okinawa entra en <em>tsuyu</em> (lluvias) finales de mayo: <strong>26-30°C</strong> con humedad. Mira la pestaña <strong>El tiempo</strong> para previsión día a día.';
+      }
+
+      // 8. Currency
+      if (lower.indexOf('cambio') > -1 || lower.indexOf('euro') > -1 || lower.indexOf('yen') > -1 || lower.indexOf('dinero') > -1) {
+        return '~¥160 = 1€. Llevad efectivo (¥30-50k). ATM en 7-Eleven aceptan tarjetas extranjeras. En <strong>Práctico</strong> tenéis un conversor en tiempo real.';
+      }
+
+      // 9. Phrases / language
+      if (lower.indexOf('gracias') > -1) return '<strong>"Arigatō gozaimasu"</strong> (ありがとうございます) — gracias formal. <strong>"Dōmo arigatō"</strong> para "muchísimas gracias".';
+      if (lower.indexOf('hola') > -1) return '<strong>"Konnichiwa"</strong> (こんにちは) — hola de mediodía a tarde. <strong>"Ohayō gozaimasu"</strong> por la mañana.';
+      if (lower.indexOf('adiós') > -1 || lower.indexOf('adios') > -1) return '<strong>"Sayōnara"</strong> formal. <strong>"Mata ne"</strong> informal entre amigos.';
+      if (lower.indexOf('frase') > -1 || lower.indexOf('idioma') > -1 || lower.indexOf('japonés') > -1 || lower.indexOf('japones') > -1) {
+        return 'En la pestaña <strong>Frases</strong> tenéis 100+ frases y palabras por categorías. Si me decís qué situación (restaurante, taxi, hotel, etc.), os doy las clave.';
+      }
+
+      // 10. Photo spots
+      if (lower.indexOf('foto') > -1 || lower.indexOf('instagram') > -1 || lower.indexOf('photo') > -1) {
+        return 'En cada día del itinerario hay una sección desplegable <strong>"Más para descubrir + spots Instagram"</strong> con joyas escondidas y los mejores ángulos para fotos. Decidme la ciudad o el lugar y os recomiendo los mejores.';
+      }
+
+      // 11. Generic city question
+      if (lower.indexOf('tokyo') > -1) return 'En Tokyo (19-23 may) tenéis Shiba Park/Tokyo Tower, Meiji Jingu, Shibuya Sky (20 may 14:20), Asakusa, Tsukiji con clase de sushi, y cenas en Hakushu, Shimomura ⭐, Nodaiwa ⭐. ¿Qué día os interesa?';
+      if (lower.indexOf('kyoto') > -1) return 'En Kyoto (23-26 may) visitaréis Gion, Arashiyama, Fushimi Inari, Higashiyama. Experiencia kimono el 25 a las 11. Cenas: Wabiya, Kiyama ⭐, Sushi Matsumoto ⭐.';
+      if (lower.indexOf('osaka') > -1) return 'En Osaka (26-30 may) tenéis Osaka Castle, Dotonbori, USJ con Nintendo World (27 may), excursión a Nara (28). Cenas: Tonkatsu Koshiro, Brasserie Kunsei, Sushi Murakami ⭐.';
+      if (lower.indexOf('okinawa') > -1) return 'En Okinawa (30 may - 4 jun) os esperan Cabo Manzamo, Churaumi Aquarium, Kouri Island con Heart Rock, ferry a Zamami para el Kerama Blue. Cenas: Hillside, Teppanyaki Zen, Yakiniku Ryukyu.';
+
+      // 12. Reservation status / what to do
+      if (lower.indexOf('reserva') > -1 || lower.indexOf('confirmad') > -1) {
+        return 'Tenéis <strong>23 reservas confirmadas</strong>: 6 cenas Michelin, hoteles, vuelos ANA, Shinkansen, coche Budget, USJ, kimono. Pendientes pre-viaje: traducción JAF, Yudofu Sagano (24 may), Yamato luggage forwarding, hotel cerca Haneda 4 jun.';
+      }
+
+      // 13. Fallback - offer to ask Claude
+      return 'Hmm, no tengo respuesta específica para esto. Puedes preguntar a Claude AI directamente:<br><a class="ask-claude" href="https://claude.ai/new?q=' + encodeURIComponent('Sobre mi viaje a Japón (Tokyo 19-23 may, Kyoto 23-26 may, Osaka 26-30 may, Okinawa 30 may - 4 jun): ' + q) + '" target="_blank">🪄 Preguntar a Claude</a>';
+    }
+
+    function addMsg(text, who){
+      var div = document.createElement('div');
+      div.className = 'ch-msg ' + who;
+      div.innerHTML = (who === 'bot' ? text : escapeHtml(text));
+      win.appendChild(div);
+      win.scrollTop = win.scrollHeight;
+    }
+
+    function ask(q){
+      if (!q.trim()) return;
+      addMsg(q, 'user');
+      input.value = '';
+      // Typing animation
+      var typing = document.createElement('div');
+      typing.className = 'ch-msg bot ch-typing-msg';
+      typing.innerHTML = '<span class="ch-typing"><span></span><span></span><span></span></span>';
+      win.appendChild(typing);
+      win.scrollTop = win.scrollHeight;
+      setTimeout(function(){
+        if (typing.parentNode) typing.parentNode.removeChild(typing);
+        addMsg(reply(q), 'bot');
+      }, 500 + Math.random() * 400);
+    }
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      ask(input.value);
+    });
+
+    if (sugg) {
+      var pills = sugg.querySelectorAll('.pill');
+      for (var i=0; i<pills.length; i++) {
+        (function(p){
+          p.addEventListener('click', function(){ ask(p.dataset.q); });
+        })(pills[i]);
+      }
+    }
+  } catch(e) { console.error('Chatbot error:', e); }
 })();
 
 // ============================================================
