@@ -365,6 +365,31 @@ details.discover .body{padding:0 16px 16px;border-top:1px dashed var(--line);mar
 .chatbot-card .ch-typing span:nth-child(3){animation-delay:.3s;}
 @keyframes bounce{0%,80%,100%{transform:scale(.6);opacity:.4;}40%{transform:scale(1);opacity:1;}}
 
+
+.chatbot-card .ch-header{position:relative;}
+.chatbot-card .ch-settings{position:absolute;right:0;top:0;background:transparent;border:1px solid var(--line);width:32px;height:32px;border-radius:50%;cursor:pointer;color:var(--ink-mute);font-size:.95rem;font-family:inherit;padding:0;display:flex;align-items:center;justify-content:center;}
+.chatbot-card .ch-settings:active{background:var(--sakura-soft);}
+.chatbot-card .ch-msg.bot pre,.chatbot-card .ch-msg.bot code{font-family:'SF Mono',Menlo,monospace;background:var(--cream);padding:1px 5px;border-radius:4px;font-size:.85em;}
+.chatbot-card .ch-msg.bot h4{margin:6px 0 4px;font-family:'Inter',sans-serif;font-size:.95rem;font-weight:600;color:var(--rose);}
+.chatbot-card .ch-msg.bot p{margin:4px 0;}
+.chatbot-card .ch-msg.bot ol{margin:4px 0;padding-left:20px;}
+.chatbot-card .ch-msg.bot blockquote{margin:6px 0;padding:6px 10px;border-left:3px solid var(--gold-soft);background:rgba(255,255,255,.5);border-radius:0 8px 8px 0;}
+.chatbot-card .ch-msg.error{background:#fce8e8;color:#a83333;border:1px solid #e8b8b8;}
+.chatbot-card .ch-msg.bot .ch-cursor{display:inline-block;width:6px;height:1em;background:var(--rose);margin-left:2px;animation:blink 1s infinite;vertical-align:text-bottom;}
+@keyframes blink{50%{opacity:0;}}
+
+/* Settings sheet */
+.ch-sheet{position:fixed;inset:0;background:rgba(42,29,34,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:400;display:none;align-items:flex-end;justify-content:center;}
+.ch-sheet.show{display:flex;animation:fadein .25s ease;}
+.ch-sheet-content{background:var(--cream);border-radius:24px 24px 0 0;width:100%;max-width:540px;padding:20px 22px max(24px,calc(var(--sab) + 22px));max-height:92vh;overflow-y:auto;animation:slideup .35s cubic-bezier(.2,.8,.3,1.2);}
+.ch-sheet-grip{width:40px;height:4px;background:var(--line);border-radius:4px;margin:0 auto 16px;}
+.ch-provider-option{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;cursor:pointer;margin-bottom:8px;background:var(--paper);transition:all .15s;}
+.ch-provider-option.selected{border-color:var(--sakura-deep);background:var(--sakura-soft);}
+.ch-provider-option input[type=radio]{width:22px;height:22px;cursor:pointer;accent-color:var(--rose);flex:0 0 22px;}
+.ch-option-title{font-weight:600;color:var(--ink);font-size:.95rem;}
+.ch-option-desc{font-size:.78rem;color:var(--ink-mute);margin-top:2px;line-height:1.4;}
+.ch-recommend{display:inline-block;font-size:.62rem;padding:1px 7px;border-radius:4px;background:linear-gradient(135deg,var(--sakura-deep),var(--gold-soft));color:white;font-weight:700;margin-left:4px;letter-spacing:.05em;text-transform:uppercase;vertical-align:middle;}
+
 /* ========== STORY COLLAPSIBLE ========== */
 details.story-collapse{margin:14px 0;background:linear-gradient(135deg,#fff8f4,#fef4e8);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:var(--r);overflow:hidden;}
 details.story-collapse[open]{box-shadow:var(--shadow);}
@@ -522,24 +547,80 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
       <div class="ch-avatar">🌸</div>
       <div class="ch-title">
         <h3>Tu asistente del viaje</h3>
-        <div class="sub">Pregúntame lo que quieras sobre Japón</div>
+        <div class="sub" id="chMode">Modo offline · pulsa ⚙ para activar IA</div>
       </div>
+      <button class="ch-settings" id="chSettings" aria-label="Ajustes" type="button">⚙</button>
     </div>
     <div class="ch-window" id="chWindow">
-      <div class="ch-msg bot">¡Hola! Soy vuestro asistente de viaje 🌸 Puedo ayudaros con horarios, restaurantes, qué pedir, fotos perfectas, tips de etiqueta y más. ¿Qué queréis saber?</div>
+      <div class="ch-msg bot">¡Hola! Soy vuestro asistente de viaje 🌸 Puedo ayudaros con horarios, restaurantes, qué pedir, fotos perfectas, tips de etiqueta y más. <br><br><strong>Modos IA disponibles (pulsa ⚙):</strong><br>• <strong>Groq</strong> · gratis, instantáneo, dentro de la app<br>• <strong>Claude API</strong> · pago por uso<br>• <strong>Mi proyecto Claude.ai</strong> · sin coste extra si tienes Max ($200) — cada pregunta abre tu proyecto<br>• <strong>Offline</strong> · respuestas básicas<br><br>¿Qué queréis saber?</div>
     </div>
     <div class="ch-suggestions" id="chSuggestions">
-      <button class="pill" data-q="¿Qué hago el día 1?">¿Qué hago el día 1?</button>
-      <button class="pill" data-q="¿Dónde ceno este viernes?">Cenas confirmadas</button>
-      <button class="pill" data-q="¿Cómo llego a Kyoto?">Transporte</button>
-      <button class="pill" data-q="¿Qué tiempo hará?">Tiempo</button>
-      <button class="pill" data-q="¿Cómo se dice 'gracias' en japonés?">Frases</button>
-      <button class="pill" data-q="Tips para Fushimi Inari">Tips Fushimi</button>
+      <button class="pill" data-q="¿Qué plan tenemos hoy?">Plan de hoy</button>
+      <button class="pill" data-q="¿Qué debo pedir en Kiyama?">Qué pedir en Kiyama</button>
+      <button class="pill" data-q="¿Qué tiempo hará en Okinawa?">Tiempo Okinawa</button>
+      <button class="pill" data-q="Dame un plan alternativo si llueve el día de Arashiyama">Plan B si llueve</button>
+      <button class="pill" data-q="¿Cuánto presupuesto necesitamos cada día?">Presupuesto</button>
+      <button class="pill" data-q="¿Qué frases imprescindibles debo aprender?">Frases clave</button>
     </div>
     <form class="ch-form" id="chForm">
       <input type="text" id="chInput" placeholder="Pregunta algo sobre el viaje…" autocomplete="off">
       <button type="submit" aria-label="Enviar">➤</button>
     </form>
+  </div>
+
+  <!-- Settings Sheet -->
+  <div id="chSettingsSheet" class="ch-sheet" role="dialog" aria-modal="true">
+    <div class="ch-sheet-content">
+      <div class="ch-sheet-grip"></div>
+      <h3 style="margin:0 0 6px;font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-style:italic;color:var(--rose);text-align:center;">Asistente IA</h3>
+      <p style="text-align:center;font-size:.88rem;color:var(--ink-soft);margin:0 0 18px;">Conecta una API para respuestas inteligentes reales sobre el viaje.</p>
+
+      <label class="ch-provider-option" data-provider="groq">
+        <div>
+          <div class="ch-option-title">⚡ Groq (gratis) <span class="ch-recommend">recomendado</span></div>
+          <div class="ch-option-desc">Llama 3.3 70B · 14.400 preguntas/día gratis. Sin tarjeta.</div>
+        </div>
+        <input type="radio" name="chProvider" value="groq">
+      </label>
+
+      <label class="ch-provider-option" data-provider="claude">
+        <div>
+          <div class="ch-option-title">🌸 Claude (Anthropic)</div>
+          <div class="ch-option-desc">Haiku 4.5 · $5 crédito gratis al registrarte · ~$0.001/pregunta.</div>
+        </div>
+        <input type="radio" name="chProvider" value="claude">
+      </label>
+
+      <label class="ch-provider-option" data-provider="claudeproject">
+        <div>
+          <div class="ch-option-title">🎯 Mi proyecto Claude.ai <span class="ch-recommend">si tienes Max</span></div>
+          <div class="ch-option-desc">Cada pregunta abre tu proyecto Claude.ai (web/app) usando tu suscripción. Sin costes extra.</div>
+        </div>
+        <input type="radio" name="chProvider" value="claudeproject">
+      </label>
+
+      <label class="ch-provider-option" data-provider="local">
+        <div>
+          <div class="ch-option-title">💾 Solo offline</div>
+          <div class="ch-option-desc">Sin IA. Solo respuestas predefinidas básicas. Funciona sin internet.</div>
+        </div>
+        <input type="radio" name="chProvider" value="local">
+      </label>
+
+      <div id="chKeyBlock" style="margin-top:14px;display:none;">
+        <label style="display:block;font-size:.8rem;color:var(--ink-soft);margin-bottom:4px;font-weight:600;">API key:</label>
+        <input type="password" id="chKeyInput" placeholder="gsk_... o sk-ant-..." style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-family:'SF Mono',Menlo,monospace;font-size:.85rem;outline:none;background:var(--paper);">
+        <div id="chKeyHelp" style="font-size:.75rem;color:var(--ink-mute);margin-top:6px;line-height:1.5;"></div>
+      </div>
+
+      <div style="display:flex;gap:8px;margin-top:18px;">
+        <button id="chSettingsCancel" style="flex:1;background:var(--paper);border:1px solid var(--line);padding:10px;border-radius:10px;font-family:inherit;font-size:.88rem;color:var(--ink-soft);cursor:pointer;">Cancelar</button>
+        <button id="chSettingsSave" style="flex:1;background:var(--rose);color:white;border:none;padding:10px;border-radius:10px;font-family:inherit;font-size:.88rem;font-weight:600;cursor:pointer;">Guardar</button>
+      </div>
+      <button id="chSettingsTest" style="width:100%;margin-top:8px;background:transparent;border:1px dashed var(--line);padding:8px;border-radius:10px;font-family:inherit;font-size:.78rem;color:var(--ink-mute);cursor:pointer;display:none;">Probar conexión</button>
+
+      <div id="chTestResult" style="margin-top:10px;font-size:.82rem;text-align:center;"></div>
+    </div>
   </div>
 
   <div class="sh"><span class="em">✈️</span><h2>Inicio</h2><span class="accent">17 días · 4 destinos</span><span class="sub">Cultura · Gastronomía · Romanticismo · Naturaleza</span></div>
@@ -2648,7 +2729,7 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
 
 
 // ============================================================
-// Chatbot (knowledge-based + Claude deep-link fallback)
+// Chatbot v2: Groq + Claude API + Local fallback + full knowledge
 // ============================================================
 (function initChatbot(){
   try {
@@ -2656,257 +2737,545 @@ body.standalone-mode .hero{padding-top:calc(54px + var(--sat));}
     var input = document.getElementById('chInput');
     var win = document.getElementById('chWindow');
     var sugg = document.getElementById('chSuggestions');
+    var modeEl = document.getElementById('chMode');
+    var settingsBtn = document.getElementById('chSettings');
+    var sheet = document.getElementById('chSettingsSheet');
     if (!form || !input || !win) return;
 
-    // Knowledge base
-    var kb = {
-      hotels: {
-        tokyo: 'The Prince Park Tower Tokyo, junto a Shiba Park y Tokyo Tower. 4 noches (19-23 may).',
-        kyoto: 'The Thousand Kyoto, a 2 min de la estación. 3 noches (23-26 may).',
-        osaka: 'Centara Grand Hotel Osaka, en pleno Namba. 4 noches (26-30 may).',
-        okinawa: 'Hiyori Ocean Resort en Onna village. 5 noches (30 may - 4 jun).'
-      },
-      vuelos: 'Madrid→Haneda IB0281 (18 may 12:30). Tokyo→Kyoto Shinkansen Nozomi 13. Osaka(ITM)→Naha NH767 (30 may 14:05). Naha→Haneda NH464 (4 jun 12:05-14:30, asientos 25A/B). Haneda→Madrid IB0282 (5 jun 11:10).',
-      michelin: ['Tempura Shimomura ⭐ (21 may, Asakusa)', 'Nodaiwa ⭐ unagi (22 may, Higashi-Azabu)', 'Kiyama ⭐ kaiseki (24 may, Nakagyo)', 'Sushi Matsumoto ⭐ (25 may, Gion)', 'Sushi Murakami Jiro ⭐ (29 may, Osaka)'],
-      dias: {
-        '19 may': {city:'Tokyo', tag:'Llegada · Tokyo Tower mañana + Ginza tarde', cena:'Shabusen Ginza (shabu-shabu)'},
-        '20 may': {city:'Tokyo', tag:'Meiji Jingu + Shibuya Sky 14:20 + compras', cena:'Hakushu Teppanyaki 19:30'},
-        '21 may': {city:'Tokyo', tag:'Asakusa + Senso-ji', cena:'Tempura Shimomura ⭐ 18:00'},
-        '22 may': {city:'Tokyo', tag:'Tsukiji + clase de sushi 13:00 + Hamarikyu', cena:'Nodaiwa ⭐ 19:00'},
-        '23 may': {city:'Kyoto', tag:'Shinkansen + Gion', cena:'Wabiya Korekido yakitori 19:30 (té en Hanbei 16:30)'},
-        '24 may': {city:'Kyoto', tag:'Arashiyama (bambú + Tenryu-ji)', cena:'Kiyama ⭐ 19:30'},
-        '25 may': {city:'Kyoto', tag:'Fushimi Inari + kimono 11:00 + Higashiyama', cena:'Sushi Matsumoto ⭐ 19:00'},
-        '26 may': {city:'Osaka', tag:'Shinkansen 10:02 + Osaka Castle + Dotonbori', cena:'Tonkatsu Koshiro 18:30'},
-        '27 may': {city:'Osaka', tag:'Universal Studios Japan (Nintendo World)', cena:'En el parque'},
-        '28 may': {city:'Nara', tag:'Excursión Nara (ciervos + Todai-ji)', cena:'Momoshiki almuerzo · Kunsei cena 20:00'},
-        '29 may': {city:'Osaka', tag:'Umeda Sky + shopping', cena:'Sushi Murakami Jiro ⭐ 20:40'},
-        '30 may': {city:'Okinawa', tag:'Vuelo NH767 14:05 + coche Budget + Hiyori', cena:'Hillside Grill 19:30'},
-        '31 may': {city:'Okinawa', tag:'Costa Oeste · Cabo Manzamo · Cueva Azul', cena:'Blue Entrance Kitchen'},
-        '1 jun': {city:'Okinawa', tag:'Norte · Churaumi Aquarium + Kouri Island', cena:'Teppanyaki Zen 21:00'},
-        '2 jun': {city:'Okinawa', tag:'Zamami Island (ferry regular ~2h)', cena:'Yakiniku Ryukyu no Ushi 19:00'},
-        '3 jun': {city:'Okinawa', tag:'Día libre', cena:'A elegir (sugerencia: Shuri o Sefa-utaki)'},
-        '4 jun': {city:'Tokyo', tag:'Vuelo NH464 12:05 + tarde libre Tokyo', cena:'Última cena (ramen)'},
-        '5 jun': {city:'Madrid', tag:'Vuelta IB0282 11:10', cena:'En casa 💕'}
-      },
-      pedir: {
-        'sushi matsumoto':'Skipjack tuna a la paja (warayaki katsuo), uni, toro/chutoro. Arroz con vinagre rojo akazu.',
-        'sushi murakami':'Tuna marinada (zuke maguro) — la firma. Chutoro y otoro. Tamagoyaki final.',
-        'kiyama':'Sea urchin egg bowl (uni-tamago) y hard shell clam rice. El agua del manantial imperial es la estrella.',
-        'shimomura':'Boniato cocido 30 min en aceite (caramelizado). Conger eel (anago). Uni en temporada.',
-        'wabiya':'Yakitori variado en cena. Acabad con oyakodon a la piedra caliente — el plato firma.',
-        'koshiro':'Sandwich de katsu fillet de apertura. Mangalica, Sangen, Berkshire, Schwäbisch-Hall.',
-        'nodaiwa':'Unaju Yamabuki o Katsura (con kabayaki + arroz). Shirayaki con wasabi + sal. Sopa de hígado.',
-        'hakushu':'Filet steak course + okonomiyaki estilo Kansai de cierre.',
-        'kunsei':'Pescado ahumado del día y wagyu con sal ahumada. Cocktails con licores ahumados.',
-        'kiji':'Modan-yaki (okonomiyaki + yakisoba). Sentaros en mostrador.',
-        'sometaro':'Buta-tama (cerdo + huevo). Lo cocináis vosotros en la plancha del tatami.',
-        'momoshiki':'El curso de Yamato Beef sukiyaki reservado (¥7.680). Huevo crudo batido para mojar.',
-        'yakiniku ryukyu':'Wagyu Motobu / Ishigaki en tasting platter. Awamori shochu local.',
-        'hillside':'Steak okinawan grass-fed. Mojitos con shikuwasa (cítrico local).',
-        'teppanyaki zen':'Wagyu Ishigaki/Motobu, gambas tigre, verduras isleñas (goya, beni-imo).',
-        'yudofu sagano':'Yudofu en cazuela, yuba, goma-dofu, tempura de verduras locales.',
-        'scalae':'Stelo Course reservado. Pasta del día con productos de Kyoto.',
-        'kitagawa hanbei':'Matcha ceremonial + wagashi de temporada (ajisai/iris en mayo).',
-        'shabusen':'Wagyu shabu-shabu course. Salsas ponzu (cítrica) o goma-dare (sésamo).'
-      },
-      tips: {
-        'fushimi inari':'Id ANTES de las 8am — sin nadie. Subid a Yotsutsuji (30 min, vistas). El sushi inari (bolsita de tofu) lleva el nombre del santuario.',
-        'tokyo tower':'Mañana = sin cola y posible Monte Fuji al fondo. Tarde-noche = vista con luces pero hay cola.',
-        'shibuya sky':'Sky Edge: la esquina abierta sin barandilla. Móvil con correa OBLIGATORIO. Lleva ropa ligera (viento).',
-        'shibuya cruce':'Foto desde Starbucks Tsutaya (gratis, pedid bebida) o Mag\'s Park (¥600). Hachiko a 50m.',
-        'bamboo grove':'Llegad a las 8am — a las 10 es imposible. 91 cm de crecimiento en 24h.',
-        'churaumi':'Alimentación mantas 9:30, tiburón ballena 15:00 y 17:00. NO os perdáis las shows.',
-        'usj':'2026 es 25º aniversario — comprad Express Pass con SEMANAS antes (ya hecho ✓). Power-Up Band conecta con la app.',
-        'kimono':'Reservado para el 25 may a las 11. Higashiyama de fondo. Llevad solo lo esencial — el atelier guarda el resto.',
-        'zamami':'Ferry regular ~2h (Queen Zamami en mantenimiento). Salida temprana. Protector solar reef-safe.',
-        'manzamo':'Mejor al ATARDECER. Color del mar pasa de turquesa → naranja → púrpura en 30 min.',
-        'nara':'¡Los ciervos abren cremalleras! No traigáis comida visible. Senbei oficial ¥200.',
-        'geikos':'Prohibido fotografiarlas sin permiso. Multas reales (¥10.000+). Nunca paréis su paso.',
-        'onsen':'Ducha completa antes. Desnudo. NO meter toalla en el agua. Tatuajes pueden no ser bienvenidos.',
-        'propina':'NO se dejan propinas en Japón — se considera ofensivo. El servicio impecable está incluido.'
-      },
-      transporte: {
-        'shinkansen':'Tokyo→Kyoto: ~2h20 Nozomi. Asientos D/E lado derecho para ver Fuji al pasar Mishima.',
-        'kyoto osaka':'Klook GHX774331 confirmado: Nozomi 13, 26 may 10:02→10:15. Plataforma 14. CAR 4, asientos 6A/6B. Código de billete 09992051218.',
-        'metro':'IC card (Suica/PASMO) en Apple Wallet desde España. Recargable.',
-        'okinawa':'Coche Budget Japan recogida 30 may 17:30 Naha Airport (confirmación 764711149). Toyota Raize. Conducción por la izquierda.',
-        'jaf':'Traducción JAF del carnet — IMPRESCINDIBLE. ¥4.000, 1 semana para tramitarla.'
-      },
-      gastronomia: ['sushi','tempura','wagyu','kaiseki','okonomiyaki','yakitori','unagi','tonkatsu','shabu-shabu','matcha','ramen','ryukyuana'],
-      momentos_clave: ['Shibuya Sky atardecer (no aplica, vais a las 14:20)','Bamboo Grove al amanecer','Fushimi Inari sin nadie','Ciervos de Nara','Nintendo World en USJ','Aguas Kerama Blue','Clase de sushi en Tsukiji','Heart Rock en Kouri'],
-      checklist_pre: ['Traducción JAF carnet','Reserva Shibuya Sky','Hotel cerca Haneda (4 jun)','Yamato luggage forwarding (Tokyo→Kyoto)','Yudofu Sagano (24 may)']
+    // ============ STORAGE ============
+    var KEYS = {
+      provider: 'cb-provider-v1',
+      groqKey: 'cb-groq-key-v1',
+      claudeKey: 'cb-claude-key-v1',
+      history: 'cb-history-v2'
     };
+    function getStored(k){ try{return localStorage.getItem(k);}catch(e){return null;} }
+    function setStored(k,v){ try{localStorage.setItem(k,v);}catch(e){} }
 
-    function escapeHtml(s){return String(s).replace(/[&<>"\']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"\'":'&#39;'}[c]; });}
-
-    // Format date keys
-    function findDateKey(q){
-      var lower = q.toLowerCase();
-      var months = {'mayo':'may','junio':'jun'};
-      for (var dk in kb.dias) {
-        if (lower.indexOf(dk) > -1) return dk;
-      }
-      // Match "día N" or "day N"
-      var m = lower.match(/d[ií]a (\d+)/) || lower.match(/day (\d+)/);
-      if (m) {
-        var n = parseInt(m[1]);
-        var ordinals = ['', '19 may', '20 may', '21 may', '22 may', '23 may', '24 may', '25 may', '26 may', '27 may', '28 may', '29 may', '30 may', '31 may', '1 jun', '2 jun', '3 jun', '4 jun', '5 jun'];
-        if (n >= 1 && n < ordinals.length) return ordinals[n];
-      }
-      // Match weekdays
-      var weekdays = {
-        'lunes': ['25 may', '1 jun'],
-        'martes': ['19 may', '26 may', '2 jun'],
-        'mi[eé]rcoles': ['20 may', '27 may', '3 jun'],
-        'jueves': ['21 may', '28 may', '4 jun'],
-        'viernes': ['22 may', '29 may', '5 jun'],
-        's[aá]bado': ['23 may', '30 may'],
-        'domingo': ['24 may', '31 may']
-      };
-      for (var wd in weekdays) {
-        var re = new RegExp(wd);
-        if (re.test(lower)) {
-          // Return upcoming/first
-          return weekdays[wd][0];
-        }
-      }
-      return null;
+    function getProvider(){ return getStored(KEYS.provider) || 'local'; }
+    function getApiKey(){
+      var p = getProvider();
+      if (p === 'groq') return getStored(KEYS.groqKey) || '';
+      if (p === 'claude') return getStored(KEYS.claudeKey) || '';
+      return '';
     }
 
-    function reply(q){
-      var lower = q.toLowerCase();
-      // 1. Day-specific question
-      var dk = findDateKey(lower);
-      if (dk && (lower.indexOf('día') > -1 || lower.indexOf('hago') > -1 || lower.indexOf('plan') > -1 || lower.indexOf('hago el') > -1 || lower.indexOf('toca') > -1 || /^\d+/.test(lower) || lower.indexOf('may') > -1 || lower.indexOf('jun') > -1)) {
-        var d = kb.dias[dk];
-        return '<strong>' + dk + ' · ' + d.city + '</strong><br>' + d.tag + '<br><em>Cena:</em> ' + d.cena;
-      }
+    // ============ SYSTEM PROMPT ============
+    var SYSTEM_PROMPT = [
+      "Eres el asistente personal de viaje de Irene & Pelayo, una pareja española en luna de miel en Japón del 18 mayo al 5 junio 2026.",
+      "",
+      "TONO: cálido, conciso, útil. Trata a la pareja con \"vosotros\". Responde en español. Usa emojis con moderación. Cuando recomiendes lugares NUEVOS no incluidos en el plan, di claramente que es una sugerencia opcional.",
+      "",
+      "VUELOS:",
+      "• 18 may 12:30 MAD→HND Iberia IB0281",
+      "• 23 may Shinkansen Tokyo→Kyoto (Nozomi)",
+      "• 26 may 10:02 Klook GHX774331 Nozomi 13 Kyoto→Shin-Osaka, CAR 4, asientos 6A/6B, plataforma 14",
+      "• 30 may 14:05 ITM→OKA ANA NH767 (reserva ANA E6YYFZ)",
+      "• 4 jun 12:05-14:30 OKA→HND ANA NH464, asientos 25A/B Eco K (reserva ANA E79H7V)",
+      "• 5 jun 11:10 HND→MAD Iberia IB0282",
+      "",
+      "HOTELES:",
+      "• Tokyo (4 noches, 19-23 may): The Prince Park Tower Tokyo, junto a Shiba Park y Tokyo Tower",
+      "• Kyoto (3 noches, 23-26 may): The Thousand Kyoto, 2 min de la estación",
+      "• Osaka (4 noches, 26-30 may): Centara Grand Hotel Osaka, en Namba",
+      "• Okinawa (5 noches, 30 may - 4 jun): Hiyori Ocean Resort Okinawa, Onna village",
+      "• Tokyo (1 noche, 4 jun): pendiente — cerca de Haneda (Royal Park HND o Villa Fontaine)",
+      "",
+      "ITINERARIO DETALLADO:",
+      "",
+      "Día 1 (Mar 19 may) TOKYO - LLEGADA:",
+      "Llegada Haneda 08:30. 11:30 Shiba Park/Zojo-ji. 12:30 Tokyo Tower. 13:30 almuerzo (Café la Tour, Tofuya Ukai opcional). 15:30 metro a Ginza. 15:45-19:30 cafés y tiendas Ginza (Itoya 12 plantas papelería, Ginza Six, Tokyu Plaza Kiriko, Muji flagship, Pierre Hermé, Mitsukoshi). 19:30 cena Shabusen Ginza (shabu-shabu). 21:00 paseo nocturno Ginza.",
+      "",
+      "Día 2 (Mié 20 may) TOKYO - MEIJI + SHIBUYA:",
+      "09:00 Meiji Jingu. 10:30 Yoyogi/Harajuku/Takeshita. 12:00 Omotesando. 13:00 almuerzo Harajuku (Maisen Aoyama tonkatsu, Afuri ramen). 14:20 Shibuya Sky (reservado, ¥2.500/p, Sky Edge con móvil con correa OBLIGATORIO). 16:00 cruce Shibuya. 16:30-18:30 compras Shibuya (Parco/Nintendo, Tokyu Hands, 109, Mega Don Quijote, Center Gai). 19:30 cena Hakushu Teppanyaki (Retty #903752891, filet steak ¥12.100/p, Counter).",
+      "",
+      "Día 3 (Jue 21 may) TOKYO - ASAKUSA:",
+      "08:30 Senso-ji + Nakamise. 11:00 Sumida Riverwalk. 13:00 almuerzo Sometaro okonomiyaki (1937, tatami). 15:00 zona Sumida o Skytree. 18:00 cena Tempura Shimomura ⭐ (JPNEAZY #166138, Counter, ¥18-25k).",
+      "",
+      "Día 4 (Vie 22 may) TOKYO - GASTRO:",
+      "08:30 Tsukiji Outer Market (tamagoyaki Yamacho ¥150, ostras). 13:00 clase de sushi 90 min (Japan Wonder Travel, Booking RE-4A84F75337, Plat Tsukiji, pagado ¥22.000). 15:30 Hamarikyu Gardens + ceremonia té. 19:00 cena Nodaiwa ⭐ Iikura Honten Annex (concierge Prince Park, 1-5-4 Higashi-Azabu, presentaros en edificio principal — staff os escolta al Annex).",
+      "",
+      "Día 5 (Sáb 23 may) KYOTO - GION:",
+      "10:00 Shinkansen Tokyo→Kyoto. 12:30 almuerzo SCALAE en hotel (Tabelog VMP94JKRRW, Stelo Course ¥5.500/p +15%). 15:30 Gion: Yasaka, Hanamikoji, canal Shirakawa. 16:30 té Gion Kitagawa Hanbei (TableCheck, 570-188 South Gion-cho). 19:30 cena Wabiya Korekido (TableCheck, Counter, Kyoto Yakitori Course ¥10.000 + servicio = ¥21.000 total, oyakodon a la piedra al final).",
+      "",
+      "Día 6 (Dom 24 may) KYOTO - ARASHIYAMA:",
+      "07:30 taxi a Arashiyama. 08:00 Bamboo Grove (¡antes de 10!). 09:00 Tenryu-ji UNESCO (¥800). 11:00 Gio-ji templo musgo (¥300). 12:30 almuerzo Yudofu Sagano (PENDIENTE reservar). 14:30 Okochi Sanso Villa. 19:30 cena Kiyama ⭐ (JPNEAZY #170910, Nakagyo, Omakase Course ¥33.578/p × 2 = ¥67.156, sea urchin egg bowl plato firma).",
+      "",
+      "Día 7 (Lun 25 may) KYOTO - INARI + KIMONO:",
+      "07:30 Fushimi Inari (¡antes de 8am!). 11:00 experiencia kimono confirmada (medio día, ~¥15-30k pareja, Higashiyama). 13:30 Kiyomizu-dera + Sannenzaka (¥400). 19:00 cena Sushi Matsumoto ⭐ (Tabelog FVJ6E36N4U, Omakase Standard ¥18.000/p +10%, plato firma skipjack tuna a la paja warayaki katsuo).",
+      "",
+      "Día 8 (Mar 26 may) OSAKA - DOTONBORI:",
+      "10:02 Shinkansen Nozomi 13 (Klook GHX774331). 14:00 Osaka Castle (¥600). 18:30 cena Tonkatsu Koshiro (TableCheck, 2-10-24 Minamisemba 2F, Six varieties tasting course, FILLET KATSU SANDWICH apertura, todos empiezan a la vez). 21:30 Dotonbori (puente Ebisubashi para Glico Running Man).",
+      "",
+      "Día 9 (Mié 27 may) OSAKA - USJ:",
+      "07:30 salida temprana. Universal Studios Japan Super Value Combo (Klook KZN248161, €169.60, 2 adultos, entry 12:00 Super Nintendo World). 1-day Studio Pass + Nintendo World + Have Fun in Kansai Pass. Estrategia: Mario Kart y Yoshi primero. Power-Up Band ~¥3.800 RECOMENDADA. 25 aniversario USJ 2026 — Express Pass crítico (incluido).",
+      "",
+      "Día 10 (Jue 28 may) NARA + OSAKA:",
+      "09:00 Kintetsu Nara desde Namba (~40 min). 10:30 Nara Park ciervos (senbei ¥200 oficial, hacen reverencia). 11:30 Todai-ji + Daibutsu (¥600, pilar con agujero). 13:00 almuerzo Momoshiki sukiyaki (Tabelog PKUTLPPSTQ, Yamato Beef Premium Sukiyaki 180g ¥7.680/p, huevo crudo batido para mojar). 16:00 café SARASA. 20:00 cena International Brasserie Kunsei (centara 33F, vistas atardecer Osaka).",
+      "",
+      "Día 11 (Vie 29 may) OSAKA - UMEDA:",
+      "10:00 Umeda Sky Building Floating Garden (¥1.500). 13:00 almuerzo Kiji okonomiyaki (modan-yaki recomendado). 15:00 shopping Umeda. 20:40 cena Sushi Murakami Jiro ⭐ (JPNEAZY #166676, 8 asientos pareja chef + esposa hablan inglés, tuna marinada zuke maguro plato firma, ¥38.500).",
+      "",
+      "Día 12 (Sáb 30 may) OKINAWA - LLEGADA:",
+      "14:05 vuelo NH767 ITM→OKA (E6YYFZ). 16:20 llegada Naha. 17:30 RECOGIDA COCHE Budget Japan (confirmación 764711149, Toyota Raize automático A/C GPS, salir puerta 3-4 planta 1 esperar bus parada 10, €313.34 pagado). 18:30 conducir a Onna ~50 min (¡izquierda en Japón!). 19:30 cena Hillside Grill en Hiyori (Reserva ab35fa59).",
+      "",
+      "Día 13 (Dom 31 may) OKINAWA - COSTA OESTE:",
+      "Mañana Paanilani Bakery (verificar). 11:00 Cape Manzamo (\"trompa de elefante\", ¥100). 14:00 OPCIONAL Cueva Azul snorkel/buceo. 19:30 cena Blue Entrance Kitchen.",
+      "",
+      "Día 14 (Lun 1 jun) OKINAWA - NORTE:",
+      "09:00 Churaumi Aquarium (¥2.180, alimentación mantas 9:30, tiburón ballena 15:00/17:00). 13:00 almuerzo L LOTA Café. 14:30 Kouri Bridge. 15:30 Heart Rock (¡marea baja!). 21:00 cena Teppanyaki Zen Hiyori (wagyu Ishigaki/Motobu).",
+      "",
+      "Día 15 (Mar 2 jun) OKINAWA - ZAMAMI:",
+      "07:30 salida → Tomari Port. 10:00 ferry regular ~2h (Queen Zamami EN MANTENIMIENTO 27 may - 5 jun, ¥3.200 ida). 12:00 playa Furuzamami snorkel directo desde orilla. 14:00 playa Ama opcional (tortugas). 16:00 ferry vuelta. 19:00 cena Yakiniku Ryukyunoushi Onna (TableCheck, NO confundir con Annex, wagyu Motobu, cargo mesa ¥385/p).",
+      "",
+      "Día 16 (Mié 3 jun) OKINAWA - LIBRE:",
+      "Día libre. Sugerencias: Shuri Castle Naha, Sefa-utaki lugar sagrado, Cape Chinen mirador sur, Cueva Gangala valle prehistórico, Kokusai-dori Naha souvenirs.",
+      "",
+      "Día 17 (Jue 4 jun) NAHA → TOKYO:",
+      "08:30 devolver coche Budget Naha Airport. 11:55 vuelo NH464 → HND llegada 14:30 (asientos 25A/25B). 15:30 check-in hotel Haneda (RESERVAR Royal Park HND o Villa Fontaine). Tarde libre Tokyo opcional.",
+      "",
+      "Día 18 (Vie 5 jun) VUELTA:",
+      "08:30 check-out + Haneda. 11:10 vuelo IB0282 → MAD. ~14h vuelo. Casa por la tarde-noche.",
+      "",
+      "RESERVAS PENDIENTES (cosas que aún hay que hacer):",
+      "• Hotel cerca Haneda para noche 4 jun",
+      "• Yudofu Sagano almuerzo 24 may en Arashiyama",
+      "• Yamato luggage forwarding Tokyo → Kyoto (1 día antes)",
+      "• Traducción JAF carnet (IMPRESCINDIBLE para coche, 1 semana de antelación)",
+      "",
+      "QUÉ PEDIR EN MICHELIN:",
+      "• Tempura Shimomura: boniato 30 min caramelizado (firma), anago, uni temporada, kisu",
+      "• Nodaiwa: unaju Yamabuki/Katsura, shirayaki con wasabi+sal, sopa kimosui",
+      "• Kiyama: uni-tamago (firma), hamaguri gohan (almeja en cáscara), té matcha del manantial",
+      "• Sushi Matsumoto: warayaki katsuo a la paja (firma), arroz akazu sin azúcar",
+      "• Sushi Murakami Jiro: zuke maguro (atún marinado firma), chutoro/otoro, tamagoyaki final",
+      "",
+      "DATOS PRÁCTICOS:",
+      "• Cambio: ~¥160 = 1€",
+      "• Conducir izquierda. Carnet español + traducción JAF (no internacional)",
+      "• Suica/PASMO en Apple Wallet desde España",
+      "• Yamato forwarding: ¥2-3k por maleta, ideal Tokyo→Kyoto",
+      "• Sin propinas (ofensivo)",
+      "• Geikos en Gion: NO fotos sin permiso (multas)",
+      "• Onsen: ducha antes, desnudo, no meter toalla, tatuajes prohibidos en algunos",
+      "",
+      "TIPS POR LUGAR:",
+      "• Fushimi Inari: 7am sin nadie, subir a Yotsutsuji (30 min, vistas)",
+      "• Bamboo Grove: antes de 10am imprescindible",
+      "• Shibuya Sky: Sky Edge esquina abierta, móvil con correa OBLIGATORIO",
+      "• Nara: ciervos abren cremalleras, no comida visible",
+      "• Cape Manzamo: mejor atardecer (turquesa→naranja→púrpura)",
+      "• Churaumi: shows alimentación 9:30 mantas, 15:00 y 17:00 tiburón ballena",
+      "• Zamami ferry: regular ~2h, salida temprana, reef-safe sunscreen",
+      "",
+      "TIEMPO ESPERADO MAYO-JUNIO:",
+      "• Tokyo/Kyoto/Osaka: 18-26°C, lluvias finales mayo",
+      "• Okinawa: 26-30°C, alta humedad, tsuyu (lluvias) finales mayo. Tormentas cortas",
+      "",
+      "Si te preguntan algo concreto que no está en este contexto, di que no estás seguro o sugiere consultar la pestaña correspondiente de la app (Gastronomía, El tiempo, Frases, Práctico). Si te preguntan cosas generales de Japón no específicas del viaje, ayuda con tu conocimiento general pero contextualizando que estás centrado en este viaje."
+    ].join("\n");
 
-      // 2. Restaurant recommendations
-      for (var rest in kb.pedir) {
-        if (lower.indexOf(rest) > -1) {
-          return '<strong>Qué pedir en ' + rest + ':</strong><br>' + kb.pedir[rest];
-        }
-      }
-      if (lower.indexOf('qué pedir') > -1 || lower.indexOf('que pedir') > -1 || lower.indexOf('recomienda') > -1) {
-        return 'Decidme el restaurante concreto (ej. "qué pedir en Kiyama" o "Sushi Matsumoto"). En la pestaña <strong>Gastronomía</strong> hay un guía completa con todo.';
-      }
+    // ============ HISTORY ============
+    var history = [];
+    try { history = JSON.parse(getStored(KEYS.history) || '[]'); } catch(e){ history = []; }
 
-      // 3. Hotels
-      if (lower.indexOf('hotel') > -1) {
-        if (lower.indexOf('tokyo') > -1) return kb.hotels.tokyo;
-        if (lower.indexOf('kyoto') > -1) return kb.hotels.kyoto;
-        if (lower.indexOf('osaka') > -1) return kb.hotels.osaka;
-        if (lower.indexOf('okinawa') > -1) return kb.hotels.okinawa;
-        return '<strong>Vuestros hoteles:</strong><br>• Tokyo: ' + kb.hotels.tokyo + '<br>• Kyoto: ' + kb.hotels.kyoto + '<br>• Osaka: ' + kb.hotels.osaka + '<br>• Okinawa: ' + kb.hotels.okinawa;
-      }
-
-      // 4. Flights / Transport
-      if (lower.indexOf('vuelo') > -1 || lower.indexOf('avión') > -1 || lower.indexOf('avion') > -1) {
-        return '<strong>Vuelos:</strong><br>' + kb.vuelos;
-      }
-      if (lower.indexOf('shinkansen') > -1 || lower.indexOf('tren') > -1) {
-        return kb.transporte['shinkansen'] + '<br><br><em>Kyoto→Osaka:</em> ' + kb.transporte['kyoto osaka'];
-      }
-      if (lower.indexOf('coche') > -1 || lower.indexOf('rental') > -1 || lower.indexOf('alquiler') > -1) {
-        return kb.transporte['okinawa'] + '<br>' + kb.transporte['jaf'];
-      }
-      if (lower.indexOf('metro') > -1 || lower.indexOf('suica') > -1 || lower.indexOf('pasmo') > -1) {
-        return kb.transporte['metro'];
-      }
-
-      // 5. Michelin
-      if (lower.indexOf('michelin') > -1 || lower.indexOf('estrella') > -1) {
-        return '<strong>Vuestras 5 estrellas Michelin:</strong><ul><li>' + kb.michelin.join('</li><li>') + '</li></ul>';
-      }
-
-      // 6. Tips
-      for (var t in kb.tips) {
-        if (lower.indexOf(t) > -1) {
-          return '<strong>Tips para ' + t + ':</strong><br>' + kb.tips[t];
-        }
-      }
-      if (lower.indexOf('tip') > -1 || lower.indexOf('consejo') > -1) {
-        return 'Decidme sobre qué — por ejemplo "tips para Fushimi Inari" o "tips para onsen". Tengo consejos específicos para Tokyo Tower, Shibuya Sky, Bamboo Grove, Churaumi, USJ, kimono, Zamami, Manzamo, Nara, geikos, onsen y propinas.';
-      }
-
-      // 7. Weather
-      if (lower.indexOf('tiempo') > -1 || lower.indexOf('clima') > -1 || lower.indexOf('lluvia') > -1 || lower.indexOf('temperatura') > -1) {
-        return 'En mayo Tokyo/Kyoto/Osaka tienen <strong>18-26°C</strong>. Okinawa entra en <em>tsuyu</em> (lluvias) finales de mayo: <strong>26-30°C</strong> con humedad. Mira la pestaña <strong>El tiempo</strong> para previsión día a día.';
-      }
-
-      // 8. Currency
-      if (lower.indexOf('cambio') > -1 || lower.indexOf('euro') > -1 || lower.indexOf('yen') > -1 || lower.indexOf('dinero') > -1) {
-        return '~¥160 = 1€. Llevad efectivo (¥30-50k). ATM en 7-Eleven aceptan tarjetas extranjeras. En <strong>Práctico</strong> tenéis un conversor en tiempo real.';
-      }
-
-      // 9. Phrases / language
-      if (lower.indexOf('gracias') > -1) return '<strong>"Arigatō gozaimasu"</strong> (ありがとうございます) — gracias formal. <strong>"Dōmo arigatō"</strong> para "muchísimas gracias".';
-      if (lower.indexOf('hola') > -1) return '<strong>"Konnichiwa"</strong> (こんにちは) — hola de mediodía a tarde. <strong>"Ohayō gozaimasu"</strong> por la mañana.';
-      if (lower.indexOf('adiós') > -1 || lower.indexOf('adios') > -1) return '<strong>"Sayōnara"</strong> formal. <strong>"Mata ne"</strong> informal entre amigos.';
-      if (lower.indexOf('frase') > -1 || lower.indexOf('idioma') > -1 || lower.indexOf('japonés') > -1 || lower.indexOf('japones') > -1) {
-        return 'En la pestaña <strong>Frases</strong> tenéis 100+ frases y palabras por categorías. Si me decís qué situación (restaurante, taxi, hotel, etc.), os doy las clave.';
-      }
-
-      // 10. Photo spots
-      if (lower.indexOf('foto') > -1 || lower.indexOf('instagram') > -1 || lower.indexOf('photo') > -1) {
-        return 'En cada día del itinerario hay una sección desplegable <strong>"Más para descubrir + spots Instagram"</strong> con joyas escondidas y los mejores ángulos para fotos. Decidme la ciudad o el lugar y os recomiendo los mejores.';
-      }
-
-      // 11. Generic city question
-      if (lower.indexOf('tokyo') > -1) return 'En Tokyo (19-23 may) tenéis Shiba Park/Tokyo Tower, Meiji Jingu, Shibuya Sky (20 may 14:20), Asakusa, Tsukiji con clase de sushi, y cenas en Hakushu, Shimomura ⭐, Nodaiwa ⭐. ¿Qué día os interesa?';
-      if (lower.indexOf('kyoto') > -1) return 'En Kyoto (23-26 may) visitaréis Gion, Arashiyama, Fushimi Inari, Higashiyama. Experiencia kimono el 25 a las 11. Cenas: Wabiya, Kiyama ⭐, Sushi Matsumoto ⭐.';
-      if (lower.indexOf('osaka') > -1) return 'En Osaka (26-30 may) tenéis Osaka Castle, Dotonbori, USJ con Nintendo World (27 may), excursión a Nara (28). Cenas: Tonkatsu Koshiro, Brasserie Kunsei, Sushi Murakami ⭐.';
-      if (lower.indexOf('okinawa') > -1) return 'En Okinawa (30 may - 4 jun) os esperan Cabo Manzamo, Churaumi Aquarium, Kouri Island con Heart Rock, ferry a Zamami para el Kerama Blue. Cenas: Hillside, Teppanyaki Zen, Yakiniku Ryukyu.';
-
-      // 12. Reservation status / what to do
-      if (lower.indexOf('reserva') > -1 || lower.indexOf('confirmad') > -1) {
-        return 'Tenéis <strong>23 reservas confirmadas</strong>: 6 cenas Michelin, hoteles, vuelos ANA, Shinkansen, coche Budget, USJ, kimono. Pendientes pre-viaje: traducción JAF, Yudofu Sagano (24 may), Yamato luggage forwarding, hotel cerca Haneda 4 jun.';
-      }
-
-      // 13. Fallback - offer to ask Claude
-      return 'Hmm, no tengo respuesta específica para esto. Puedes preguntar a Claude AI directamente:<br><a class="ask-claude" href="https://claude.ai/new?q=' + encodeURIComponent('Sobre mi viaje a Japón (Tokyo 19-23 may, Kyoto 23-26 may, Osaka 26-30 may, Okinawa 30 may - 4 jun): ' + q) + '" target="_blank">🪄 Preguntar a Claude</a>';
+    function saveHistory(){
+      // Keep last 20 messages max
+      var trimmed = history.slice(-20);
+      setStored(KEYS.history, JSON.stringify(trimmed));
     }
 
-    function addMsg(text, who){
+    function restoreHistory(){
+      // Don\'t restore — start fresh each session for now
+      // Just show initial bot greeting which is already in HTML
+    }
+    restoreHistory();
+
+    // ============ MARKDOWN RENDERING ============
+    function escapeHtml(s){
+      return String(s).replace(/[&<>"\']/g, function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"\'":'&#39;'}[c];
+      });
+    }
+
+    function renderMarkdown(text){
+      var t = escapeHtml(text);
+      // Code blocks (must come first)
+      t = t.replace(/```([^`]+)```/g, function(_, code){ return '<pre>' + code + '</pre>'; });
+      // Inline code
+      t = t.replace(/`([^`]+)`/g, '<code>$1</code>');
+      // Headers
+      t = t.replace(/^### (.+)$/gm, '<h4>$1</h4>');
+      t = t.replace(/^## (.+)$/gm, '<h4>$1</h4>');
+      // Bold
+      t = t.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+      // Italic
+      t = t.replace(/(^|[^*])\*([^*\n]+)\*/g, '$1<em>$2</em>');
+      // Links
+      t = t.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+      // Numbered lists
+      t = t.replace(/^(\d+)\. (.+)$/gm, '<li>$2</li>');
+      t = t.replace(/(<li>[\s\S]*?<\/li>)+/g, function(m){ return '<ol>' + m + '</ol>'; });
+      // Bullet lists
+      t = t.replace(/^[\-•] (.+)$/gm, '<li>$1</li>');
+      // Wrap consecutive <li> not yet wrapped
+      t = t.replace(/(?:^|>)(<li>(?!<\/ol>)[\s\S]*?<\/li>(?!<\/ol|<\/ul>))+/g, function(m){
+        if (m.indexOf('<ol>') > -1 || m.indexOf('<ul>') > -1) return m;
+        return m.replace(/^>/, '').replace(/(<li>[\s\S]*<\/li>)/, '<ul>$1</ul>');
+      });
+      // Blockquotes
+      t = t.replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>');
+      // Line breaks
+      t = t.replace(/\n\n/g, '</p><p>');
+      t = '<p>' + t + '</p>';
+      t = t.replace(/<p><\/p>/g, '');
+      t = t.replace(/<p>(<h4|<ol|<ul|<pre|<blockquote)/g, '$1');
+      t = t.replace(/(<\/h4>|<\/ol>|<\/ul>|<\/pre>|<\/blockquote>)<\/p>/g, '$1');
+      return t;
+    }
+
+    // ============ UI HELPERS ============
+    function addMsg(content, who, isHtml){
       var div = document.createElement('div');
       div.className = 'ch-msg ' + who;
-      div.innerHTML = (who === 'bot' ? text : escapeHtml(text));
+      div.innerHTML = isHtml ? content : escapeHtml(content);
       win.appendChild(div);
       win.scrollTop = win.scrollHeight;
+      return div;
     }
 
-    function ask(q){
-      if (!q.trim()) return;
-      addMsg(q, 'user');
-      input.value = '';
-      // Typing animation
+    function showTyping(){
       var typing = document.createElement('div');
       typing.className = 'ch-msg bot ch-typing-msg';
       typing.innerHTML = '<span class="ch-typing"><span></span><span></span><span></span></span>';
       win.appendChild(typing);
       win.scrollTop = win.scrollHeight;
-      setTimeout(function(){
-        if (typing.parentNode) typing.parentNode.removeChild(typing);
-        addMsg(reply(q), 'bot');
-      }, 500 + Math.random() * 400);
+      return typing;
     }
 
+    function updateMode(){
+      var p = getProvider();
+      if (modeEl){
+        if (p === 'groq') modeEl.textContent = '⚡ Groq · Llama 3.3 70B';
+        else if (p === 'claude') modeEl.textContent = '🌸 Claude Haiku 4.5';
+        else if (p === 'claudeproject') modeEl.textContent = '🎯 Mi proyecto Claude.ai';
+        else modeEl.textContent = 'Modo offline · pulsa ⚙ para activar IA';
+      }
+    }
+    updateMode();
+
+    // ============ API CALLS ============
+    async function callGroq(messages){
+      var key = getStored(KEYS.groqKey);
+      if (!key) throw new Error('Falta API key de Groq');
+      var resp = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Bearer ' + key,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          model: 'llama-3.3-70b-versatile',
+          messages: messages,
+          temperature: 0.7,
+          max_tokens: 1024,
+          stream: false
+        })
+      });
+      if (!resp.ok){
+        var err = await resp.text();
+        throw new Error('Groq error ' + resp.status + ': ' + err.slice(0, 200));
+      }
+      var data = await resp.json();
+      return data.choices[0].message.content;
+    }
+
+    async function callClaude(messages){
+      var key = getStored(KEYS.claudeKey);
+      if (!key) throw new Error('Falta API key de Claude');
+      // Anthropic expects system separate from messages
+      var systemMsg = '';
+      var userMessages = [];
+      for (var i=0; i<messages.length; i++){
+        if (messages[i].role === 'system') systemMsg = messages[i].content;
+        else userMessages.push(messages[i]);
+      }
+      var resp = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'x-api-key': key,
+          'anthropic-version': '2023-06-01',
+          'anthropic-dangerous-direct-browser-access': 'true',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          model: 'claude-haiku-4-5-20251001',
+          max_tokens: 1024,
+          system: systemMsg,
+          messages: userMessages
+        })
+      });
+      if (!resp.ok){
+        var err = await resp.text();
+        throw new Error('Claude error ' + resp.status + ': ' + err.slice(0, 200));
+      }
+      var data = await resp.json();
+      return data.content[0].text;
+    }
+
+    // ============ LOCAL FALLBACK (basic rule-based) ============
+    function localReply(q){
+      var lower = q.toLowerCase();
+      // Days
+      var dias = {
+        '19 may': 'Día 1 · TOKYO: llegada Haneda 08:30, Tokyo Tower a las 12:30, Ginza por la tarde, cena Shabusen 19:30.',
+        '20 may': 'Día 2 · TOKYO: Meiji Jingu, Shibuya Sky a las 14:20, compras Shibuya, cena Hakushu Teppanyaki 19:30.',
+        '21 may': 'Día 3 · TOKYO: Senso-ji Asakusa, mercado, cena Tempura Shimomura ⭐ 18:00.',
+        '22 may': 'Día 4 · TOKYO: Tsukiji + clase sushi 13:00, Hamarikyu, cena Nodaiwa ⭐ 19:00.',
+        '23 may': 'Día 5 · KYOTO: Shinkansen mañana, SCALAE 12:30, Gion, té Hanbei 16:30, Wabiya 19:30.',
+        '24 may': 'Día 6 · KYOTO: Arashiyama (bambú 8am, Tenryu-ji, Gio-ji), cena Kiyama ⭐ 19:30.',
+        '25 may': 'Día 7 · KYOTO: Fushimi Inari 7am, kimono 11:00, Kiyomizu, cena Sushi Matsumoto ⭐ 19:00.',
+        '26 may': 'Día 8 · OSAKA: Shinkansen 10:02, Osaka Castle, cena Tonkatsu Koshiro 18:30, Dotonbori.',
+        '27 may': 'Día 9 · OSAKA: USJ Universal Studios + Nintendo World.',
+        '28 may': 'Día 10 · NARA: Nara Park ciervos, Todai-ji, almuerzo Momoshiki 13:00, cena Kunsei 20:00.',
+        '29 may': 'Día 11 · OSAKA: Umeda Sky, almuerzo Kiji, cena Sushi Murakami Jiro ⭐ 20:40.',
+        '30 may': 'Día 12 · OKINAWA: vuelo NH767 14:05, coche Budget, hotel Hiyori, cena Hillside 19:30.',
+        '31 may': 'Día 13 · OKINAWA: Paanilani Bakery, Cape Manzamo, Cueva Azul opcional.',
+        '1 jun': 'Día 14 · OKINAWA: Churaumi Aquarium, Kouri Bridge, Heart Rock, cena Teppanyaki Zen 21:00.',
+        '2 jun': 'Día 15 · OKINAWA: Zamami ferry (regular ~2h), playas Furuzamami/Ama, cena Yakiniku Ryukyu 19:00.',
+        '3 jun': 'Día 16 · OKINAWA: día libre. Sugerencias: Shuri, Sefa-utaki, Kokusai-dori.',
+        '4 jun': 'Día 17 · NAHA→TOKYO: vuelo NH464 12:05, noche cerca Haneda.',
+        '5 jun': 'Día 18 · VUELTA: vuelo IB0282 11:10 → Madrid.'
+      };
+      for (var d in dias) if (lower.indexOf(d) > -1) return dias[d];
+
+      var tips = {
+        'fushimi': 'Id a las 7am SIN gente. Subid a Yotsutsuji 30 min para las vistas.',
+        'shibuya sky': '14:20 reservado. Sky Edge esquina abierta. Móvil con correa OBLIGATORIO.',
+        'bamboo': 'Antes de las 10am imprescindible. Después es imposible.',
+        'churaumi': 'Shows: mantas 9:30, tiburón ballena 15:00 y 17:00.',
+        'manzamo': 'Mejor al atardecer (turquesa→naranja→púrpura).',
+        'kimono': 'Confirmado 25 may 11:00. Higashiyama de fondo.',
+        'nara': 'Ciervos abren cremalleras. No traigáis comida visible.',
+        'onsen': 'Ducha antes, desnudo, NO toalla en agua.',
+        'geiko': 'NO fotos sin permiso (multas reales).'
+      };
+      for (var t in tips) if (lower.indexOf(t) > -1) return tips[t];
+
+      if (lower.indexOf('hola') > -1) return '¡Hola! 🌸 ¿En qué puedo ayudaros con el viaje?';
+      if (lower.indexOf('plan') > -1) return 'Decidme qué día os interesa (ej. "plan del 24 may") y os lo cuento.';
+      if (lower.indexOf('cena') > -1) return 'Cenas Michelin del viaje: Tempura Shimomura (21 may), Nodaiwa (22), Kiyama (24), Sushi Matsumoto (25), Sushi Murakami Jiro (29).';
+      if (lower.indexOf('hotel') > -1) return 'Tokyo: Prince Park Tower · Kyoto: The Thousand · Osaka: Centara Grand · Okinawa: Hiyori Ocean Resort. Falta reservar hotel cerca Haneda 4 jun.';
+      if (lower.indexOf('vuelo') > -1) return 'IB0281 18 may MAD→HND · NH767 30 may ITM→OKA (E6YYFZ) · NH464 4 jun OKA→HND asientos 25A/B (E79H7V) · IB0282 5 jun HND→MAD.';
+
+      return 'No tengo respuesta detallada para eso en modo offline. Activa Groq (gratis) o Claude pulsando el ⚙ arriba para respuestas inteligentes reales sobre cualquier tema del viaje.';
+    }
+
+    // ============ MAIN ASK ============
+    async function ask(q){
+      if (!q.trim()) return;
+      addMsg(q, 'user');
+      input.value = '';
+      history.push({role:'user', content: q});
+
+      var provider = getProvider();
+
+      if (provider === 'local'){
+        var typing = showTyping();
+        setTimeout(function(){
+          if (typing.parentNode) typing.parentNode.removeChild(typing);
+          var reply = localReply(q);
+          var msg = addMsg(renderMarkdown(reply), 'bot', true);
+          history.push({role:'assistant', content: reply});
+          saveHistory();
+        }, 400);
+        return;
+      }
+
+      if (provider === 'claudeproject'){
+        var projectUrl = getStored(KEYS.claudeProjectUrl);
+        if (!projectUrl){
+          addMsg(renderMarkdown('⚠️ Configura primero la URL de tu proyecto Claude.ai pulsando el ⚙ arriba.'), 'bot error', true);
+          return;
+        }
+        // Build URL: try project/[id]/new?q= format, fallback to project/[id]
+        var separator = projectUrl.indexOf('?') > -1 ? '&' : '?';
+        var newChatUrl = projectUrl.replace(/\/?$/, '') + '/new' + separator + 'q=' + encodeURIComponent(q);
+        // Copy question to clipboard as fallback
+        if (navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(q).catch(function(){});
+        }
+        addMsg(renderMarkdown('🎯 Abriendo tu proyecto Claude.ai con la pregunta:<br><br><blockquote>' + escapeHtml(q) + '</blockquote><br><a href="' + newChatUrl + '" target="_blank" style="display:inline-block;background:linear-gradient(135deg,#c97b8b,#b08855);color:white;padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.9rem;">🪄 Abrir en Claude.ai →</a><br><br><small style="color:var(--ink-mute);">Si no se abre la pregunta automáticamente, ya está copiada en el portapapeles — pégala en el chat del proyecto.</small>'), 'bot', true);
+        // Auto-open the URL
+        setTimeout(function(){ window.open(newChatUrl, '_blank'); }, 200);
+        history.push({role:'assistant', content: 'Abierto en Claude.ai'});
+        saveHistory();
+        return;
+      }
+
+      // API mode
+      var typing = showTyping();
+      try {
+        var messages = [{role:'system', content: SYSTEM_PROMPT}];
+        // Add last 8 history items
+        var recent = history.slice(-9, -1);
+        for (var i=0; i<recent.length; i++) messages.push(recent[i]);
+        messages.push({role:'user', content: q});
+
+        var reply;
+        if (provider === 'groq') reply = await callGroq(messages);
+        else if (provider === 'claude') reply = await callClaude(messages);
+
+        if (typing.parentNode) typing.parentNode.removeChild(typing);
+        addMsg(renderMarkdown(reply), 'bot', true);
+        history.push({role:'assistant', content: reply});
+        saveHistory();
+      } catch(e){
+        if (typing.parentNode) typing.parentNode.removeChild(typing);
+        var errMsg = '⚠️ Error: ' + e.message + '. Verifica tu API key en ⚙ o usa el modo offline.';
+        addMsg(renderMarkdown(errMsg), 'bot error', true);
+      }
+    }
+
+    // ============ EVENTS ============
     form.addEventListener('submit', function(e){
       e.preventDefault();
       ask(input.value);
     });
 
-    if (sugg) {
+    if (sugg){
       var pills = sugg.querySelectorAll('.pill');
-      for (var i=0; i<pills.length; i++) {
+      for (var i=0; i<pills.length; i++){
         (function(p){
           p.addEventListener('click', function(){ ask(p.dataset.q); });
         })(pills[i]);
       }
     }
+
+    // ============ SETTINGS SHEET ============
+    var keyBlock = document.getElementById('chKeyBlock');
+    var keyInput = document.getElementById('chKeyInput');
+    var keyHelp = document.getElementById('chKeyHelp');
+    var saveBtn = document.getElementById('chSettingsSave');
+    var cancelBtn = document.getElementById('chSettingsCancel');
+    var testBtn = document.getElementById('chSettingsTest');
+    var testResult = document.getElementById('chTestResult');
+    var providerOptions = document.querySelectorAll('.ch-provider-option');
+
+    function openSettings(){
+      var current = getProvider();
+      var radios = document.querySelectorAll('input[name="chProvider"]');
+      for (var i=0; i<radios.length; i++){
+        radios[i].checked = (radios[i].value === current);
+      }
+      updateProviderUI(current);
+      if (sheet) sheet.classList.add('show');
+      if (testResult) testResult.textContent = '';
+    }
+    function closeSettings(){
+      if (sheet) sheet.classList.remove('show');
+    }
+    function updateProviderUI(p){
+      // Selected styling
+      for (var i=0; i<providerOptions.length; i++){
+        providerOptions[i].classList.toggle('selected', providerOptions[i].dataset.provider === p);
+      }
+      // Show key input for groq/claude
+      if (p === 'groq'){
+        if (keyBlock) keyBlock.style.display = 'block';
+        if (keyInput){
+          keyInput.placeholder = 'gsk_xxxxxxxxxxxxxxxxxxxxxxxx';
+          keyInput.value = getStored(KEYS.groqKey) || '';
+        }
+        if (keyHelp) keyHelp.innerHTML = 'Obtén tu key gratis en <a href="https://console.groq.com/keys" target="_blank" style="color:var(--rose);">console.groq.com/keys</a> · Sin tarjeta · 14.400 req/día.';
+        if (testBtn) testBtn.style.display = 'block';
+      } else if (p === 'claude'){
+        if (keyBlock) keyBlock.style.display = 'block';
+        if (keyInput){
+          keyInput.placeholder = 'sk-ant-api03-xxxxxxxxxxxx';
+          keyInput.value = getStored(KEYS.claudeKey) || '';
+        }
+        if (keyHelp) keyHelp.innerHTML = 'Obtén tu key en <a href="https://console.anthropic.com/settings/keys" target="_blank" style="color:var(--rose);">console.anthropic.com</a> · $5 crédito gratis al registrarte · ~$0.001/pregunta.';
+        if (testBtn) testBtn.style.display = 'block';
+      } else if (p === 'claudeproject'){
+        if (keyBlock) keyBlock.style.display = 'block';
+        if (keyInput){
+          keyInput.type = 'text';
+          keyInput.placeholder = 'https://claude.ai/project/xxxxxxxx-xxxx-xxxx';
+          keyInput.value = getStored(KEYS.claudeProjectUrl) || '';
+        }
+        if (keyHelp) keyHelp.innerHTML = '<strong>Setup en 2 min:</strong><br>1. Ve a <a href="https://claude.ai/projects" target="_blank" style="color:var(--rose);">claude.ai/projects</a> → "Crear proyecto"<br>2. Sube el archivo <strong>proyecto-claude-luna-de-miel.md</strong> como conocimiento<br>3. Pega las <strong>instrucciones del archivo .txt</strong> en "Custom instructions"<br>4. Copia la URL del proyecto y pégala aquí ↑';
+        if (testBtn) testBtn.style.display = 'none';
+      } else {
+        if (keyInput){ keyInput.type = 'password'; }
+        if (keyBlock) keyBlock.style.display = 'none';
+        if (testBtn) testBtn.style.display = 'none';
+      }
+    }
+
+    if (settingsBtn) settingsBtn.addEventListener('click', openSettings);
+    if (cancelBtn) cancelBtn.addEventListener('click', closeSettings);
+    if (sheet) sheet.addEventListener('click', function(e){
+      if (e.target === sheet) closeSettings();
+    });
+
+    // Radio change
+    for (var i=0; i<providerOptions.length; i++){
+      (function(opt){
+        opt.addEventListener('click', function(){
+          var radio = opt.querySelector('input[type=radio]');
+          if (radio){ radio.checked = true; updateProviderUI(radio.value); }
+        });
+      })(providerOptions[i]);
+    }
+
+    if (saveBtn){
+      saveBtn.addEventListener('click', function(){
+        var selected = document.querySelector('input[name="chProvider"]:checked');
+        if (!selected) return;
+        var p = selected.value;
+        setStored(KEYS.provider, p);
+        if (p === 'groq' && keyInput) setStored(KEYS.groqKey, keyInput.value.trim());
+        else if (p === 'claude' && keyInput) setStored(KEYS.claudeKey, keyInput.value.trim());
+        else if (p === 'claudeproject' && keyInput) setStored(KEYS.claudeProjectUrl, keyInput.value.trim());
+        updateMode();
+        closeSettings();
+        // Show feedback
+        var feedback = addMsg(renderMarkdown('✅ Configuración guardada. Ahora uso **' + (p === 'groq' ? 'Groq (gratis)' : p === 'claude' ? 'Claude Haiku 4.5' : 'modo offline') + '**. Pregúntame algo para probar.'), 'bot', true);
+      });
+    }
+
+    if (testBtn){
+      testBtn.addEventListener('click', async function(){
+        var selected = document.querySelector('input[name="chProvider"]:checked');
+        if (!selected || !keyInput) return;
+        var p = selected.value;
+        var key = keyInput.value.trim();
+        if (!key){ testResult.innerHTML = '<span style="color:#a83333;">Pega una API key primero.</span>'; return; }
+        // Temp save for the test
+        if (p === 'groq') setStored(KEYS.groqKey, key);
+        else if (p === 'claude') setStored(KEYS.claudeKey, key);
+        var origProvider = getStored(KEYS.provider);
+        setStored(KEYS.provider, p);
+        testResult.innerHTML = '<span style="color:var(--ink-mute);">Probando…</span>';
+        try {
+          var testMsg = [{role:'system', content:'You are a test assistant.'}, {role:'user', content:'Reply with just: OK'}];
+          var reply;
+          if (p === 'groq') reply = await callGroq(testMsg);
+          else reply = await callClaude(testMsg);
+          testResult.innerHTML = '<span style="color:#5d7a3a;">✅ Conexión OK · respuesta: "' + escapeHtml(reply.slice(0,30)) + '"</span>';
+        } catch(e){
+          testResult.innerHTML = '<span style="color:#a83333;">❌ ' + escapeHtml(e.message.slice(0,150)) + '</span>';
+          // Restore original provider on failure
+          if (origProvider) setStored(KEYS.provider, origProvider);
+          else localStorage.removeItem(KEYS.provider);
+        }
+      });
+    }
+
   } catch(e) { console.error('Chatbot error:', e); }
 })();
+
 
 // ============================================================
 // PWA install prompt + Service Worker
